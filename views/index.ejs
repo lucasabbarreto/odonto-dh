@@ -116,23 +116,31 @@
 
         <section class="geral" id="geral">
    
-            <form action="POST" class="contato" id="contato">
+            <form action="" method="POST" class="contato" id="contato">
                 
                 <h2>Contato</h2>
                 
-                <label for="nomeCompleto">Nome Completo</label><br>
-                <input type="text" name="nomeCompleto" id="nomeCompleto"> 
+                <div>
+                    <label for="nomeCompleto">Nome Completo</label><br>
+                    <input type="text" name="nomeCompleto" id="nomeCompleto">
+                </div>
                 
-                <label for="email">e-mail</label> 
-                <input type="email" name="email" id="email"><br>
+                <div>
+                    <label for="email">e-mail</label> <br>
+                    <input type="email" name="email" id="email"><br>
+                </div>
                 
-                <label for="assunto">Assunto</label><br>
-                <input type="text" name="assunto" id="assunto"> <br>
+                <div>
+                    <label for="assunto">Assunto</label><br>
+                    <input type="text" name="assunto" id="assunto"> <br> 
+                </div>
                 
-                <label for="mensagem">Mensagem</label><br>
-                <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
-               <div class="butaoEnviar">
-                   
+                <div>
+                    <label for="mensagem">Mensagem</label><br>
+                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
+                </div>
+
+                <div class="butaoEnviar">
                    <label for="enviar"></label>
                    <input type="submit" value="Enviar" id="enviar" >
                </div>
