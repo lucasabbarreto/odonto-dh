@@ -39,14 +39,106 @@
             </div>
              
             <div class="categorias">
-                <p>Sobre nós</p>
-                <p>Tratamento</p>
-                <p>contato</p>
+                <a href="#sobreNos">
+                    <p>Sobre nós</p>
+                </a>
+                <a href="#tratamento">
+                    <p>Tratamento</p>
+                </a>
+                <a href="#geral">
+                    <p>contato</p>
+                </a>
 
             </div>
 
         </section>
     </header>
-    <script src="https://kit.fontawesome.com/efec101eb5.js" crossorigin="anonymous"></script>    
+
+    <!-- BANNER PRINCIPAL -->
+        <section class="banner">
+            <a href="https://api.whatsapp.com/send?phone=+55 75 983132493"><img src="/images/img-corpo/icone-wpp.png" alt="" class="icone-wpp" id="efeito"></a>
+    
+        <img src="/images/img-corpo/bannerPrincipal.jpeg" class="bannerPrincipal" alt="Banner pessoa sorrindo">
+        </section>
+             
+<!-- PRIMEIRO CARROSSEL -->
+        
+<section class="sobreNos" id="sobreNos">
+            <h2>SOBRE NÓS</h2>  
+    <section class="imagens">
+       
+        <div class="imgCarrosel">
+        <img src="/images/img-corpo/carrosel1.png" alt="" class="imagemCarrossel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>
+        </div>
+        
+        <div class="imgCarrosel" >
+        <img src="/images/img-corpo/carrosel2.png" alt="" class="imagemCarrossel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>
+    </div>
+        <div class="imgCarrosel">
+        <img src="/images/img-corpo/carrosel3.jpeg" alt="" class="imagemCarrossel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>    
+    </div>
+        <div class="imgCarrosel">
+        <img src="/images/img-corpo/carrosel4.jpeg" alt="" class="imagemCarrossel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>   
+    </div>
+    </section>
+        </section>
+
+        <!-- SEGUNDO CARROSSEL -->
+
+        
+        <section class="tratamento" id="tratamento">
+            <h2>TRATAMENTO</h2>  
+    <section class="imagensCarrossel2">
+        <div class="imgCarrosel2">
+        <img src="/images/img-corpo/segundoCarrossel1.png" alt="" class="imgSegCarrosel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>
+        </div>
+        <div class="imgCarrosel" >
+        <img src="/images/img-corpo/segundoCarrossel2.png" alt="" class="imgSegCarrosel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>
+    </div>
+        <div class="imgCarrosel">
+        <img src="/images/img-corpo/segundoCarrossel3.png" alt="" class="imgSegCarrosel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>    
+    </div>
+        <div class="imgCarrosel">
+        <img src="/images/img-corpo/segundoCarrossel4.png" alt="" class="imgSegCarrosel"> <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, delectus laboriosam! Magni nemo eligendi eius non tempore id, repellendus cupiditate, voluptatem quibusdam .</p>   
+    </div>
+    </section>
+        </section>
+
+        <!-- CONTATO -->
+
+        <section class="geral" id="geral">
+   
+            <form action="POST" class="contato" id="contato">
+                
+                <h2>Contato</h2>
+                
+                <label for="nomeCompleto">Nome Completo</label><br>
+                <input type="text" name="nomeCompleto" id="nomeCompleto"> 
+                
+                <label for="email">e-mail</label> 
+                <input type="email" name="email" id="email"><br>
+                
+                <label for="assunto">Assunto</label><br>
+                <input type="text" name="assunto" id="assunto"> <br>
+                
+                <label for="mensagem">Mensagem</label><br>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
+               <div class="butaoEnviar">
+                   
+                   <label for="enviar"></label>
+                   <input type="submit" value="Enviar" id="enviar" >
+               </div>
+               
+                
+            </form>
+        </section>
 </body>
 </html>
