@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/consulta-paciente.css">
+    <link rel="stylesheet" href="/stylesheets/calendar.css">
+
+    <title>Agendamento</title>
+</head>
+<body>
+    <%-include('./partials/header')%>
+    <main>
+        <div class="nome-botao">
+            <span class="span-consulta-paciente">Olá, José da Silva</span>
+            <a href="login"><button class="botao-consulta-paciente">Sair</button></a>
+        </div>
+        <div class="area-agendamento">
+            <div class="coluna-esquerda-consulta-paciente">
+                <span>Selecione o dia para sua consulta.</span>
+                <div class="calendar">
+                    <div class="month">
+                        <ul>
+                          <li class="prev">&#10094;</li>
+                          <li class="next">&#10095;</li>
+                          <li>August<br><span style="font-size:18px">2021</span></li>
+                        </ul>
+                      </div>
+                      
+                      <ul class="weekdays">
+                        <li>Seg</li>
+                        <li>Ter</li>
+                        <li>Qua</li>
+                        <li>Qui</li>
+                        <li>Sex</li>
+                        <li>Sab</li>
+                        <li>Dom</li>
+                      </ul>
+                      
+                      <ul class="days">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li><span class="active">10</span></li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                      </ul>
+                </div>
+                <!-- <img src="/images/img-consulta-paciente/calendario 1.png" alt=""> -->
+                <div class="botoes-consulta-paciente">
+                    <button class="botao-consulta-paciente">Confirmar</button>
+                    <button class="botao-consulta-paciente">Reagendar</button>
+                    <button class="botao-consulta-paciente">Cancelar</button>
+                </div>
+            </div>
+            <div class="historico-consulta">
+                <span>Histórico de Consultas</span>
+                <img src="/images/img-consulta-paciente/prontuario 1.png" alt="">
+            </div>
+        </div>        
+        
+    </main>
+</body>
+</html>

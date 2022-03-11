@@ -22,16 +22,17 @@
         <section class="header-menu">
             
             <div class="social">
-                <img src="images/img-header/instagram.png" alt="logo-insta" class="icones">
+                <%- include('./partials/social-media') %>
+                <!-- <img src="images/img-header/instagram.png" alt="logo-insta" class="icones">
                 <img src="/images/img-header/face.png" alt="logo-face" class="icones">
-                <img src="/images/img-header/twitter.png" alt="logo-twitter" class="icones" id="logo-twitter">
+                <img src="/images/img-header/twitter.png" alt="logo-twitter" class="icones" id="logo-twitter"> -->
                            
             </div>
             
             <div class="agendamento">
             <p>AGENDAMENTO</p>
-            <button class="btn-agendamento">ENTRAR</button>
-            <button class="btn-agendamento ">CADASTRE-SE</button>
+            <a href="login"><button class="btn-agendamento">ENTRAR</button></a>
+            <a href="cadastro"><button class="btn-agendamento ">CADASTRE-SE</button></a>
             </div>
 
         </section>
@@ -42,7 +43,7 @@
         <section class="banner">
             <a href="https://api.whatsapp.com/send?phone=+55 75 983132493"><img src="/images/img-corpo/icone-wpp.png" alt="" class="icone-wpp" id="efeito"></a>
     
-        <img src="/images/img-corpo/bannerPrincipal.jpeg" class="bannerPrincipal" alt="Banner pessoa sorrindo">
+        <img src="/images/img-corpo/bannerTeste.jpg" class="bannerPrincipal" alt="Banner pessoa sorrindo">
         </section>
              
 <!-- PRIMEIRO CARROSSEL -->
@@ -75,7 +76,7 @@
 
         
         <section class="tratamento" id="tratamento">
-            <h2>TRATAMENTO</h2>  
+            <h2>TRATAMENTOS</h2>  
     <section class="imagensCarrossel2">
         <div class="imgCarrosel2">
         <img src="/images/img-corpo/segundoCarrossel1.png" alt="" class="imgSegCarrosel"> <br>
@@ -124,9 +125,9 @@
                     <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
                 </div>
 
-                <div class="butaoEnviar">
+                <div class="botaoEnviar">
                    <label for="enviar"></label>
-                   <input type="submit" value="Enviar" id="enviar" >
+                   <input type="submit" value="ENVIAR" id="enviar" >
                </div>
                
                 
