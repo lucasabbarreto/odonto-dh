@@ -13,15 +13,17 @@ html{
     font-family: "Poppins",serif;
 }
 
-.header-nav{
+.wrapper-nav {
+    background-color: #1CBACF;
     height: 100px; /* fixei a altura do header */
+}
+
+.header-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 150px; /*padding alterado */
-    /* height: 80px; */
-    background-color: #1CBACF;
-
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .header-nav a{
@@ -43,7 +45,7 @@ html{
 .categorias{
     display: flex;
     /* justify-content: center; */
-    gap: 100px; /* gap aumentado para 100px */
+    gap: 64px; /* gap aumentado para 100px */
     /* width: 100%; */
     /* height: 50px; */
     font-weight: bold;
