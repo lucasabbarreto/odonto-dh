@@ -68,7 +68,9 @@ position: absolute;
 }
 .sobreNos p{
     color: white;
-    font-weight: bold
+    /* font-weight: bold; */
+    font-family: "'Poppins'";
+    font-size: 18px;
 }
 .imagens{
     width: 100vw;
@@ -105,7 +107,9 @@ position: absolute;
 }
 .tratamento p{
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 13px;
+    font-family: 'Poppins';
 }
 .imagensCarrossel2{
     width: 100vw;
