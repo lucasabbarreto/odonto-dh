@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
     <link rel="stylesheet" href="/stylesheets/header-social.css">
     <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -39,108 +40,106 @@
        <%-include('./partials/header')%>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
-        <section class="banner">
-            <a href="https://api.whatsapp.com/send?phone=+55 75 983132493"><img src="/images/img-corpo/icone-wpp.png" alt="" class="icone-wpp" id="efeito"></a>
+    <main class="main-index">
+            <!-- BANNER PRINCIPAL -->
+            <section class="banner">
+                <a href="https://api.whatsapp.com/send?phone=+55 75 983132493"><img src="/images/img-corpo/icone-wpp.png" alt="" class="icone-wpp" id="efeito"></a>
+        
+            <img src="/images/img-corpo/bannerTeste.jpg" class="bannerPrincipal" alt="Banner pessoa sorrindo">
+            </section>
+                 
+    <!-- PRIMEIRO CARROSSEL -->
+            
+    <section class="sobreNos" id="sobreNos">
+                <h2>SOBRE NÓS</h2>  
+        <section class="imagens">
+           
+            <div class="imgCarrosel">
+            <img src="/images/img-corpo/carrosel1.png" alt="" class="imagemCarrossel"> <br>
+            <p>A OdontoClean é uma clínica com mais de 50 anos de experiência, com muita história e gerações.
+                Somos uma clínica odontológica completa, com todas as modalidades em um só lugar.</p>
+            </div>
+            
+            <div class="imgCarrosel" >
+            <img src="/images/img-corpo/carrosel2.png" alt="" class="imagemCarrossel"> <br>
+            <p>Tornar melhor e mais acessível o tratamento odontológico a todos os brasileiros através de profissionais capacitados, equipamentos de última geração e ambiente multidisciplinar com qualidade, tecnologia e segurança.</p>
+        </div>
+            <div class="imgCarrosel">
+            <img src="/images/img-corpo/carrosel3.jpeg" alt="" class="imagemCarrossel"> <br>
+            <p>Trabalhar de forma ética e consciente, propondo soluções personalizadas para as necessidades de cada paciente, dentro de suas possibilidades.</p>    
+        </div>
+            <div class="imgCarrosel">
+            <img src="/images/img-corpo/carrosel4.jpeg" alt="" class="imagemCarrossel"> <br>
+            <p>Profissionalismo,
+                Seriedade,
+                Dedicação e 
+                Tecnologia</p>   
+        </div>
+        </section>
+            </section>
     
-        <img src="/images/img-corpo/bannerTeste.jpg" class="bannerPrincipal" alt="Banner pessoa sorrindo">
+            <!-- SEGUNDO CARROSSEL -->
+    
+            
+            <section class="tratamento" id="tratamento">
+                <h2>TRATAMENTOS</h2>  
+        <section class="imagensCarrossel2">
+            <div class="imgCarrosel2">
+            <img src="/images/img-corpo/segundoCarrossel1.png" alt="" class="imgSegCarrosel"> <br>
+            <p>A função principal do tratamento ortodôntico é restabelecer a oclusão dentária (perfeito engrenamento dos dentes superiores com os inferiores), que é fundamental para a correta mastigação e, consequentemente, a adequada nutrição e saúde bucal.</p>
+            </div>
+            <div class="imgCarrosel" >
+            <img src="/images/img-corpo/segundoCarrossel2.png" alt="" class="imgSegCarrosel"> <br>
+            <p>Especialidade odontológica responsável pela prevenção e tratamento das doenças que acometem os tecidos de sustentação e proteção dos dentes (tratamento da gengiva e do osso).</p>
+        </div>
+            <div class="imgCarrosel">
+            <img src="/images/img-corpo/segundoCarrossel3.png" alt="" class="imgSegCarrosel"> <br>
+            <p>A especialidade de prótese dentária é responsável por reestruturar os tecidos bucais e dentes perdidos, seja por acidentes ou doenças periodontais, por peças artificiais - fixas ou removíveis.</p>    
+        </div>
+            <div class="imgCarrosel">
+            <img src="/images/img-corpo/segundoCarrossel4.png" alt="" class="imgSegCarrosel"> <br>
+            <p>Entre as competências do dentista clínico geral estão: prevenção, diagnóstico e tratamento de uma ampla variedade de condições, desordens e doenças dos dentes e gengivas.</p>   
+        </div>
         </section>
-             
-<!-- PRIMEIRO CARROSSEL -->
-        
-<section class="sobreNos" id="sobreNos">
-            <h2>SOBRE NÓS</h2>  
-    <section class="imagens">
+            </section>
+    
+            <!-- CONTATO -->
+    
+            <section class="geral" id="geral">
        
-        <div class="imgCarrosel">
-        <img src="/images/img-corpo/carrosel1.png" alt="" class="imagemCarrossel"> <br>
-        <p>A OdontoClean é uma clínica com mais de 50 anos de experiência, com muita história e gerações.
-            Somos uma clínica odontológica completa, com todas as modalidades em um só lugar.</p>
-        </div>
-        
-        <div class="imgCarrosel" >
-        <img src="/images/img-corpo/carrosel2.png" alt="" class="imagemCarrossel"> <br>
-        <p>Tornar melhor e mais acessível o tratamento odontológico a todos os brasileiros através de profissionais capacitados, equipamentos de última geração e ambiente multidisciplinar com qualidade, tecnologia e segurança.</p>
-    </div>
-        <div class="imgCarrosel">
-        <img src="/images/img-corpo/carrosel3.jpeg" alt="" class="imagemCarrossel"> <br>
-        <p>Trabalhar de forma ética e consciente, propondo soluções personalizadas para as necessidades de cada paciente, dentro de suas possibilidades.</p>    
-    </div>
-        <div class="imgCarrosel">
-        <img src="/images/img-corpo/carrosel4.jpeg" alt="" class="imagemCarrossel"> <br>
-        <p>Profissionalismo,
-            Seriedade,
-            Dedicação e 
-            Tecnologia</p>   
-    </div>
-    </section>
-        </section>
-
-        <!-- SEGUNDO CARROSSEL -->
-
-        
-        <section class="tratamento" id="tratamento">
-            <h2>TRATAMENTOS</h2>  
-    <section class="imagensCarrossel2">
-        <div class="imgCarrosel2">
-        <img src="/images/img-corpo/segundoCarrossel1.png" alt="" class="imgSegCarrosel"> <br>
-        <p>A função principal do tratamento ortodôntico é restabelecer a oclusão dentária (perfeito engrenamento dos dentes superiores com os inferiores), que é fundamental para a correta mastigação e, consequentemente, a adequada nutrição e saúde bucal.</p>
-        </div>
-        <div class="imgCarrosel" >
-        <img src="/images/img-corpo/segundoCarrossel2.png" alt="" class="imgSegCarrosel"> <br>
-        <p>Especialidade odontológica responsável pela prevenção e tratamento das doenças que acometem os tecidos de sustentação e proteção dos dentes (tratamento da gengiva e do osso).</p>
-    </div>
-        <div class="imgCarrosel">
-        <img src="/images/img-corpo/segundoCarrossel3.png" alt="" class="imgSegCarrosel"> <br>
-        <p>A especialidade de prótese dentária é responsável por reestruturar os tecidos bucais e dentes perdidos, seja por acidentes ou doenças periodontais, por peças artificiais - fixas ou removíveis.</p>    
-    </div>
-        <div class="imgCarrosel">
-        <img src="/images/img-corpo/segundoCarrossel4.png" alt="" class="imgSegCarrosel"> <br>
-        <p>Entre as competências do dentista clínico geral estão: prevenção, diagnóstico e tratamento de uma ampla variedade de condições, desordens e doenças dos dentes e gengivas.</p>   
-    </div>
-    </section>
-        </section>
-
-        <!-- CONTATO -->
-
-        <section class="geral" id="geral">
-   
-            <form action="" method="POST" class="contato" id="contato">
-                
-                <h2>Contato</h2>
-                
-                <div>
-                    <label for="nomeCompleto">Nome Completo</label><br>
-                    <input type="text" name="nomeCompleto" id="nomeCompleto">
-                </div>
-                
-                <div>
-                    <label for="email">e-mail</label> <br>
-                    <input type="email" name="email" id="email"><br>
-                </div>
-                
-                <div>
-                    <label for="assunto">Assunto</label><br>
-                    <input type="text" name="assunto" id="assunto"> <br> 
-                </div>
-                
-                <div>
-                    <label for="mensagem">Mensagem</label><br>
-                    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
-                </div>
-
-                <div class="botaoEnviar">
-                   <label for="enviar"></label>
-                   <input type="submit" value="ENVIAR" id="enviar" >
-               </div>
-               
-                
-            </form>
-        </section>
+                <form action="" method="POST" class="contato" id="contato">
+                    
+                    <h2>Contato</h2>
+                    
+                    <div>
+                        <label for="nomeCompleto">Nome Completo</label><br>
+                        <input type="text" name="nomeCompleto" id="nomeCompleto">
+                    </div>
+                    
+                    <div>
+                        <label for="email">e-mail</label> <br>
+                        <input type="email" name="email" id="email"><br>
+                    </div>
+                    
+                    <div>
+                        <label for="assunto">Assunto</label><br>
+                        <input type="text" name="assunto" id="assunto"> <br> 
+                    </div>
+                    
+                    <div>
+                        <label for="mensagem">Mensagem</label><br>
+                        <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea> <br>
+                    </div>
+    
+                    <div class="botaoEnviar">
+                       <label for="enviar"></label>
+                       <input type="submit" value="ENVIAR" id="enviar" >
+                   </div>
+                   
+                    
+                </form>
+            </section>    
+    </main>
         <%-include('./partials/footer')%> 
 </body>
-
-
-
-
 </html>

@@ -24,6 +24,7 @@ html{
 .header-menu{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
     background-color: white;
     font-family: 'Poppins', sans-serif;
@@ -40,6 +41,7 @@ html{
 .agendamento{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 30px;
     height: 30px;
 }

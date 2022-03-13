@@ -23,6 +23,10 @@ html{
 
 /* Inicio corpo */
 
+.main-index {
+    max-width: 1024px;
+    margin: 0 auto;
+}
 
 /* Banner principal */
 
@@ -53,7 +57,6 @@ html{
 /* carrossel 1  */
 .sobreNos{
     display: flex;
-    background: #1CBACF;
     width: 100vw;
     height: 600px;
     justify-content: center;
@@ -67,10 +70,11 @@ margin-top: 50px;
 position: absolute;
 }
 .sobreNos p{
-    color: white;
+    color: #1CBACF;;
     /* font-weight: bold; */
     font-family: "'Poppins'";
-    font-size: 18px;
+    font-size: 15px;
+    text-align:center;
 }
 .imagens{
     width: 100vw;
@@ -92,7 +96,7 @@ position: absolute;
 
 .tratamento{
     display: flex;
-    background: white;
+    background-color: #1CBACF;
     width: 100vw;
     height: 600px;
     justify-content: center;
@@ -100,16 +104,17 @@ position: absolute;
 
 }
 .tratamento h2{
-    color: black;
+    color: white;
 align-items: center;
 margin-top: 50px;
 position: absolute;
 }
 .tratamento p{
-    color: black;
+    color: white;
     /* font-weight: bold; */
     font-size: 13px;
     font-family: 'Poppins';
+    text-align: center;
 }
 .imagensCarrossel2{
     width: 100vw;
@@ -131,7 +136,6 @@ position: absolute;
 .geral{
     display: flex;
     height: 600px;
-    background: #1CBACF;
     display: flex;
     justify-content: center;
     align-items: center;
