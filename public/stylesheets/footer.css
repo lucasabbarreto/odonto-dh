@@ -10,14 +10,13 @@
    padding: 10px 0;
    align-items: center;
    justify-content: space-between;
-   gap: 10px;
 }
 
-.logo-footer{
+.logo-footer {
    height: 100px;
   }
 
-.opening-hours{
+.opening-hours p, h3 {
    /* Horario de Funcionamento */
    
    font-family: Poppins;
@@ -25,68 +24,43 @@
    font-weight: 600;
    font-size: 14px;
    line-height: 21px;
-
    color: #FFFFFF;
-  }
-
-
+}
 
 .map{
    /* Localizacao 1 */
    background: url(Localizacao.jpg);
-
+   border-radius: 5px;
 }
-.social-networks{
-   /* Redes Sociais */
-   
+
+.social-media-footer h3 {
    font-family: Poppins;
-   font-style: normal;
-   font-weight: normal;
-   font-size: 15px;
-   line-height: 30px;
-
-   color: #FFFFFF;
-
-
-}
-.social-networks2{
-   /* Facebook */
-   /* Twitter */
-   /* Instagran */
-
-   font-family: Poppins;
-   font-style: normal;
+   font-style:normal;
    font-weight: 600;
    font-size: 14px;
-   line-height: 29px;
+   line-height: 21px;
 
    color: #FFFFFF;
 }
 
-.logoFacebook{
-   
+.social-media-footer {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
 
-.logoTwitter{
-
+.social-media-footer h3 {
+   text-align: center;
 }
 
-.logoInstagram{
+.social-media-icons-footer {
+   display: flex;
+   gap: 5px;
 }
 
-.newsL{
-   /* Newsletter Lorem Ipsum is simply dummy text of the printing 
-   and typesetting industry. */
-   display: none;
-   font-family: Poppins;
-   font-style: normal;
-   font-weight: 600;
-   font-size: 19px;
-   line-height: 29px;
-
-   color: #FFFFFF;
-}
-
-.sending-email{
-   display: none;
+.social-media-icon-background-footer {
+   width: 45px;
+   height: 45px;
+   background-color: white;
+   border-radius: 5px;
 }
