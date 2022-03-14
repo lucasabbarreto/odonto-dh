@@ -13,6 +13,11 @@ html{
     font-family: "Poppins", serif;
 }
 
+.agendamento p {
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /* Inicio corpo */
 
 .main-index {

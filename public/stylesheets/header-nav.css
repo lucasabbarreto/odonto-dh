@@ -37,8 +37,12 @@ html{
 .categorias{
     display: flex;
     gap: 64px;
-    font-weight: bold;
     color: white;
+}
+
+.categorias p {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .categorias p:hover {

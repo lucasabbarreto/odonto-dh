@@ -14,10 +14,27 @@
     
     <form class="form-cadastro" method="">
         <span class="span-cadastro">Cadastre-se para agendar sua consulta</span>
-        <div class="campo-cadastro">
+        <div class="email-senha-wrapper">
             <div class='coluna-esquerda-cadastro'>
-                <div class="label-esquerda-cadastro">
+                <div class="label-wrapper-cadastro">
                     <label for="email">Email</label>
+                </div>
+                <div class="input-wrapper-cadastro">
+                    <input type="email" name="email" id="email">
+                </div>                     
+            </div>
+            <div class="coluna-direita-cadastro">
+                <div class="label-wrapper-cadastro">
+                    <label for="senha">Senha</label>                    
+                </div>
+                <div class="input-wrapper-cadastro">
+                    <input type="password" id="senha">
+                </div>    
+            </div>
+        </div>        
+        <div class="detalhes-wrapper-cadastro">
+            <div class='coluna-esquerda-cadastro'>
+                <div class="label-wrapper-cadastro">                    
                     <label for="nome">Nome completo</label>
                     <label for="sexo">Sexo</label>
                     <label for="cpf">CPF</label>
@@ -25,8 +42,7 @@
                     <label for="celular">Celular</label>
                     <label for="nascimento">Data de nascimento</label>
                 </div>
-                <div class="input-esquerda-cadastro">
-                    <input type="email" name="email" id="email">
+                <div class="input-wrapper-cadastro">
                     <input type="text" name="nome" id="nome">
                     <select name="genero" id="sexo">
                         <option value="masculino">masculino</option>
@@ -40,8 +56,7 @@
                 </div>                
             </div>            
             <div class="coluna-direita-cadastro">
-                <div class="label-direita-cadastro">
-                    <label for="senha">Senha</label>
+                <div class="label-wrapper-cadastro">
                     <label for="cep">CEP</label>
                     <label for="endereco">Endereço</label>
                     <label for="complemento">Complemento</label>
@@ -49,8 +64,7 @@
                     <label for="cidade">Cidade</label>
                     <label for="estado">Estado</label>
                 </div>
-                <div class="input-direita-cadastro">                
-                    <input type="password" id="senha">
+                <div class="input-wrapper-cadastro">                
                     <input type="number" id="cep">
                     <input type="text" id="endereco">
                     <input type="text" id="complemento">

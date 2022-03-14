@@ -18,6 +18,8 @@ main {
     margin: 20px auto;
 }
 
+
+
 .nome-botao {
     margin-bottom: 40px;
 }
@@ -25,12 +27,13 @@ main {
 .area-agendamento {
     display: flex;
     margin-bottom: 40px;
-    justify-content: space-between;
 }
 
 .historico-consulta {
     display: flex;
     flex-direction: column;
+    margin-left: 40px;
+    text-align: center;
 }
 
 .historico-consulta span {
@@ -47,14 +50,36 @@ main {
     flex-direction: column;
 }
 
+.calendar {
+    height: 300px;
+}
+
 .coluna-esquerda-consulta-paciente span {
     color: white;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.coluna-esquerda-consulta-paciente img {
-    width: 400px;
-    margin-bottom: 20px;
+#table-wrapper {
+    font-size: 14px;
+}
+
+#table-scroll {
+    height:300px;
+    overflow: auto;
+    overflow-x: hidden;  
+    border: solid 1px white
+}
+  
+#table-wrapper table {
+    width:100%;
+  
+}
+
+#table-wrapper table * {
+    color:white;
+    background-color: #1CBACF;
+    padding: 1px;
 }
 
 .botoes-consulta-paciente {
