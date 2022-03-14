@@ -16,6 +16,12 @@
    height: 100px;
   }
 
+.opening-hours {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
 .opening-hours p, h3 {
    /* Horario de Funcionamento */
    

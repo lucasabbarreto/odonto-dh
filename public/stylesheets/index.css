@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -10,8 +10,7 @@ html{
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: "Poppins",serif;
-    max-width: 100%;
+    font-family: "Poppins", serif;
 }
 
 /* Inicio corpo */
@@ -24,19 +23,7 @@ html{
 /* Banner principal */
 
 .banner{
-    width: 100vw;
-    height: 400px;
-    
-}
-
-.banner a{
-    display: flex;
-    justify-content: end;
-}
-
-.bannerPrincipal{
-    width: 100vw;
-    height: 400px;
+    height: 400px;   
 }
 
 .icone-wpp{
@@ -44,86 +31,63 @@ html{
     position: fixed;
     bottom: 50px;
     right: 50px;
-    
 }
-.icone-wpp{
-    margin-top: 20px;
-   
-}
-/* carrossel 1  */
-.sobreNos{
-    display: flex;
-    width: 100vw;
-    height: 600px;
-    justify-content: center;
-    
 
+/* carrossel 1  */
+.sobreNos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 25px 0;
 }
+
 .sobreNos h2{
     color: #1CBACF;
-    align-items: center;
-    margin-top: 50px;
-    position: absolute;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .sobreNos p{
     color: #1CBACF;
-    /* font-weight: bold; */
-    font-family: "'Poppins'";
-    font-size: 15px;
+    font-size: 13px;
     text-align:center;
 }
-.imagens{
-    width: 100vw;
+.carrossel {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 20px;
 }
-.imgCarrosel{
-    margin-top: 150px;
+
+.carrossel-item {
     width: 200px;
-    height: 200px;
 }
-.imagemCarrossel{
+
+.imagemCarrossel {
     width: 200px;
-    height: 200px;
+    border-radius: 50%;
 }
 
 
 /* SEGUNDO CARROSSEL */
 
-.tratamento{
+.tratamento {
     display: flex;
+    flex-direction: column;
     background-color: #1CBACF;
-    width: 100vw;
-    height: 600px;
-    justify-content: center;
-    
-
-}
-.tratamento h2{
-    color: white;
-    align-items: center;
-    margin-top: 50px;
-    position: absolute;
+    margin-top: 25px;
+    padding: 25px 0;
 }
 
-.tratamento p{
+.tratamento h2 {
     color: white;
-    /* font-weight: bold; */
-    font-size: 13px;
-    font-family: 'Poppins';
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.imgCarrosel2 {
-    margin-top: 150px;
-    width: 200px;
-    height: 200px;
-}
-
-.imgCarrosel{
-    width: 200px;
-    height: 200px;
+.tratamento p {
+    color: white;
+    font-size: 13px;
+    text-align: center;
 }
 
 /* CONTATO */
@@ -181,27 +145,24 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.botaoEnviar{
-    display: flex;
-    justify-content: center;    
-}
-
-#enviar{
-    width: 195px;
-    height: 35px;
-    border-radius: 5px;
-    border: 1px solid #3e5ba5e3;
-    background-color: #3e5ba5e3;
-    font-size: 11px;
-    color: white;
-    font-weight: bold;
+.botaoEnviar {
+    width: 100px;
+    height: 30px;
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    color: white;
+    background-color: #3e5ba5e3;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 11px;
+    transition: 250ms ease-in-out;
 }
 
-#enviar:hover{
+.botaoEnviar:hover {
     background-color: white;
-    color: black; 
+    border: solid 1px #3e5ba5e3;
+    color: #3e5ba5e3; 
 }
 
 
