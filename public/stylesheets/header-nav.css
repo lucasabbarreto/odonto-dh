@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins",serif;
+}
+
+.wrapper-nav {
+    background-color: #1CBACF;
+    height: 100px; /* fixei a altura do header */
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header-nav a{
+    color: white;
+}
+
+.logo-donto{
+    /* width: 100%; */
+    height: 100px;
+}
+
+/* .social-dois{
+    width: 195px;
+    height: px;
+}
+ */
+
+
+.categorias{
+    display: flex;
+    /* justify-content: center; */
+    gap: 64px; /* gap aumentado para 100px */
+    /* width: 100%; */
+    /* height: 50px; */
+    font-weight: bold;
+    color: white;
+}
+
+.categorias p:hover {
+    text-decoration: underline;
+}

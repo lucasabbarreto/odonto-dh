@@ -14,6 +14,7 @@ html{
     list-style: none;
     font-family: "Poppins",serif;
     max-width: 100%;
+<<<<<<< HEAD
     
 }
 
@@ -76,31 +77,14 @@ html{
     height: 50px;
 
     
+=======
+>>>>>>> 7e269fe52b0f947eee857687b6b62ab815a34a4c
 }
 
 
 
-.logo-donto{
-    width: 196px;
-    
-}
-
-.social-dois{
-    width: 195px;
-    height: 100px;
-}
 
 
-
-.categorias{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    height: 50px;
-    font-weight: bold;
-    color: white
-}
 
 /* Inicio corpo */
 
@@ -149,7 +133,9 @@ position: absolute;
 }
 .sobreNos p{
     color: white;
-    font-weight: bold
+    /* font-weight: bold; */
+    font-family: "'Poppins'";
+    font-size: 18px;
 }
 .imagens{
     width: 100vw;
@@ -186,7 +172,9 @@ position: absolute;
 }
 .tratamento p{
     color: black;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 13px;
+    font-family: 'Poppins';
 }
 .imagensCarrossel2{
     width: 100vw;
@@ -254,7 +242,7 @@ position: absolute;
     width: 652px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.butaoEnviar{
+.botaoEnviar{
     display: flex;
     justify-content: center;
     
@@ -262,20 +250,20 @@ position: absolute;
 
 
 #enviar{
-
     width: 195px;
     height: 35px;
-   border-radius: 4px;
-   background-color: #3e5ba5e3;;
-   color: white;
-   font-weight: bold;
-   cursor: pointer;
-   transition: 1s;
+    border-radius: 5px;
+    border: 1px solid #3e5ba5e3;
+    background-color: #3e5ba5e3;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
 
 }
 
 #enviar:hover{
-    transition: 1s;
     background-color: white;
     color: black;
  

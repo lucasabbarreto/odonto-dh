@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Poppins",serif;
+}
+
+main {
+    background: #399ca98c;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+.nome-botao {
+    margin-bottom: 40px;
+}
+
+.area-agendamento {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.historico-consulta {
+    display: flex;
+    flex-direction: column;
+}
+
+.historico-consulta span {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.span-consulta-paciente {
+    color: white;
+}
+
+.coluna-esquerda-consulta-paciente {
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna-esquerda-consulta-paciente span {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.coluna-esquerda-consulta-paciente img {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.botoes-consulta-paciente {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.botao-consulta-paciente {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.botao-consulta-paciente:hover {
+    color: #3e5ba5e3;
+    background-color: white;
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="/stylesheets/cadastro.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
 
 </head>
 <body>  
@@ -16,74 +16,46 @@
         <span class="span-cadastro">Cadastre-se para agendar sua consulta</span>
         <div class="campo-cadastro">
             <div class='coluna-esquerda-cadastro'>
-                <div class="email-senha-div">
+                <div class="label-esquerda-cadastro">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" id="sobrenome">
-                </div>
-                <div class="div-comum-cadastro">
+                    <label for="nome">Nome completo</label>
                     <label for="sexo">Sexo</label>
+                    <label for="cpf">CPF</label>
+                    <label for="tel">Telefone</label>
+                    <label for="celular">Celular</label>
+                    <label for="nascimento">Data de nascimento</label>
+                </div>
+                <div class="input-esquerda-cadastro">
+                    <input type="email" name="email" id="email">
+                    <input type="text" name="nome" id="nome">
                     <select name="genero" id="sexo">
                         <option value="masculino">masculino</option>
                         <option value="feminino">feminino</option>
                         <option value="nao-informar">Não informar</option>
                     </select>
-                </div>               
-                <div class="div-comum-cadastro">
-                    <label for="cpf">CPF</label>
                     <input type="number" id="cpf">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="tel">Telefone</label>
                     <input type="tel" id="tel">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="celular">Celular</label>
                     <input type="tel" id="celular">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="nascimento">Data de nascimento</label>
                     <input type="date" id="nascimento">
-                </div>
-            </div>
+                </div>                
+            </div>            
             <div class="coluna-direita-cadastro">
-                <div class="email-senha-div">
+                <div class="label-direita-cadastro">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="cep">CEP</label>
-                    <input type="number" id="cep">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="endereco">Endereço</label>
-                    <input type="text" id="endereco">
-                </div>
-                <div class="div-comum-cadastro">
-                    <label for="numero">Número</label>
-                    <input type="number" id="numero">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="complemento">Complemento</label>
-                    <input type="text" id="complemento">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade">
-                </div>
-                <div class="div-comum-cadastro">
                     <label for="estado">Estado</label>
+                </div>
+                <div class="input-direita-cadastro">                
+                    <input type="password" id="senha">
+                    <input type="number" id="cep">
+                    <input type="text" id="endereco">
+                    <input type="text" id="complemento">
+                    <input type="text" id="bairro">
+                    <input type="text" id="cidade">
                     <select name="estado" id="estado">
                         <option value="acre">AC</option>
                         <option value="alagoas">AL</option>
@@ -94,7 +66,7 @@
                         <option value="">AC</option>
                         <option value="bahia">BA</option>
                     </select>
-                </div>
+                </div>                
             </div>
         </div>
         <button class="button-cadastro" type="submit">ENVIAR</button>

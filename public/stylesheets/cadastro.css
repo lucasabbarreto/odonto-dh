@@ -5,7 +5,6 @@ body {
     border: 0;
     padding: 0;
     font-family: "Poppins",serif;
-    background-color: #1cbacf;
 }
 
 .form-cadastro {
@@ -27,15 +26,29 @@ body {
 
 .campo-cadastro {
     display: flex;
-    flex-wrap: wrap;
-    padding-right: 140px;
+    height: 265px;
 }
 
 .coluna-esquerda-cadastro {
     display: flex;
-    flex-direction: column;
     margin-right: 100px;
     align-items: flex-end;
+}
+
+.label-esquerda-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.input-esquerda-cadastro {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .email-senha-div {
@@ -51,7 +64,8 @@ body {
     border: 0;
     border-radius: 10px;
     padding: 2px 5px;
-    height: 17px;
+    height: 25px;
+    width: 200px;
 }
 
 .coluna-esquerda-cadastro select {
@@ -61,14 +75,26 @@ body {
     padding: 2px;
 }
 
-.coluna-esquerda-cadastro div:last-of-type {
-    margin: 0 28px 0 0;
+.coluna-direita-cadastro {
+    display: flex;
+    margin-right: 100px;
+    align-items: flex-end;
 }
 
-.coluna-direita-cadastro {
+.label-direita-cadastro {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    height: 100%;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+
+.input-direita-cadastro {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .coluna-direita-cadastro input {
@@ -76,7 +102,8 @@ body {
     border: 0;
     border-radius: 10px;
     padding: 2px 5px;
-    height: 17px;
+    height: 25px;
+    width: 200px;
 }
 
 .coluna-direita-cadastro select {
@@ -96,9 +123,10 @@ body {
     background-color: #3e5ba5e3;
     padding: 10px;
     cursor: pointer;
-    transition: 200ms linear;
+    transition: 500ms ease-in-out;
 }
 
 .button-cadastro:hover {
-    transform: scale(1.03);
+    color: #3e5ba5e3;
+    background-color: white;
 }
