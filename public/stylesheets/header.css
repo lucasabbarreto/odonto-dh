@@ -13,6 +13,8 @@ html{
     text-decoration: none;
     list-style: none;
     font-family: "Poppins",serif;
+    max-width: 100%;
+    
 }
 
 .social{
@@ -301,3 +303,7 @@ position: absolute;
     #efeito:hover{
         animation: bounce 1s;
     }
+
+
+
+    
