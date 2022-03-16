@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.geral{
+  max-width: 1024px;
+    margin: 0 auto;
+}
+
 
 .saudacao-admin{
     display: flex;

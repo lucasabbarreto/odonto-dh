@@ -19,38 +19,42 @@
 </section>
 
 </header>
-<!-- Barra de Busca -->
-<section class="area-buscar-paciente"> 
-    <form action="" method="post">
-         <div class="busca">
-        <input type="text" id="txtBusca" placeholder="Buscar Paciente...">
-        <button id="btnBusca">Pesquisar</button>
-    </div>
-        <div class="area">
-            <textarea name="lista-pacientes" id="" cols="30" rows="10" class="area-pacientes" placeholder="Falta saber se aqui sera text area ou tabela"></textarea>
+
+<main class="geral">
+    
+    <!-- Barra de Busca -->
+    <section class="area-buscar-paciente">
+        <form action="" method="post">
+             <div class="busca">
+            <input type="text" id="txtBusca" placeholder="Buscar Paciente...">
+            <button id="btnBusca">Pesquisar</button>
         </div>
-        <div class="butoes-pacientes">
-            <button type="submit">Novo</button> 
+            <div class="area">
+                <textarea name="lista-pacientes" id="" cols="30" rows="10" class="area-pacientes" placeholder="Falta saber se aqui sera text area ou tabela"></textarea>
+            </div>
+            <div class="butoes-pacientes">
+                <button type="submit">Novo</button>
+                <button type="submit">Editar</button>
+                <button type="submit">Deletar</button>
+            </div>
+        </form>
+        </section >
+    
+    
+        <section class="calendario-historico">
+    <div class="calendario">
+        <h1>calendario de Consultas</h1>
+    </div>
+    <div class="hisorico">
+        <h1>Historico de Consultas</h1>
+    </div>
+        </section>
+        <div class="butoes-agendamento">
+            <button type="submit">Novo</button>
             <button type="submit">Editar</button>
             <button type="submit">Deletar</button>
         </div>
-    </form>  
-    </section >
-    
-
-    <section class="calendario-historico">
-<div class="calendario">
-    <h1>calendario de Consultas</h1>
-</div>
-<div class="hisorico">
-    <h1>Historico de Consultas</h1>
-</div>
-    </section>
-    <div class="butoes-agendamento">
-        <button type="submit">Novo</button> 
-        <button type="submit">Editar</button>
-        <button type="submit">Deletar</button>
-    </div>
+</main>
 </body>
 
 </html>
