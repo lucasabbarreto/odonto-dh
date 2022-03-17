@@ -34,14 +34,15 @@ html{
 .icone-wpp{
     width: 70px;
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 25px;
+    right: 25px;
 }
 
 /* carrossel 1  */
 .sobreNos {
     display: flex;
     flex-direction: column;
+    height: 650px;
     margin-top: 25px;
     padding: 25px 0;
 }
@@ -50,6 +51,12 @@ html{
     color: #1CBACF;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.span-sobre-nos {
+    color: #1CBACF;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .sobreNos p{
@@ -64,12 +71,16 @@ html{
 }
 
 .carrossel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
 }
 
 .imagemCarrossel {
     width: 200px;
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 
@@ -80,6 +91,7 @@ html{
     flex-direction: column;
     background-color: #1CBACF;
     margin-top: 25px;
+    margin-bottom: 70px;
     padding: 25px 0;
 }
 
@@ -87,6 +99,12 @@ html{
     color: white;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.span-tratamento {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .tratamento p {
@@ -97,18 +115,11 @@ html{
 
 /* CONTATO */
 
-.geral{
-    display: flex;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
 .contato {
     display: flex;
     background-color: #1CBACF;
     width: 1024px;
+    border-bottom: solid 1px white;
     border-radius: 5px;
     flex-direction: column;
     align-items: center;
