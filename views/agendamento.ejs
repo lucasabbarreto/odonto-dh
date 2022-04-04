@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header-nav.css">
     <link rel="stylesheet" href="/stylesheets/agendamento.css">
-    <link rel="stylesheet" href="/stylesheets/calendar.css">
 
     <title>Agendamento</title>
 </head>
 <body>
-    <%-include('./partials/header')%>
+    <!-- <%-include('./partials/header')%> -->
     <main>
         <div class="nome-botao">
             <span class="span-consulta-paciente">Olá, José da Silva</span>
@@ -27,7 +26,7 @@
                           <li class="next">&#10095;</li>
                           <li>August<br><span style="font-size:18px">2021</span></li>
                         </ul>
-                      </div>
+                    </div>
                       
                       <ul class="weekdays">
                         <li>Seg</li>
@@ -72,15 +71,9 @@
                         <li>30</li>
                       </ul>
                 </div>
-                <div class="botoes-consulta-paciente">
-                    <button class="botao-consulta-paciente">Confirmar</button>
-                    <button class="botao-consulta-paciente">Reagendar</button>
-                    <button class="botao-consulta-paciente">Cancelar</button>
-                </div>
             </div>
             <div class="historico-consulta">
-                <span>Prontuário</span>
-                <!-- <img src="/images/img-consulta-paciente/prontuario 1.png" alt=""> -->
+                <span>Prontuário</span>                
                   <div id="table-wrapper">
                     <div id="table-scroll">
                       <table>
@@ -117,7 +110,11 @@
                   </div>                
             </div>
         </div>        
-        
+        <div class="botoes-consulta-paciente">
+          <button class="botao-consulta-paciente">Confirmar</button>
+          <button class="botao-consulta-paciente">Reagendar</button>
+          <button class="botao-consulta-paciente">Cancelar</button>
+      </div>
     </main>
 </body>
 </html>
