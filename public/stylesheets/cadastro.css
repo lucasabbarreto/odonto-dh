@@ -130,3 +130,10 @@ body {
     color: #3e5ba5e3;
     background-color: white;
 }
+
+@media(max-width: 480px){
+    .form-cadastro{
+    max-width: 100%;
+
+    }          
+}
