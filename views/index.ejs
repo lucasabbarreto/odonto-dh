@@ -6,8 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header.css">
+
     <link rel="stylesheet" href="/stylesheets/header-social.css">
     <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -20,38 +24,21 @@
 <body>
     <header>
 
-        <!-- <section class="header-menu">
-            
-            <div class="social">
-                <%- include('./partials/social-media') %> -->
-                <!-- <img src="images/img-header/instagram.png" alt="logo-insta" class="icones">
-                <img src="/images/img-header/face.png" alt="logo-face" class="icones">
-                <img src="/images/img-header/twitter.png" alt="logo-twitter" class="icones" id="logo-twitter"> -->
-                           
-            <!-- </div>
-             -->
-            <!-- <div class="agendamento"> Mudar para Nave -->
-            <!-- <p>AGENDAMENTO</p>
-            <a href="login"><button class="btn-agendamento">ENTRAR</button></a>
-            <a href="cadastro"><button class="btn-agendamento ">CADASTRE-SE</button></a>
-            </div>
-
-        </section>
-       <%-include('./partials/header')%> -->
-
-
+        <section class="header-midiasSociais">
             
             <div class="social">
                 <%- include('./partials/social-media') %> 
                                           
             </div>
 
-            <nav>
+            <nav class="navbar">
                 <a>AGENDAMENTO</a>
-                <button type="button" class="teste">CADASTRE-SE</button>
-                <button type="button" class="btnTwo">ENTRAR</button>
+                <button type="button" class="teste">ENTRAR</button>
+                <button type="button" class="btnTwo">CADASTRE-SE</button>
 
             </nav>
+        </section>
+        <%-include('./partials/header')%>
      
     </header>
 

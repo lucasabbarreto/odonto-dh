@@ -16,32 +16,22 @@ html{
 .social{
     display: flex;
     gap: 5px;
-    width: 100%;
     height: 40px;
+    
 
 }
 
-.header-menu{
+.header-midiasSociais{
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 35px;
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    /* max-width: 1024px; */
-    margin: 0 auto;
 }
   
 #logo-twitte{
     width: 100%;
-}
-
-
-.agendamento{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    height: 30px;
 }
 
 .social-icon-media {
@@ -49,22 +39,31 @@ html{
     height: 45px;
 }
 
-.btn-agendamento{
-    width: 100px;
-    height: 30px;
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    color: white;
-    text-decoration: none;
-    background-color: #1CBACF;
-    border-radius: 5px;
-    border: 1px solid #1CBACF;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 11px;
-    transition: 250ms ease-in-out;
+    gap: 30px;
+    height: 30px;
+    font-size: 13px;
+  
 }
 
-.btn-agendamento:hover {
-    color: #1CBACF;
-    background-color: white;
+.navbar > button{
+    display: flex;
+    align-items: center;
+    background-color: #1CBACF;
+    cursor: pointer;
+    border-radius: 9px;
+    border: 3px solid #1CBACF;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    color: white;
+    transition: 250ms ease-in-out;
+    
+    
 }
+
+

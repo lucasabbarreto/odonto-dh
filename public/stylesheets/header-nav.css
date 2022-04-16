@@ -15,7 +15,7 @@ html{
 
 .wrapper-nav {
     background-color: #1CBACF;
-    height: 100px; /* fixei a altura do header */
+    height: 120px; 
 }
 
 .header-nav{
@@ -31,27 +31,64 @@ html{
 }
 
 .logo-donto{
-    /* width: 100%; */
-    height: 100px;
+   height: 120px;
 }
-
-/* .social-dois{
-    width: 195px;
-    height: px;
-}
- */
 
 
 .categorias{
     display: flex;
-    /* justify-content: center; */
-    gap: 64px; /* gap aumentado para 100px */
-    /* width: 100%; */
-    /* height: 50px; */
-    font-weight: bold;
+    gap: 64px;
     color: white;
+}
+
+.categorias p {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .categorias p:hover {
     text-decoration: underline;
+}
+
+@media(max-width: 960px){
+    .header-nav{
+     padding-right:30px;
+    }
+
+    .map{
+       display: none;
+    }
+
+    /* .logo-footer{
+        display:none;
+    } */
+.logo-um{
+    display:none;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 480px){
+.wrapper-nav{
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .social-dois{
+        display: none;
+    }
+
+    .categorias{
+        display: block;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+}
 }

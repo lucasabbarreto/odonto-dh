@@ -132,8 +132,92 @@ body {
 }
 
 @media(max-width: 480px){
-    .form-cadastro{
+
+
+    .campo-cadastro{
+    display: flex;
+    flex-wrap: wrap; 
     max-width: 100%;
+    flex-direction: column;
+
+
+    }
+/* 
+
+ .campo-cadastro{
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 100%; 
+    flex-direction: column; 
+    
+    
+     } 
+
+    .span-cadastro{
+        max-width: 100%;
+        
+    }
+    .campo-cadastro{
+         max-width: 100%;
+        background-color: red;
+        border: 2px solid blueviolet;
+    }
+
+    .coluna-esquerda-cadastro{
+        max-width: 100%;
+        background-color: yellow;
+        
+    }
+
+    .coluna-direita-cadastro{
+        max-width: 100%;
+        background-color: pink;
+       
+
+    }
 
     }          
-}
+
+
+    @media(max-width: 768px){
+
+
+
+        .campo-cadastro{
+        display: flex; 
+        flex-wrap: wrap; 
+        max-width: 100%;
+        margin: 30px 20px 0 20px;
+             
+        
+        }
+    
+        .span-cadastro{
+            max-width: 100%;
+            
+        }
+        .campo-cadastro{
+            max-width: 100%;
+            background-color: red;
+            margin: 30px 20px 0 20px;
+            flex-direction: column;
+            
+        }
+    
+        .coluna-esquerda-cadastro{
+            max-width: 100%;
+            background-color: yellow;
+            
+        }
+    
+        .coluna-direita-cadastro{
+            max-width: 100%;
+            background-color: pink;
+           
+    
+        }
+    
+        }   
+ */
+
+    }
