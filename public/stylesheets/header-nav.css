@@ -50,6 +50,8 @@ html{
     text-decoration: underline;
 }
 
+/* Início Responsividade Index */
+
 @media(max-width: 960px){
     .header-nav{
      padding-right:30px;
@@ -59,36 +61,69 @@ html{
        display: none;
     }
 
-    /* .logo-footer{
-        display:none;
-    } */
-.logo-um{
-    display:none;
+.social-media-footer{
+    padding: 30px;
 }
 
+@media(max-width: 768px){
+    .sobreNos{
+        display: none;
+    }
 
-
-
-
-
-
-
+    .tratamento{
+        display: none;
+    }
+}
 
 @media(max-width: 480px){
+
 .wrapper-nav{
     justify-content: space-between;
     align-items: center;
 }
+
+    .social{
+        display: none;
+    }
+
+    .navbar{
+        padding: 20px;
+        margin-left: 20px;
+        
+    }
 
     .social-dois{
         display: none;
     }
 
     .categorias{
-        display: block;
-        align-items: center;
+        display: flex;
         flex-direction: row;
-        
+        gap: 13px;
+        padding: 50px;
+        margin-left: 11px;
+
+       
+    }
+
+    .contato{
+        padding: 3git px;
     }
 }
+
+.sobreNos{
+    display: none;
+}
+
+.tratamento{
+    display: none;
+}
+
+.logo-footer{
+    display: none;
+}
+.opening-hours{
+    padding: 20px;
+}
+
 }
