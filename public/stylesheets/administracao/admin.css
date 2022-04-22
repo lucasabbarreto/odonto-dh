@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1100px;
+    max-width: 90%;
     padding: 20px 40px;
     border-radius: 20px;
     margin: 20px auto;
@@ -28,6 +28,7 @@ body {
     height: 70px;
     background: #0096ff;
     align-items: center;
+    max-width: 100%;
    
 }
 .saudacao-admin h4{
@@ -55,7 +56,10 @@ body {
     width: 172px;
     
 }
-header button{
+.icone-busca{
+    display: none;
+}
+.saudacao-admin button{
     height: 25px;
     width: 70px;
     border-radius: 5px;
@@ -63,11 +67,12 @@ header button{
     cursor: pointer;
     border: solid 1px gray;
     margin-left: 10px;
+    color: white;
 }
-header button:hover{
+.saudacao-admin button:hover{
     background-color: white;
     transition: 1s;
-    color: #0096ff;
+    color: gray;
     
 }
 #btnBusca{
@@ -140,6 +145,8 @@ header button:hover{
     margin-bottom: 40px;
     justify-content: space-between;
     /* justify-content: space-between; */
+    max-width: 90%;
+    flex-wrap: wrap;
     
 }
 .historico, .calendario{
@@ -171,4 +178,147 @@ header button:hover{
 .historico-consulta {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
+
+
+
+/* responsividade */
+
+@media(max-width:960px){
+    .geral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calendario-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .historico-consulta{
+        margin-top: 30px;
+    }
+
+}
+
+@media(max-width:768px){
+    .geral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calendario-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .historico-consulta{
+        margin-top: 30px;
+    }
+}
+
+@media(max-width:560px){
+    .geral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calendario-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .historico-consulta{
+        margin-top: 30px;
+        
+    }
+    .calendar{
+        max-width: 90%;
+    }
+    .butoes-agendamento button{
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+       
+    }
+    .calendario h3{
+        text-align: center;
+    }
+    .historico h3{
+        text-align: center;
+    }
+   
+    
+}
+
+
+
+@media(max-width:480px){
+    .geral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calendario-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .historico-consulta{
+        margin-top: 30px;
+        max-width: 100%;
+        
+    }
+    .calendar{
+        max-width: 90%;
+    }
+    .butoes-agendamento button{
+        height: 30px;
+        font-size: 12px;
+        
+    }
+    
+}
+
+
+@media(max-width:420px){
+    .geral{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+    }
+    .calendario-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .historico-consulta{
+        margin-top: 30px;
+        max-width: 100%;
+        
+    }
+    .calendar{
+        max-width: 90%;
+    }
+    .butoes-agendamento button{
+        height: 30px;
+        font-size: 12px;
+        
+    }
+    .busca{
+        max-width: 90%;
+        
+    }
+    #btnBusca{
+        width: 57px;
+        font-size: 10px;
+    }
+}
+
+
