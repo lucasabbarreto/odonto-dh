@@ -19,8 +19,6 @@ main {
     margin: 20px auto;
 }
 
-
-
 .nome-botao {
     margin-bottom: 40px;
 }
@@ -28,7 +26,8 @@ main {
 .area-agendamento {
     display: flex;
     margin-bottom: 20px;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
 }
 
 ul {
@@ -36,7 +35,7 @@ ul {
 }
 
 .calendar {
-    width: 550px;
+    width: 390px;
 }
 
 /* Month header */
@@ -82,7 +81,7 @@ ul {
 
 .weekdays li {
   display: inline-block;
-  width: 13.6%;
+  width: 12.6%;
   color: #666;
   text-align: center;
 }
@@ -98,7 +97,7 @@ ul {
 .days li {
   list-style-type: none;
   display: inline-block;
-  width: 13.6%;
+  width: 12.6%;
   text-align: center;
   margin-bottom: 5px;
   font-size:12px;
@@ -169,6 +168,7 @@ ul {
 
 .botoes-consulta-paciente {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -188,77 +188,20 @@ ul {
     background-color: white;
 }
 
-@media (max-width: 992px) {
-    main {
-        width: 970px;
-        padding: 20px 5px;
-    }
-
-    .nome-botao {
-        margin-left: 40px;
-    }
-
-    .area-agendamento {
-        flex-wrap: wrap;
-        width: 540px;
-        justify-content: center;
-    }
-
-    .coluna-esquerda-consulta-paciente {
-        justify-content: center;
-    }
-
-    .historico-consulta {
-        justify-content: center;
-        margin: 30px 0 0;
-    }
-
-    .botoes-consulta-paciente {
-        justify-content: center;
-    }    
-
-    .calendar {
-        width: 400px;
-    }
-
-    .weekdays li {
-        width: 12.6%;
-    }
-
-    .days li {
-        width: 12.6%;
-    }
-}
-
-@media (max-width: 1200px) {
-    main {
-        width: 992px;
-    }
-
-    .calendar {
-        width: 450px;
-    }
-
-    .weekdays li {
-        width: 12.6%;
-    }
-
-    .days li {
-        width: 12.6%;
-    }
-}
-
-@media (max-width: 992px) {
+@media (max-width: 960px) {
     main {
         width: 768px;
     }
 
     .area-agendamento {
+        flex-wrap: wrap;
         margin: 0 auto;
+        gap: 0;
+        justify-content: center;
     }
 
-    .calendar {
-        width: 550px;
+    .historico-consulta {
+        margin: 30px 0 0;
     }
 
     .botoes-consulta-paciente {
@@ -268,18 +211,16 @@ ul {
 
 @media (max-width: 768px) {
     main {
-        width: 576px;
-        padding: 20px 5px;
+        width: 480px;
+        padding: 20px 0 20px 0;
     }
 
     .nome-botao {
         margin-left: 70px;
     }
 
-    .area-agendamento {
-        flex-wrap: wrap;
-        width: 540px;
-        justify-content: center;
+    .area-agendamento {       
+        width: 480px;        
     }
 
     .coluna-esquerda-consulta-paciente {
@@ -288,32 +229,27 @@ ul {
 
     .historico-consulta {
         justify-content: center;
-        margin: 30px 0 0;
-    }
-
-    .botoes-consulta-paciente {
-        justify-content: center;
-    }    
-
-    .calendar {
-        width: 400px;
-    }
-
-    .weekdays li {
-        width: 12.6%;
-    }
-
-    .days li {
-        width: 12.6%;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+
     main {
-        width: 500px;
+        width: 450px;
+        margin: 20px auto;
+        justify-content: center;
+    }
+
+    .nome-botao {
+        margin-left: 25px;
     }
 
     .area-agendamento {
+        width: 450px;
+        margin: 0;
+    }
+
+    .botoes-consulta-paciente {
         width: 450px;
     }
 }
