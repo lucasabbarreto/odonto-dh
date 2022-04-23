@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins",serif;
+    max-width: 100%;
+    
+}
+
+.social{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 40px;
+
+}
+
+.header-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 35px;
+    background-color: white;
+    border: solid 1px #1CBACF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+  
+#logo-twitte{
+    width: 60px;
+}
+
+.agendamento button{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    background-color: #1CBACF;
+    border-radius: 10px;
+    padding: 5px;
+    border: none;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.btn-agendamento{
+    width: 100px;
+    height: 30px;
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+    padding: 20px 35px;
+    background-color: #1CBACF;
+
+}
+
+.header-nav a{
+    color: white;
+}
+
+.agendamento{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    height: 50px;
+
+    
+}
+
+
+
+
+
+
+/* Inicio corpo */
+
+
+/* Banner principal */
+
+
+.banner{
+    width: 100vw;
+    height: 400px;
+    
+}
+.banner a{
+    display: flex;
+    justify-content: end;
+}
+.bannerPrincipal{
+    width: 100vw;
+    height: 400px;
+}
+.icone-wpp{
+    width: 70px;
+    position: fixed;
+    margin-left: -20px;
+    
+}
+.icone-wpp{
+    margin-top: 20px;
+   
+}
+/* carrossel 1  */
+.sobreNos{
+    display: flex;
+    background: #1CBACF;
+    width: 100vw;
+    height: 600px;
+    justify-content: center;
+    
+
+}
+.sobreNos h2{
+    color: white;
+align-items: center;
+margin-top: 50px;
+position: absolute;
+}
+.sobreNos p{
+    color: white;
+    /* font-weight: bold; */
+    font-family: "'Poppins'";
+    font-size: 18px;
+}
+.imagens{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.imgCarrosel{
+    margin-top: 150px;
+    width: 200px;
+    height: 200px;
+}
+.imagemCarrossel{
+    width: 200px;
+    height: 200px;
+}
+
+
+/* SEGUNDO CARROSSEL */
+
+.tratamento{
+    display: flex;
+    background: white;
+    width: 100vw;
+    height: 600px;
+    justify-content: center;
+    
+
+}
+.tratamento h2{
+    color: black;
+align-items: center;
+margin-top: 50px;
+position: absolute;
+}
+.tratamento p{
+    color: black;
+    /* font-weight: bold; */
+    font-size: 13px;
+    font-family: 'Poppins';
+}
+.imagensCarrossel2{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.imgCarrosel2{
+    margin-top: 150px;
+    width: 200px;
+    height: 200px;
+}
+.imgSegCarrosel{
+    width: 200px;
+    height: 200px;
+}
+
+/* CONTATO */
+
+.geral{
+    display: flex;
+    height: 600px;
+    background: #1CBACF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contato{
+    display: flex;
+    background-color: #399ca98c;
+    width: 900px;
+    height: 400px;
+    border: 2px solid #399ca98c;
+   border-radius: 20px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+.contato h2{
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+.contato label{
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.contato input{
+    height: 30px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+#nomeCompleto,#email{
+    width: 300px;
+}
+#assunto{
+    width: 652px;
+}
+.contato textarea{
+    height: 60px;
+    width: 652px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.botaoEnviar{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+#enviar{
+    width: 195px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #3e5ba5e3;
+    background-color: #3e5ba5e3;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+
+}
+
+#enviar:hover{
+    background-color: white;
+    color: black;
+ 
+}
+
+
+/* EFEITO DO ICONE WHATSAPP */
+
+@keyframes bounce{
+    0%, 20%,80%, 100%{
+        -webkit-transform: translateY(0);
+         transform: translateY(0);
+    }
+    40%{
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);  
+    }
+    60%{
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);  
+    }
+}
+
+
+    #efeito:hover{
+        animation: bounce 1s;
+    }
+
+
+
+    
