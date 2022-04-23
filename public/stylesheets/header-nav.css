@@ -15,7 +15,7 @@ html{
 
 .wrapper-nav {
     background-color: #1CBACF;
-    height: 100px; /* fixei a altura do header */
+    height: 100px;
 }
 
 .header-nav{
@@ -31,25 +31,18 @@ html{
 }
 
 .logo-donto{
-    /* width: 100%; */
     height: 100px;
 }
 
-/* .social-dois{
-    width: 195px;
-    height: px;
-}
- */
-
-
 .categorias{
     display: flex;
-    /* justify-content: center; */
-    gap: 64px; /* gap aumentado para 100px */
-    /* width: 100%; */
-    /* height: 50px; */
-    font-weight: bold;
+    gap: 64px;
     color: white;
+}
+
+.categorias p {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .categorias p:hover {

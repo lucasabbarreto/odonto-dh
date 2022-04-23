@@ -10,8 +10,6 @@ var loginRouter = require('./routes/login');
 var cadastroRouter = require('./routes/cadastro');
 var agendamentoPacienteRouter = require('./routes/agendamento');
 
-// Rota Admin
-let adminRouter = require('./routes/admin/admin')
 var app = express();
 
 // view engine setup
@@ -29,9 +27,6 @@ app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
 app.use('/agendamento', agendamentoPacienteRouter);
-
-// Admin
-app.use('/admin/acesso', adminRouter)
 
 
 // catch 404 and forward to error handler
