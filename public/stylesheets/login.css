@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     /* width: 1440px; */
     /* height: 800px; */
@@ -15,12 +16,14 @@ body {
 .content-login {
     display: flex;
 }
+
 .tela-logo {
     width: 57%;
     max-width: 777px;
     /* height: 840px; */
     background-color: #1cbacf;
 }
+
 .tela-logo1 {
     display: flex;
     justify-content: center;
@@ -29,25 +32,29 @@ body {
     gap: 40px;
     margin-top: 90px;
 }
+
 .tela-logo1 .text-logo {
     margin-top: 50px;
     font-family: 'Poppins';
     color: #ffffff;
 }
+
 .login-img-login {
     width: 400px;
-    height: 265px; 
+    height: 265px;
     /* margin-top: 200px;  */
 }
+
 .cadastro {
     display: flex;
 }
+
 h1 {
     font-family: 'Poppins';
     text-align: center;
     font-size: 40px;
 }
-    
+
 .login-form {
     background-color: #399ca98c;
     width: 460px;
@@ -63,11 +70,12 @@ h1 {
     border-color: #399ca98c;
     border-radius: 20px;
 }
+
 .content-form {
     display: flex;
     flex-direction: column;
     padding: 50px 0;
-    
+
 }
 
 .relative {
@@ -83,6 +91,7 @@ h1 {
     transition: 200ms #3e5ba5e3;
 
 }
+
 .icon-email:hover {
     color: #1cbacf;
 }
@@ -95,9 +104,11 @@ h1 {
     font-size: 13px;
     transition: 200ms #3e5ba5e3;
 }
-.icon-senha:hover{
+
+.icon-senha:hover {
     color: #1cbacf;
 }
+
 .campo-email {
     width: 320px;
     height: 38px;
@@ -108,10 +119,11 @@ h1 {
 
 }
 
-.campo-email:hover{
+.campo-email:hover {
     border: 1px solid #3e5ba5e3;
 
 }
+
 .campo-senha {
     width: 320px;
     height: 38px;
@@ -119,9 +131,11 @@ h1 {
     margin-bottom: 10px;
     padding: 14px 36px;
 }
+
 .campo-senha:hover {
     border: 1px solid #3e5ba5e3;
 }
+
 .text-senha {
     margin-bottom: 30px;
     text-decoration: none;
@@ -129,6 +143,7 @@ h1 {
     font-size: 13px;
     font-weight: bold;
 }
+
 .button-enviar {
     width: 320px;
     height: 45px;
@@ -143,26 +158,31 @@ h1 {
     cursor: pointer;
     transition: transform 200ms linear;
 }
+
 .button-enviar:hover {
     transform: scale(1.03);
 }
+
 .cadastrase {
     display: flex;
     gap: 7px;
     justify-content: center;
     align-items: center;
 }
+
 .text-ncadastro {
     font-family: 'Poppins';
     font-size: 14px;
     font-weight: normal;
 }
+
 .text-cadastrase {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Poppins';
     font-size: 11px;
 }
+
 .hr1 {
     position: absolute;
     width: 110px;
@@ -170,7 +190,7 @@ h1 {
     background: #3e5ba5e3;
     top: 10px;
     left: 10px;
-    
+
 }
 
 .hr2 {
@@ -180,7 +200,7 @@ h1 {
     background: #3e5ba5e3;
     top: 10px;
     left: 180px;
-    
+
 
 }
 
@@ -190,6 +210,7 @@ h1 {
     align-items: center;
 
 }
+
 .text-social {
     font-family: 'Poppins';
     font-weight: bold;
@@ -197,12 +218,34 @@ h1 {
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
 .button-image {
     width: 250px;
     margin-top: 3px;
     cursor: pointer;
     transition: transform 200ms linear;
 }
+
 .button-image:hover {
     transform: scale(1.03);
+}
+
+@media (max-width:860px) {
+    .content-form {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 780px) {
+    .tela-logo {
+        display: none;
+    }
+
+    .login-form {
+        display: flex;
+        justify-content: center;
+        margin: 44px;
+    }
+
+    .content-form {}
 }
