@@ -15,7 +15,11 @@ html{
 
 .wrapper-nav {
     background-color: #1CBACF;
+<<<<<<< HEAD
     height: 120px; 
+=======
+    height: 100px;
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 }
 
 .header-nav{
@@ -31,10 +35,16 @@ html{
 }
 
 .logo-donto{
+<<<<<<< HEAD
    height: 120px;
 }
 
 
+=======
+    height: 100px;
+}
+
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 .categorias{
     display: flex;
     gap: 64px;

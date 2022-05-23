@@ -16,6 +16,7 @@ html{
 .social{
     display: flex;
     gap: 5px;
+<<<<<<< HEAD
     height: 40px;
     
 
@@ -25,11 +26,27 @@ html{
     display: flex;
     justify-content: space-between;
     padding: 20px 35px;
+=======
+
+}
+
+.social-icon-media-header {
+    width: 45px;
+    height: 45px;
+}
+
+.header-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
   
+<<<<<<< HEAD
 #logo-twitte{
     width: 100%;
 }
@@ -37,6 +54,15 @@ html{
 .social-icon-media {
     width: 45px;
     height: 45px;
+=======
+.agendamento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 30px;
+    color: #1CBACF;
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 }
 
 .navbar {
@@ -44,10 +70,21 @@ html{
     display: flex;
     align-items: center;
     cursor: pointer;
+<<<<<<< HEAD
     gap: 30px;
     height: 30px;
     font-size: 13px;
   
+=======
+    color: white;
+    background-color: #1CBACF;
+    border-radius: 5px;
+    border: 1px solid #1CBACF;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 11px;
+    transition: 250ms ease-in-out;
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 }
 
 .navbar > button{

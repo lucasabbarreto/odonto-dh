@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header-nav.css">
-    <link rel="stylesheet" href="/stylesheets/consulta-paciente.css">
-    <link rel="stylesheet" href="/stylesheets/calendar.css">
+    <link rel="stylesheet" href="/stylesheets/agendamento.css">
 
     <title>Agendamento</title>
 </head>
@@ -27,7 +26,7 @@
                           <li class="next">&#10095;</li>
                           <li>August<br><span style="font-size:18px">2021</span></li>
                         </ul>
-                      </div>
+                    </div>
                       
                       <ul class="weekdays">
                         <li>Seg</li>
@@ -72,19 +71,50 @@
                         <li>30</li>
                       </ul>
                 </div>
-                <!-- <img src="/images/img-consulta-paciente/calendario 1.png" alt=""> -->
-                <div class="botoes-consulta-paciente">
-                    <button class="botao-consulta-paciente">Confirmar</button>
-                    <button class="botao-consulta-paciente">Reagendar</button>
-                    <button class="botao-consulta-paciente">Cancelar</button>
-                </div>
             </div>
             <div class="historico-consulta">
-                <span>Histórico de Consultas</span>
-                <img src="/images/img-consulta-paciente/prontuario 1.png" alt="">
+                <span>Prontuário</span>                
+                  <div id="table-wrapper">
+                    <div id="table-scroll">
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th>Selecione</th>
+                                  <th>Data</th>
+                                  <th>Dia</th>
+                                  <th>Procedimento</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>
+                            <tr> <td><input type="checkbox"></td> <td>14/03/2022</td> <td>Segunda-feira</td> <td>Restauração</td> </tr>                   
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>                
             </div>
         </div>        
-        
+        <div class="botoes-consulta-paciente">
+          <button class="botao-consulta-paciente">Confirmar</button>
+          <button class="botao-consulta-paciente">Reagendar</button>
+          <button class="botao-consulta-paciente">Cancelar</button>
+      </div>
     </main>
 </body>
 </html>
