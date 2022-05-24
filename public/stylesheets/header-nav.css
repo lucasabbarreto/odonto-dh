@@ -15,7 +15,11 @@ html{
 
 .wrapper-nav {
     background-color: #1CBACF;
-    height: 100px; /* fixei a altura do header */
+<<<<<<< HEAD
+    height: 120px; 
+=======
+    height: 100px;
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 }
 
 .header-nav{
@@ -31,27 +35,105 @@ html{
 }
 
 .logo-donto{
-    /* width: 100%; */
+<<<<<<< HEAD
+   height: 120px;
+}
+
+
+=======
     height: 100px;
 }
 
-/* .social-dois{
-    width: 195px;
-    height: px;
-}
- */
-
-
+>>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 .categorias{
     display: flex;
-    /* justify-content: center; */
-    gap: 64px; /* gap aumentado para 100px */
-    /* width: 100%; */
-    /* height: 50px; */
-    font-weight: bold;
+    gap: 64px;
     color: white;
+}
+
+.categorias p {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .categorias p:hover {
     text-decoration: underline;
+}
+
+/* Início Responsividade Index */
+
+@media(max-width: 960px){
+    .header-nav{
+     padding-right:30px;
+    }
+
+    .map{
+       display: none;
+    }
+
+.social-media-footer{
+    padding: 30px;
+}
+
+@media(max-width: 768px){
+    .sobreNos{
+        display: none;
+    }
+
+    .tratamento{
+        display: none;
+    }
+}
+
+@media(max-width: 480px){
+
+.wrapper-nav{
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .social{
+        display: none;
+    }
+
+    .navbar{
+        padding: 20px;
+        margin-left: 20px;
+        
+    }
+
+    .social-dois{
+        display: none;
+    }
+
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        gap: 13px;
+        padding: 50px;
+        margin-left: 11px;
+
+       
+    }
+
+    .contato{
+        padding: 3git px;
+    }
+}
+
+.sobreNos{
+    display: none;
+}
+
+.tratamento{
+    display: none;
+}
+
+.logo-footer{
+    display: none;
+}
+.opening-hours{
+    padding: 20px;
+}
+
 }
