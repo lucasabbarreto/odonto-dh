@@ -4,10 +4,6 @@ html{
     scroll-behavior: smooth;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 *{
     margin: 0;
     padding: 0;
@@ -19,8 +15,6 @@ html{
     
 }
 
-<<<<<<< HEAD
-=======
 .social{
     display: flex;
     gap: 5px;
@@ -80,7 +74,6 @@ html{
     height: 50px;    
 }
 
->>>>>>> 8a39e7ceb233516fe95547cc3cef6c8b0447224b
 /* Inicio corpo */
 
 /* Banner principal */
