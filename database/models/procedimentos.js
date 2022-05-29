@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) =>{
     const procedimentos = sequelize.define("procedimentos",{
     id_procedimento: {
-    type: Sequelize.INTEGER,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
