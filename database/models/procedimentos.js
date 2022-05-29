@@ -1,25 +1,25 @@
-module.exports = (sequelize, DataTypes) =>{
-    const procedimentos = sequelize.define("procedimentos",{
+module.exports = (sequelize, DataTypes) => {
+  const procedimentos = sequelize.define("procedimentos", {
     id_procedimento: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    nome: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    }
   },
-  nome: {
-    type: DataTypes.STRING(100),
-    allowNull:false,
-    unique: true,
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  }
-},
-{  tableName:'procedimentos'}
-);
-    return procedimentos;
+    { tableName: 'procedimentos' }
+  );
+  return procedimentos;
 }

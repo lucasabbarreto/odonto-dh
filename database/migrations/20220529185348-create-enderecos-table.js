@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('enderecos',{
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('enderecos', {
       id_endereco: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,30 +10,30 @@ module.exports = {
       },
       cep: {
         type: Sequelize.STRING(12),
-        allowNull:false,
+        allowNull: false,
       },
       endereco: {
         type: Sequelize.STRING(50),
-        allowNull:false,
+        allowNull: false,
       },
       numero: {
         type: Sequelize.STRING(10),
-        allowNull:false,
+        allowNull: false,
       },
       complemento: {
         type: Sequelize.STRING(50),
-      },      
+      },
       cidade: {
         type: Sequelize.STRING(50),
-        allowNull:false,
+        allowNull: false,
       },
       bairro: {
         type: Sequelize.STRING(50),
-        allowNull:false,
+        allowNull: false,
       },
       estado: {
         type: Sequelize.STRING(2),
-        allowNull:false,
+        allowNull: false,
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -46,7 +46,7 @@ module.exports = {
     });
   },
 
- async down (queryInterface, Sequelize) {
-  await queryInterface.dropTable('enderecos');
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('enderecos');
   }
 };
