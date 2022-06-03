@@ -19,9 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     telefone: {
       type: DataTypes.STRING(11),
     },
-    celular: {
-      type: DataTypes.STRING(11),
-    },
     data_nascimento: {
       type: DataTypes.DATE,
     },
@@ -37,10 +34,32 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    id_endereco: {
-      type: DataTypes.INTEGER,
+    cep: {
+      type: DataTypes.STRING(12),
       allowNull: false,
-      references: { model: 'enderecos', key: 'id_endereco' },
+    },
+    endereco: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    numero: {
+      type: DataTypes.STRING(10),
+      allowNull: false,
+    },
+    complemento: {
+      type: DataTypes.STRING(50),
+    },
+    cidade: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    bairro: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    estado: {
+      type: DataTypes.STRING(2),
+      allowNull: false,
     },
     createdAt: {
       type: DataTypes.DATE,

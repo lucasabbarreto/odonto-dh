@@ -22,9 +22,6 @@ module.exports = {
       telefone: {
         type: Sequelize.STRING(11),
       },
-      celular: {
-        type: Sequelize.STRING(11),
-      },
       data_nascimento: {
         type: Sequelize.DATE,
       },
@@ -40,10 +37,32 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
       },
-      id_endereco: {
-        type: Sequelize.INTEGER,
+      cep: {
+        type: Sequelize.STRING(12),
         allowNull: false,
-        references: { model: 'enderecos', key: 'id_endereco' },
+      },
+      endereco: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      numero: {
+        type: Sequelize.STRING(10),
+        allowNull: false,
+      },
+      complemento: {
+        type: Sequelize.STRING(50),
+      },
+      cidade: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      bairro: {
+        type: Sequelize.STRING(50),
+        allowNull: false,
+      },
+      estado: {
+        type: Sequelize.STRING(2),
+        allowNull: false,
       },
       createdAt: {
         type: Sequelize.DATE,
