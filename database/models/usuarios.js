@@ -72,5 +72,13 @@ module.exports = (sequelize, DataTypes) => {
   },
     { tableName: 'usuarios' }
   );
+
+usuarios.associate  = function(models){
+    usuarios.belongsTo(models.agendamentos,{
+      foreignKey:'id_usuario',
+      as:'agendamentos'
+    })
+}
+
   return usuarios;
 }

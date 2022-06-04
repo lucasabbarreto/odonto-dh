@@ -21,5 +21,15 @@ module.exports = (sequelize, DataTypes) => {
   },
     { tableName: 'procedimentos' }
   );
+
+  procedimentos.associate = function(models){
+    procedimentos.belongsTo(models.agendamentos,{
+      foreignKey:'id_procedimento',
+      as:'agendamentos'
+    })
+}
+
+
   return procedimentos;
 }
+

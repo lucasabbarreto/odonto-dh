@@ -36,5 +36,20 @@ module.exports = (sequelize, DataTypes) => {
   },
     { tableName: 'agendamentos' }
   );
+
+  agendamentos.associate = function(models){
+    agendamentos.hasMany(models.procedimentos,{
+      foreignKey:'id_procedimento',
+      as:'procedimentos'
+    }),
+
+  agendamentos.hasMany(models.usuarios,{
+    foreignKey:'id_usuario',
+    as:'usuarios'
+  })
+}
+
+
+
   return agendamentos;
 }
