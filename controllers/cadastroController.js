@@ -52,7 +52,50 @@ const controller = {
     )
 
     return response.json(cadastro);
+  },
+
+  atualizar: async (request, response) => {
+      const {
+      id_usuario,  
+      nome,
+      sexo,
+      cpf,
+      telefone,
+      datanascimento,
+      email,
+      senha,
+      permissao,
+      cep,
+      endereco,
+      numero,
+      complemento,
+      bairro,
+      cidade,
+      estado,
+           
+    } = request.body
+
+    const cadastro = await cadastroServices.AtualizarUsuario(
+      nome,
+      sexo,
+      cpf,
+      telefone,
+      datanascimento,
+      email,
+      senha,
+      permissao,
+      cep,
+      endereco,
+      numero,
+      complemento,
+      bairro,
+      cidade,
+      estado,
+    )
+
+    return response.json(cadastro);
   }
+  
 }
 
 module.exports = controller;

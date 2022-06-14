@@ -48,9 +48,54 @@ const cadastroServices = {
       cidade,
       estado,
     });
-
     return novoCadastro;
-  }
+  },
+
+  AtualizarUsuario: async (
+    id,
+    nome,
+    sexo,
+    cpf,
+    telefone,
+    datanascimento,
+    email,
+    senha,
+    permissao,
+    cep,
+    endereco,
+    numero,
+    complemento,
+    bairro,
+    cidade,
+    estado,
+
+    ) => {
+    const usuario = await database.usuarios.update(
+        { 
+          nome,
+          sexo,
+          cpf,
+          telefone,
+          datanascimento,
+          email,
+          senha,
+          permissao,
+          cep,
+          endereco,
+          numero,
+          complemento,
+          bairro,
+          cidade,
+          estado,
+
+        },
+        {
+        where:{
+        id_usuario:id
+      }
+    });
+    return usuario;
+  },
 }
 
 module.exports = cadastroServices;

@@ -30,8 +30,6 @@ module.exports = (sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-
-
     },
   },
     { tableName: 'agendamentos' }
@@ -48,8 +46,5 @@ module.exports = (sequelize, DataTypes) => {
     as:'usuarios'
   })
 }
-
-
-
   return agendamentos;
 }
