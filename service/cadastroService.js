@@ -1,8 +1,10 @@
+const { request } = require('express');
 const database = require('../database/models');
 
 const cadastroServices = {
   ListarCadastro: async () => {
-    const cadastro = await database.cadastro.findAll();
+    console.log('oi')
+    const cadastro = await database.usuarios.findAll();
     return cadastro;
   },
   ProcurarCadastro: async (cadastro) => {
@@ -86,12 +88,11 @@ const cadastroServices = {
           complemento,
           bairro,
           cidade,
-          estado,
-
+          estado
         },
         {
         where:{
-        id_usuario:id
+        id_usuario: id
       }
     });
     return usuario;

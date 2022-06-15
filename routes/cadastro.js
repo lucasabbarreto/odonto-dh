@@ -7,6 +7,10 @@ router.get('/', function(req, res) {
   res.render('cadastro');
 });
 
+router.get('/all', controller.TodosCadastros)
+
 router.post('/',controller.create);
+
+router.put('/:id', controller.atualizar);
 
 module.exports = router;

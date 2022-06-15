@@ -1,8 +1,8 @@
 const cadastroServices = require('../service/cadastroService')
 
 const controller = {
-  TodosCadastro: async (request, response) => {
-    const cadastro = await candastroServices.ListarCadastro();
+  TodosCadastros: async (request, response) => {
+    const cadastro = await cadastroServices.ListarCadastro();
     return response.json(cadastro);
   },
   index: async (request, response) => {  
@@ -55,8 +55,9 @@ const controller = {
   },
 
   atualizar: async (request, response) => {
-      const {
-      id_usuario,  
+    const { id } = request.params;
+
+      const {  
       nome,
       sexo,
       cpf,
@@ -75,7 +76,8 @@ const controller = {
            
     } = request.body
 
-    const cadastro = await cadastroServices.AtualizarUsuario(
+    const usuario = await cadastroServices.AtualizarUsuario(
+      id,
       nome,
       sexo,
       cpf,
@@ -93,7 +95,7 @@ const controller = {
       estado,
     )
 
-    return response.json(cadastro);
+    return response.json(usuario);
   }
   
 }
