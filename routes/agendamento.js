@@ -5,15 +5,19 @@ const database = require('../database/models')
 
 
 /* GET home page. */
-router.get('/', async function(req, res) {
-  // const id = request.getSession().getAttribute("id")
-  // const usuario = await database.usuarios.findOne({
-  //   where:{
-  //     id_usuario:id
-  //   }
-  // })
-  
-  res.render('agendamento');
+router.get('/', auth,  async function(req, res) {
+  const usuario = await database.usuarios.findOne({
+    where: {
+      nome: req.session.nome
+    }
+  })
+  res.render('agendamento', {usuario});
 });
+
+router.get('/sair', async (req, res) => {
+  req.session.isLogged = false;
+  req.session.nome = null;
+  res.redirect('/login')
+})
 
 module.exports = router;
