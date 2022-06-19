@@ -3,18 +3,8 @@ const database = require('../database/models');
 
 const cadastroServices = {
   ListarCadastro: async () => {
-    console.log('oi')
     const cadastro = await database.usuarios.findAll();
     return cadastro;
-  },
-  ProcurarCadastro: async (cadastro) => {
-   
-    const nomeCadastro = await database.cadastro.findOne({
-      where: {
-        nome:cadastro
-      }
-    });
-    return nomeCadastro;
   },
   CriarCadastro: async (
       nome,
@@ -72,7 +62,7 @@ const cadastroServices = {
     estado,
 
     ) => {
-    const usuario = await database.usuarios.update(
+    await database.usuarios.update(
         { 
           nome,
           sexo,
@@ -95,8 +85,18 @@ const cadastroServices = {
         id_usuario: id
       }
     });
-    return usuario;
+    const usuarioAlterado = await database.usuarios.findOne({
+      where: {
+        id_usuario:id
+      }
+    });
+    return usuarioAlterado;
   },
+  apagarUsuario: async (id)=>{
+    await database.usuarios.destroy({
+      where: {id_usuario: id}
+    })
+  }
 }
 
 module.exports = cadastroServices;

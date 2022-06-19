@@ -57,7 +57,7 @@ const controller = {
   atualizar: async (request, response) => {
     const { id } = request.params;
 
-      const {  
+    const {  
       nome,
       sexo,
       cpf,
@@ -96,6 +96,13 @@ const controller = {
     )
 
     return response.json(usuario);
+  },
+  apagar: async (request, response) => {
+    const { id } = request.params;
+
+    await cadastroServices.apagarUsuario(id)
+
+    return response.send("Usuário " + id +" apagado")
   }
   
 }

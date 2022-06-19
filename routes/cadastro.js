@@ -13,4 +13,6 @@ router.post('/',controller.create);
 
 router.put('/:id', controller.atualizar);
 
+router.delete('/apagar/:id', controller.apagar);
+
 module.exports = router;
