@@ -1,23 +1,18 @@
 const auth = require("../middlewares/auth")
 const express = require('express');
 const router = express.Router();
-const database = require('../database/models')
+const controller = require('../controllers/agendamentoController');
 
+router.get('/', auth, controller.index);
 
-/* GET home page. */
-router.get('/', auth,  async function(req, res) {
-  const usuario = await database.usuarios.findOne({
-    where: {
-      nome: req.session.nome
-    }
-  })
-  res.render('agendamento', {usuario});
-});
+router.get('/sair', controller.logout);
 
-router.get('/sair', async (req, res) => {
-  req.session.isLogged = false;
-  req.session.nome = null;
-  res.redirect('/login')
-})
+router.post('/:id', controller.criarAgendamento);
+
+router.get('/all', controller.listarAgendamento);
+
+router.put('/:id', controller.alterarAgendamento);
+
+router.delete('/:id', controller.apagarAgendamento);
 
 module.exports = router;

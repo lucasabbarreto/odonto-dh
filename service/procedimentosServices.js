@@ -6,7 +6,7 @@ const procedimentosServices = {
     return procedimentos;
   },
   ProcurarProcedimento: async (procedimento) => {
-   
+
     const nomeProcedimento = await database.procedimentos.findOne({
       where: {
         nome: procedimento
@@ -15,14 +15,33 @@ const procedimentosServices = {
     return nomeProcedimento;
   },
   CriarProcedimento: async (
-    nome,
+    nome
   ) => {
     const novoProcedimento = await database.procedimentos.create({
-      nome,
+      nome
     });
 
     return novoProcedimento;
-  }
-}
+  },
+  alterarProcedimento: async (
+    nomeAtual,
+    nomeAtualizado
+  ) => {
+    await database.procedimentos.update({
+      nome: nomeAtualizado
+    }, {
+      where: {
+        nome: nomeAtual
+      }
+    })
+  },
+  apagarProcedimento: async (nome) => {
+      await database.procedimentos.destroy({
+        where: {
+          nome
+        }
+      })
+    }      
+};
 
 module.exports = procedimentosServices;

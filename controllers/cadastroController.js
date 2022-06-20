@@ -1,11 +1,11 @@
-const cadastroServices = require('../service/cadastroService')
+const cadastroServices = require('../service/cadastroService');
 
 const controller = {
   TodosCadastros: async (request, response) => {
     const cadastro = await cadastroServices.ListarCadastro();
     return response.json(cadastro);
   },
-  index: async (request, response) => {  
+  index: async (request, response) => {
     const { nome } = request.query;
 
     const cadastro = await cadastroServices.ProcurarCadastro(nome);
@@ -19,7 +19,7 @@ const controller = {
       sexo,
       cpf,
       telefone,
-      datanascimento,
+      data_nascimento,
       email,
       senha,
       permissao,
@@ -30,7 +30,7 @@ const controller = {
       bairro,
       cidade,
       estado,
-           
+
     } = request.body
 
     const cadastro = await cadastroServices.CriarCadastro(
@@ -38,7 +38,7 @@ const controller = {
       sexo,
       cpf,
       telefone,
-      datanascimento,
+      data_nascimento,
       email,
       senha,
       permissao,
@@ -57,12 +57,12 @@ const controller = {
   atualizar: async (request, response) => {
     const { id } = request.params;
 
-    const {  
+    const {
       nome,
       sexo,
       cpf,
       telefone,
-      datanascimento,
+      data_nascimento,
       email,
       senha,
       permissao,
@@ -73,7 +73,7 @@ const controller = {
       bairro,
       cidade,
       estado,
-           
+
     } = request.body
 
     const usuario = await cadastroServices.AtualizarUsuario(
@@ -82,7 +82,7 @@ const controller = {
       sexo,
       cpf,
       telefone,
-      datanascimento,
+      data_nascimento,
       email,
       senha,
       permissao,
@@ -97,14 +97,14 @@ const controller = {
 
     return response.json(usuario);
   },
+
   apagar: async (request, response) => {
     const { id } = request.params;
 
     await cadastroServices.apagarUsuario(id)
 
-    return response.send("Usuário " + id +" apagado")
+    return response.send("Usuário " + id + " apagado")
   }
-  
 }
 
 module.exports = controller;
