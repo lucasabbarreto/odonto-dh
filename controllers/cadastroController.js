@@ -1,18 +1,15 @@
 const cadastroServices = require('../service/cadastroService');
 
 const controller = {
+  index: (req, res) => {
+    res.render('cadastro');
+  },
+  
   TodosCadastros: async (request, response) => {
     const cadastro = await cadastroServices.ListarCadastro();
     return response.json(cadastro);
   },
-  index: async (request, response) => {
-    const { nome } = request.query;
-
-    const cadastro = await cadastroServices.ProcurarCadastro(nome);
-
-    return response.json(cadastro)
-  },
-
+  
   create: async (request, response) => {
     const {
       nome,

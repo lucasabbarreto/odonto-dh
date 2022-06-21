@@ -3,11 +3,9 @@ const controller = require('../controllers/cadastroController');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('cadastro');
-});
+router.get('/', controller.index);
 
-router.get('/all', controller.TodosCadastros)
+router.get('/all', controller.TodosCadastros);
 
 router.post('/',controller.create);
 
