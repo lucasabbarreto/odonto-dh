@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       references: { model: 'usuarios', key: 'id_usuario' }
     },
 
+    id_dentista:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,

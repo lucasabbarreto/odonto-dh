@@ -18,12 +18,23 @@ module.exports = {
       id_procedimento: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'procedimentos', key: 'id_procedimento' }
+        references: {
+          model: 'procedimentos',
+          key: 'id_procedimento'
+        }
       },
       id_usuario: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'usuarios', key: 'id_usuario' }
+        references: {
+          model: 'usuarios',
+          key: 'id_usuario'
+        }
+      },
+
+      id_dentista: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
 
       createdAt: {

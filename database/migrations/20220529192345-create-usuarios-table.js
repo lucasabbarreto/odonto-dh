@@ -34,7 +34,7 @@ module.exports = {
         allowNull: false,
       },
       permissao: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.STRING(8),
         allowNull: false,
       },
       cep: {

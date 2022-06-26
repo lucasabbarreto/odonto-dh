@@ -9,12 +9,13 @@ const controller = {
     criarAgendamento: async (req, res) => {
         const { id } = req.params;
         const id_usuario = Number(id);
-        const { data_agendamento, id_procedimento } = req.body;
+        const { data_agendamento,id_dentista, id_procedimento } = req.body;
 
         const agendamento = await agendamentosServices.criarAgendamento(
             id_usuario, 
             data_agendamento, 
-            id_procedimento
+            id_procedimento,
+            id_dentista
         );
 
         return res.json(agendamento)
@@ -43,9 +44,14 @@ const controller = {
     apagarAgendamento: async (req, res) => {
         const { id } = req.params;
 
-        await agendamentosServices.apagarAgendamento(id);
+        const agendamento = await agendamentosServices.apagarAgendamento(id);
+        if(agendamento){
+            return res.send("Não é possivel apagar o agendamento") 
+        }else{
+            return res.send("Agendamento " + id + " apagado.")
+        }
 
-        return res.send("Agendamento " + id + " apagado.")
+       
 
     },
     logout: async (req, res) => {
