@@ -5,12 +5,12 @@ const controller = {
     res.render('cadastro');
   },
   
-  TodosCadastros: async (request, response) => {
+  TodosCadastros: async (req, res) => {
     const cadastro = await cadastroServices.ListarCadastro();
-    return response.json(cadastro);
+    return res.json(cadastro);
   },
   
-  create: async (request, response) => {
+  create: async (req, res) => {
     const {
       nome,
       sexo,
@@ -22,13 +22,12 @@ const controller = {
       permissao,
       cep,
       endereco,
-      numero,
       complemento,
       bairro,
       cidade,
       estado,
 
-    } = request.body
+    } = req.body
 
     const cadastro = await cadastroServices.CriarCadastro(
       nome,
@@ -41,18 +40,17 @@ const controller = {
       permissao,
       cep,
       endereco,
-      numero,
       complemento,
       bairro,
       cidade,
       estado,
     )
 
-    return response.json(cadastro);
+    return res.json(cadastro);
   },
 
-  atualizar: async (request, response) => {
-    const { id } = request.params;
+  atualizar: async (req, res) => {
+    const { id } = req.params;
 
     const {
       nome,
@@ -65,13 +63,14 @@ const controller = {
       permissao,
       cep,
       endereco,
-      numero,
       complemento,
       bairro,
       cidade,
       estado,
 
-    } = request.body
+    } = req.body
+
+    console.log(req.body)
 
     const usuario = await cadastroServices.AtualizarUsuario(
       id,
@@ -85,22 +84,21 @@ const controller = {
       permissao,
       cep,
       endereco,
-      numero,
       complemento,
       bairro,
       cidade,
       estado,
     )
 
-    return response.json(usuario);
+    return res.json(usuario);
   },
 
-  apagar: async (request, response) => {
-    const { id } = request.params;
+  apagar: async (req, res) => {
+    const { id } = req.params;
 
     await cadastroServices.apagarUsuario(id)
 
-    return response.send("Usuário " + id + " apagado")
+    return res.send("Usuário " + id + " apagado")
   }
 }
 

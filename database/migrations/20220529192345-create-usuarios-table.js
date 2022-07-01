@@ -35,7 +35,6 @@ module.exports = {
       },
       permissao: {
         type: Sequelize.STRING(8),
-        allowNull: false,
       },
       cep: {
         type: Sequelize.STRING(12),
@@ -43,10 +42,6 @@ module.exports = {
       },
       endereco: {
         type: Sequelize.STRING(50),
-        allowNull: false,
-      },
-      numero: {
-        type: Sequelize.STRING(10),
         allowNull: false,
       },
       complemento: {
