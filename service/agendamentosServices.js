@@ -1,29 +1,44 @@
 const database = require('../database/models')
 
 const agendamentosServices = {
-    index: async (nome) => {
+    index: async (email) => {
 
         const usuario = await database.usuarios.findOne({
             where: {
-                nome: nome
+                email
             }
         });
         return usuario;
     },
-    criarAgendamento: async (id_usuario, id_dentista, data_agendamento, id_procedimento) => {
+    criarAgendamento: async (id_usuario, data_agendamento, id_procedimento, id_dentista) => {
         const agendamento = await database.agendamentos.create({
+            id_usuario,
             data_agendamento,
             agendamento_confirmado: false,
             id_procedimento,
-            id_dentista,
-            id_usuario
+            id_dentista            
         })
 
         return agendamento
     },
-
     listarAgendamentos: async () => {
         const agendamentos = await database.agendamentos.findAll();
+
+        return agendamentos;
+    },
+    listarAgendamentosComId_usuario: async (id) => {
+        const agendamentos = await database.agendamentos.findAll({
+            where: {
+                id_usuario: id
+            },
+            attributes : {
+                exclude: ['createdAt', 'updatedAt']
+            },
+            include: {
+                model: database.procedimentos,
+                as: 'procedimentos'
+            }
+        });
 
         return agendamentos;
     },
@@ -64,6 +79,12 @@ const agendamentosServices = {
             })
 
         }
+    },
+    formatarAgendamentos: (agendamentos) => {
+        agendamentos.map(agendamento =>{
+            agendamento.data_agendamento = `${agendamento.data_agendamento.getDate()}/${agendamento.data_agendamento.getMonth()+1}/${agendamento.data_agendamento.getFullYear()}`
+            return agendamento
+        })
     }
 };
 

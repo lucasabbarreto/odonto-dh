@@ -2,14 +2,17 @@ const agendamentosServices = require('../service/agendamentosServices');
 
 const controller = {
     index: async function(req, res) {
-        const nome = req.session.nome
-        const usuario = await agendamentosServices.index(nome);
-        res.render('agendamento', {usuario});
+        const email = req.session.email 
+        const usuario = await agendamentosServices.index(email);
+        const id = usuario.id_usuario
+        const agendamentos = await agendamentosServices.listarAgendamentosComId_usuario(id)
+        console.log(agendamentos)
+        res.render('agendamento', {usuario, agendamentos});
     },
     criarAgendamento: async (req, res) => {
         const { id } = req.params;
         const id_usuario = Number(id);
-        const { data_agendamento,id_dentista, id_procedimento } = req.body;
+        const { data_agendamento, id_dentista, id_procedimento } = req.body;
 
         const agendamento = await agendamentosServices.criarAgendamento(
             id_usuario, 
@@ -22,6 +25,7 @@ const controller = {
 
     },
     listarAgendamento: async (req, res) => {
+
         const agendamentos = await agendamentosServices.listarAgendamentos();
 
         return res.json(agendamentos);
@@ -56,7 +60,7 @@ const controller = {
     },
     logout: async (req, res) => {
         req.session.isLogged = false;
-        req.session.nome = null;
+        req.session.email = null;
         res.redirect('/login')
     }
 };

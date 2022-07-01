@@ -22,12 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: { model: 'usuarios', key: 'id_usuario' }
     },
-
-    id_dentista:{
+    id_dentista: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -40,16 +38,16 @@ module.exports = (sequelize, DataTypes) => {
     { tableName: 'agendamentos' }
   );
 
-  agendamentos.associate = function(models){
-    agendamentos.hasMany(models.procedimentos,{
-      foreignKey:'id_procedimento',
-      as:'procedimentos'
+  agendamentos.associate = function (models) {
+    agendamentos.hasMany(models.procedimentos, {
+      foreignKey: 'id_procedimento',
+      as: 'procedimentos'
     }),
 
-  agendamentos.hasMany(models.usuarios,{
-    foreignKey:'id_usuario',
-    as:'usuarios'
-  })
-}
+    agendamentos.hasMany(models.usuarios, {
+      foreignKey: 'id_usuario',
+      as: 'usuarios'
+    })
+  }
   return agendamentos;
 }

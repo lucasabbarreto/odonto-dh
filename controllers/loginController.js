@@ -15,7 +15,7 @@ const controller = {
         if (usuario) {
           if (usuario.senha === senha) {
             req.session.isLogged = true
-            req.session.nome = usuario.nome
+            req.session.email = usuario.email
             return res.redirect('/agendamento')
           } else {
             return res.redirect('/login')

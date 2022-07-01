@@ -5,9 +5,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', controller.index);
 
-router.get('/all', controller.TodosCadastros);
+router.get('/all', controller.todosCadastros);
 
-router.post('/',controller.create);
+router.post('/',controller.criar);
 
 router.put('/:id', controller.atualizar);
 

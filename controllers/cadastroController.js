@@ -5,12 +5,12 @@ const controller = {
     res.render('cadastro');
   },
   
-  TodosCadastros: async (req, res) => {
+  todosCadastros: async (req, res) => {
     const cadastro = await cadastroServices.ListarCadastro();
     return res.json(cadastro);
   },
   
-  create: async (req, res) => {
+  criar: async (req, res) => {
     const {
       nome,
       sexo,
@@ -46,7 +46,7 @@ const controller = {
       estado,
     )
 
-    return res.json(cadastro);
+    return res.redirect('/login')
   },
 
   atualizar: async (req, res) => {
