@@ -152,7 +152,7 @@ ul {
     height:300px;
     overflow: auto;
     overflow-x: hidden;  
-    border: solid 1px white
+    /* border: solid 1px white */
 }
   
 #table-wrapper table {

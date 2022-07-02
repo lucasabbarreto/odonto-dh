@@ -18,223 +18,128 @@
         <span class="span-consulta-paciente">Olá, <%= usuario.nome %></span>
         <a href="agendamento/sair"><button class="botao-consulta-paciente">Sair</button></a>
       </div>
-      <div class="area-agendamento">
-        <div class="coluna-esquerda-consulta-paciente">
-          <span>Selecione o dia para sua consulta.</span>
-          <div class="calendar">
-            <div class="month">
-              <ul>
-                <li class="prev">&#10094;</li>
-                <li class="next">&#10095;</li>
-                <li>August<br><span style="font-size:18px">2021</span></li>
+      <form action="/agendamento/criar" method="post">
+        <div class="area-agendamento">
+          <div class="coluna-esquerda-consulta-paciente">
+            <span>Selecione o dentista.</span>
+          
+            <select name="id_dentista" id="id_dentista">
+              <% dentistas.forEach(dentista=>{ %>
+                <option value="<%= dentista.id_usuario %>"><%=dentista.nome%></option>
+              <% }) %>              
+          </select>
+            <span>Selecione o dia para sua consulta.</span>
+            <input type="date" name="data_agendamento">
+            <!-- <div class="calendar">
+              <div class="month">
+                <ul>
+                  <li class="prev">&#10094;</li>
+                  <li class="next">&#10095;</li>
+                  <li>August<br><span style="font-size:18px">2021</span></li>
+                </ul>
+              </div>
+  
+              <ul class="weekdays">
+                <li>Seg</li>
+                <li>Ter</li>
+                <li>Qua</li>
+                <li>Qui</li>
+                <li>Sex</li>
+                <li>Sab</li>
+                <li>Dom</li>
               </ul>
-            </div>
-
-            <ul class="weekdays">
-              <li>Seg</li>
-              <li>Ter</li>
-              <li>Qua</li>
-              <li>Qui</li>
-              <li>Sex</li>
-              <li>Sab</li>
-              <li>Dom</li>
-            </ul>
-
-            <ul class="days">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
-              <li>5</li>
-              <li>6</li>
-              <li>7</li>
-              <li>8</li>
-              <li>9</li>
-              <li><span class="active">10</span></li>
-              <li>11</li>
-              <li>12</li>
-              <li>13</li>
-              <li>14</li>
-              <li>15</li>
-              <li>16</li>
-              <li>17</li>
-              <li>18</li>
-              <li>19</li>
-              <li>20</li>
-              <li>21</li>
-              <li>22</li>
-              <li>23</li>
-              <li>24</li>
-              <li>25</li>
-              <li>26</li>
-              <li>27</li>
-              <li>28</li>
-              <li>29</li>
-              <li>30</li>
-            </ul>
+  
+              <ul class="days">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li><span class="active">10</span></li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+              </ul>
+            </div> -->
           </div>
-        </div>
-        <div class="historico-consulta">
-          <span>Prontuário</span>
-          <div id="table-wrapper">
-            <div id="table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Selecione</th>
-                    <th>Data</th>
-                    <th>Dia</th>
-                    <th>Procedimento</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% agendamentos.forEach(agendamento=>{ %>
+          <div class="historico-consulta">
+            <span>Prontuário</span>
+            <div id="table-wrapper">
+              <div id="table-scroll">
+                <table>
+                  <thead>
                     <tr>
-                      <td><input type="checkbox"></td>
-                      <td>
-                        <%= agendamento.data_agendamento.getDate() %>/<%= agendamento.data_agendamento.getMonth()+1 %>/<%= agendamento.data_agendamento.getFullYear() %>
-                      </td>
-                        <td>                          
-                          <% if(agendamento.data_agendamento.getDay() ==1){ %>
-                            Segunda-feira
-                          <% } %>
-                          <% if(agendamento.data_agendamento.getDay() ==2){ %>
-                            Terça-feira
-                          <% } %>
-                          <% if(agendamento.data_agendamento.getDay() ==3){ %>
-                            Quarta-feira
-                          <% } %>
-                          <% if(agendamento.data_agendamento.getDay() ==4){ %>
-                            Quinta-feira
-                          <% } %>
-                          <% if(agendamento.data_agendamento.getDay() ==5){ %>
-                            Sexta-feira
-                          <% } %>
+                      <th>Selecione</th>
+                      <th>Data</th>
+                      <th>Dia</th>
+                      <th>Procedimento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% agendamentos.forEach(agendamento=>{ %>
+                      <tr>
+                        <td><input name="agendamento_selecionado" value="<%=agendamento.id_agendamento%>" type="checkbox"></td>
+                        <td>
+                          <%= agendamento.data_agendamento.getDate() %>/<%= agendamento.data_agendamento.getMonth()+1 %>/
+                              <%= agendamento.data_agendamento.getFullYear() %>
                         </td>
                         <td>
-                          <%= agendamento.procedimentos %>
+                          <% if(agendamento.data_agendamento.getDay()==1){ %>
+                            Segunda-feira
+                            <% } %>
+                              <% if(agendamento.data_agendamento.getDay()==2){ %>
+                                Terça-feira
+                                <% } %>
+                                  <% if(agendamento.data_agendamento.getDay()==3){ %>
+                                    Quarta-feira
+                                    <% } %>
+                                      <% if(agendamento.data_agendamento.getDay()==4){ %>
+                                        Quinta-feira
+                                        <% } %>
+                                          <% if(agendamento.data_agendamento.getDay()==5){ %>
+                                            Sexta-feira
+                                            <% } %>
                         </td>
-                    </tr>
-                    <% }) %>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
+                        <td>
+                          <%= %>
+                        </td>
                       </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>14/03/2022</td>
-                        <td>Segunda-feira</td>
-                        <td>Restauração</td>
-                      </tr>
-                </tbody>
-              </table>
+                      <% }) %>
+  
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="botoes-consulta-paciente">
-        <button class="botao-consulta-paciente">Confirmar</button>
-        <button class="botao-consulta-paciente">Reagendar</button>
-        <button class="botao-consulta-paciente">Cancelar</button>
-      </div>
+        <div class="botoes-consulta-paciente">
+          <button type="submit" class="botao-consulta-paciente">Confirmar</button>
+          <button type="submit" class="botao-consulta-paciente">Reagendar</button>
+          <button type="submit" class="botao-consulta-paciente">Cancelar</button>
+        </div>
+      </form>
+      
     </main>
 </body>
 

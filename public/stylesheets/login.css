@@ -82,6 +82,16 @@ h1 {
     position: relative;
 }
 
+.loginFail {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    color: red;
+    font-family: 'Poppins';
+    font-size: 13px;
+    font-weight: bold;
+}
+
 .icon-email {
     position: absolute;
     left: 8px;

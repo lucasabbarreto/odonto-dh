@@ -2,9 +2,25 @@ const { request } = require('express');
 const database = require('../database/models');
 
 const cadastroServices = {
+  procurarCadastroPorEmail: async (email) => {
+    const cadastro = await database.usuarios.findOne({
+      where: {
+        email
+      }
+    })
+    return cadastro
+  },
   ListarCadastro: async () => {
     const cadastro = await database.usuarios.findAll();
     return cadastro;
+  },
+  listarDentistas: async () =>{
+    const dentistas = await database.usuarios.findAll({
+      where: {
+        permissao: "1"
+      }
+    })
+    return dentistas
   },
   CriarCadastro: async (
     nome,

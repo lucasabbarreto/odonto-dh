@@ -23,6 +23,7 @@ html{
     align-items: center;
     justify-content: space-between;
     max-width: 1024px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -31,7 +32,7 @@ html{
 }
 
 .logo-donto{
-    height: 100px;
+    height: 80px;
 }
 
 .categorias{

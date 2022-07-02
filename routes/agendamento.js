@@ -7,12 +7,12 @@ router.get('/', auth, controller.index);
 
 router.get('/sair', controller.logout);
 
-router.post('/:id', controller.criarAgendamento);
+router.post('/criar', controller.criarAgendamento);
 
 router.get('/all', controller.listarAgendamento);
 
 router.put('/:id', controller.alterarAgendamento);
 
-router.delete('/:id', controller.apagarAgendamento);
+router.delete('/apagar/:id', controller.apagarAgendamento);
 
 module.exports = router;

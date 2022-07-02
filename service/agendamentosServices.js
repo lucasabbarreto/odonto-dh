@@ -10,12 +10,12 @@ const agendamentosServices = {
         });
         return usuario;
     },
-    criarAgendamento: async (id_usuario, data_agendamento, id_procedimento, id_dentista) => {
-        const agendamento = await database.agendamentos.create({
-            id_usuario,
+    criarAgendamento: async (data_agendamento, id_procedimento, id_usuario, id_dentista) => {
+        const agendamento = await database.agendamentos.create({            
             data_agendamento,
             agendamento_confirmado: false,
             id_procedimento,
+            id_usuario,
             id_dentista            
         })
 
@@ -36,7 +36,8 @@ const agendamentosServices = {
             },
             include: {
                 model: database.procedimentos,
-                as: 'procedimentos'
+                as: 'procedimentos',
+                required: false
             }
         });
 

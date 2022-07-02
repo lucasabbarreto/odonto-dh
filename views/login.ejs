@@ -22,7 +22,9 @@
       <form action="/login/validar" class="content-form" method="post">
         <div class="relative">
           <label for="email" class="icon-email"><i class="fa-solid fa-envelope"></i></label>
-          <input type="email" name="email" id="email" class="campo-email" placeholder="E-mail">
+          <input type="email" name="email" id="email" class="campo-email" placeholder="E-mail"><% if(loginFail){ %>
+            <span class="loginFail">Credenciais incorretas</span>
+          <% } %>
         </div>
         <div class="relative">
           <label for="senha" class="icon-senha"><i class="fa-solid fa-lock"></i></label>
