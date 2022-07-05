@@ -18,6 +18,23 @@
         <span class="span-consulta-paciente">Olá, <%= usuario.nome %></span>
         <a href="agendamento/sair"><button class="botao-consulta-paciente">Sair</button></a>
       </div>
+      <% if( permissao < 1) { %>
+        <span>Alterar nivel de acesso</span>
+        <form action="/agendamento/<%= usuario.id_usuario %>_method=put" method="post">
+          <select name="" id="usuario">
+            <% dentistas.forEach(dentista=>{ %>
+              <option value="<%= usuario.id_usuario %>"><%=usuario.nome%></option>
+            <% }) %>              
+        </select>
+        <select name="permissao" id="permissao">          
+            <option value=0>Cliente</option>
+            <option value=1>Dentista</option>
+            <option value=2>Administrador</option>                 
+      </select>
+      <button type="submit">Alterar</button>
+        </form>
+      <% } %>
+    
       <form action="/agendamento/criar" method="post">
         <div class="area-agendamento">
           <div class="coluna-esquerda-consulta-paciente">
@@ -101,8 +118,7 @@
                       <tr>
                         <td><input name="agendamento_selecionado" value="<%=agendamento.id_agendamento%>" type="checkbox"></td>
                         <td>
-                          <%= agendamento.data_agendamento.getDate() %>/<%= agendamento.data_agendamento.getMonth()+1 %>/
-                              <%= agendamento.data_agendamento.getFullYear() %>
+                          <%= agendamento.data_agendamento.toLocaleDateString() %>
                         </td>
                         <td>
                           <% if(agendamento.data_agendamento.getDay()==1){ %>

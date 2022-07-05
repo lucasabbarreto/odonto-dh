@@ -36,8 +36,7 @@ const agendamentosServices = {
             },
             include: {
                 model: database.procedimentos,
-                as: 'procedimentos',
-                required: false
+                as: 'procedimentos'                
             }
         });
 

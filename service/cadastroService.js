@@ -17,7 +17,7 @@ const cadastroServices = {
   listarDentistas: async () =>{
     const dentistas = await database.usuarios.findAll({
       where: {
-        permissao: "1"
+        permissao: 1
       }
     })
     return dentistas

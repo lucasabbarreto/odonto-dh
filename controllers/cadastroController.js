@@ -19,7 +19,6 @@ const controller = {
       data_nascimento,
       email,
       senha,
-      permissao,
       cep,
       endereco,
       complemento,
@@ -28,6 +27,8 @@ const controller = {
       estado,
 
     } = req.body
+
+    const permissao = 0;
 
     const cadastro = await cadastroServices.CriarCadastro(
       nome,
