@@ -1,3 +1,4 @@
+const { sequelize } = require('../database/models');
 const database = require('../database/models')
 
 const agendamentosServices = {
@@ -27,20 +28,9 @@ const agendamentosServices = {
         return agendamentos;
     },
     listarAgendamentosComId_usuario: async (id) => {
-        const agendamentos = await database.agendamentos.findAll({
-            where: {
-                id_usuario: id
-            },
-            attributes : {
-                exclude: ['createdAt', 'updatedAt']
-            },
-            include: {
-                model: database.procedimentos,
-                as: 'procedimentos'                
-            }
-        });
+       const agendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento')
 
-        return agendamentos;
+       return agendamentos    
     },
     alterarAgendamento: async (id, agendamento_confirmado, id_usuario, data_agendamento, id_procedimento) => {
         await database.agendamentos.update({

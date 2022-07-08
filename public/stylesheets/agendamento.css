@@ -5,27 +5,62 @@
     border: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins",serif;
+    font-family: "Poppins", serif;
 }
 
 main {
-    background: #399ca98c;
+    max-width: 1200px;
+    margin: 10px auto 0;
+
+}
+
+.campo-acoes {
+    position: relative;
+    background-color: #399ca98c;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1200px;
-    padding: 20px 60px;
+    
+    min-height: 450px;
+    padding: 0 60px 20px;
     border-radius: 20px;
-    margin: 20px auto;
+    margin-top: 40px;
 }
 
-.nome-botao {
-    margin-bottom: 40px;
+.campo-nome-botao {
+    margin-bottom: 20px;
+}
+
+.abas-admin {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: -25px;
+}
+
+.abas {
+    
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    padding: 0 5px 0 5px;
+    cursor: pointer;
+}
+
+.aba-esquerda {
+    border-bottom: 1px solid white;
+}
+
+.aba-direita {
+    border-bottom: 1px solid white;
 }
 
 .area-agendamento {
     display: flex;
-    margin-bottom: 20px;
+    margin: 20px 0;
     justify-content: center;
     gap: 100px;
 }
@@ -40,75 +75,75 @@ ul {
 
 /* Month header */
 .month {
-  padding: 15px 25px;
-  width: 100%;
-  background: #1CBACF;
-  text-align: center;
-  border-radius: 5px 5px 0 0;
+    padding: 15px 25px;
+    width: 100%;
+    background: #1CBACF;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
 }
 
 /* Month list */
 .month ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 /* Previous button inside month header */
 .month .prev {
-  float: left;
-  padding-top: 10px;
+    float: left;
+    padding-top: 10px;
 }
 
 /* Next button */
 .month .next {
-  float: right;
-  padding-top: 10px;
+    float: right;
+    padding-top: 10px;
 }
 
 /* Weekdays (Mon-Sun) */
 .weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color:#ddd;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
 }
 
 .weekdays li {
-  display: inline-block;
-  width: 12.6%;
-  color: #666;
-  text-align: center;
+    display: inline-block;
+    width: 12.6%;
+    color: #666;
+    text-align: center;
 }
 
 /* Days (1-31) */
 .days {
-  padding: 15px 0;
-  background: #eee;
-  margin: 0;
-  border-radius: 0 0 5px 5px;
+    padding: 15px 0;
+    background: #eee;
+    margin: 0;
+    border-radius: 0 0 5px 5px;
 }
 
 .days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 12.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
+    list-style-type: none;
+    display: inline-block;
+    width: 12.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
 }
 
 /* Highlight the "current" day */
 .days li .active {
-  padding: 5px;
-  background: #1CBACF;
-  color: white !important
+    padding: 5px;
+    background: #1CBACF;
+    color: white !important
 }
 
 .historico-consulta {
@@ -124,7 +159,7 @@ ul {
 }
 
 .span-consulta-paciente {
-    color: white;
+    color: #1CBACF;
 }
 
 .coluna-esquerda-consulta-paciente {
@@ -139,9 +174,18 @@ ul {
 
 .coluna-esquerda-consulta-paciente span {
     color: white;
-    margin-bottom: 20px;
     text-align: center;
 }
+
+.selecione-dentista {
+    margin-bottom: 20px;
+}
+
+.selecione-cliente,
+.selecione-dia {
+    margin: 20px 0;
+}
+
 
 #table-wrapper {
     width: 500px;
@@ -149,19 +193,19 @@ ul {
 }
 
 #table-scroll {
-    height:300px;
+    height: 300px;
     overflow: auto;
-    overflow-x: hidden;  
+    overflow-x: hidden;
     /* border: solid 1px white */
 }
-  
+
 #table-wrapper table {
-    width:100%;
-  
+    width: 100%;
+
 }
 
 #table-wrapper table * {
-    color:white;
+    color: white;
     background-color: #1CBACF;
     padding: 1px;
 }
@@ -223,8 +267,8 @@ table th {
         margin-left: 70px;
     }
 
-    .area-agendamento {       
-        width: 480px;        
+    .area-agendamento {
+        width: 480px;
     }
 
     .coluna-esquerda-consulta-paciente {
@@ -258,7 +302,7 @@ table th {
         margin: 0;
     }
 
-    
+
 
     .botoes-consulta-paciente {
         width: 450px;

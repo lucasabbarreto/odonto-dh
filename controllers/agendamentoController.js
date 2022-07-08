@@ -8,7 +8,6 @@ const controller = {
         const id = usuario.id_usuario
         const agendamentos = await agendamentosServices.listarAgendamentosComId_usuario(id)
         const dentistas = await cadastroServices.listarDentistas()
-        console.log(dentistas) 
         console.log(agendamentos)
         const permissao = 0
         res.render('agendamento', {usuario, agendamentos, dentistas, permissao});
