@@ -11,8 +11,10 @@ let selecionarAcaoAgendamentos = document.getElementById('selecionar-acao-agenda
 let acoesAgendamentos = document.getElementById('acoes-agendamentos');
 let seletorAcaoUsuarios = document.getElementById('seletor-acao-usuarios');
 let acoesUsuarios = document.getElementById('acoes-usuarios');
-let formNovoUsuario = document.getElementById('form-novo-usuario');
-let nivelAcesso = document.getElementById('nivel-acesso');
+let formCriarUsuario = document.getElementById('form-criar-usuario');
+let formAlterarUsuario = document.getElementById('form-alterar-usuario');
+let formApagarUsuario = document.getElementById('form-apagar-usuario');
+let formNivelAcesso = document.getElementById('form-nivel-acesso');
 let seletorUsuarioNivelAcesso = document.getElementById('seletor-usuario-nivel-acesso');
 let usuarioNivelAcesso = document.getElementById('usuario-nivel-acesso');
 let seletorNivelAcesso = document.getElementById('seletor-nivel-acesso');
@@ -20,6 +22,7 @@ let formCriarProcedimento = document.getElementById('form-criar-procedimento');
 let formAlterarProcedimento = document.getElementById('form-alterar-procedimento');
 let formApagarProcedimento = document.getElementById('form-apagar-procedimento');
 let acoesProcedimentos = document.getElementById('acoes-procedimentos');
+let seletorAcaoProcedimentos = document.getElementById('seletor-acao-procedimentos');
 
 window.addEventListener('load', function () {
     agendamentos.style.background = "#399ca98c";
@@ -28,11 +31,7 @@ window.addEventListener('load', function () {
     procedimentos.style.color = "#399ca98c";
     usuarios.style.background = "white";
     usuarios.style.color = "#399ca98c";
-    campoAgendamentos.style.display = "block";
-    campoUsuarios.style.display = "none";
-    campoProcedimentos.style.display = "none";
-    formAlterarAdmin.style.display = "none";
-    formCancelarAdmin.style.display = "none";
+    acoesAgendamentos.value = ""
 });
 
 agendamentos.addEventListener('click', function () {
@@ -45,8 +44,13 @@ agendamentos.addEventListener('click', function () {
     campoAgendamentos.style.display = "block";
     campoUsuarios.style.display = "none";
     campoProcedimentos.style.display = "none";
+    acoesAgendamentos.value = "";
+    acoesUsuarios.value = "";
+    acoesProcedimentos.value = "";
     selecionarAcaoAgendamentos.style.display = "block";
     formAgendarAdmin.style.display = "none";
+    formAlterarAdmin.style.display = "none";
+    formCancelarAdmin.style.display = "none";
 
 });
 
@@ -68,8 +72,6 @@ acoesAgendamentos.addEventListener('change', function () {
     }
 })
 
-
-
 usuarios.addEventListener('click', function () {
     usuarios.style.background = "#399ca98c";
     usuarios.style.color = "white";
@@ -80,38 +82,44 @@ usuarios.addEventListener('click', function () {
     campoAgendamentos.style.display = "none";
     campoUsuarios.style.display = "block";
     campoProcedimentos.style.display = "none";
+    acoesAgendamentos.value = "";
+    acoesUsuarios.value = "";
+    acoesProcedimentos.value = "";
     seletorAcaoUsuarios.style.display = "block";
-    formNovoUsuario.style.display ="none";
-    nivelAcesso.style.display ="none";
+    formCriarUsuario.style.display = "none";
+    formAlterarUsuario.style.display = "none";
+    formApagarUsuario.style.display = "none";
+    formNivelAcesso.style.display = "none";
 });
 
 acoesUsuarios.addEventListener('change', function () {
     if (acoesUsuarios.value === "criar") {
-        nivelAcesso.style.display ="none";
-        usuarioNivelAcesso.value = "";
+        formCriarUsuario.style.display = "flex";
+        formAlterarUsuario.style.display = "none";
+        formApagarUsuario.style.display = "none"
+        formNivelAcesso.style.display = "none";
     }
     if (acoesUsuarios.value === "alterar") {
-        nivelAcesso.style.display ="none";
-        usuarioNivelAcesso.value = "";
+        formCriarUsuario.style.display = "none";
+        formAlterarUsuario.style.display = "flex";
+        formApagarUsuario.style.display = "none"
+        formNivelAcesso.style.display = "none";
     }
     if (acoesUsuarios.value === "apagar") {
-        nivelAcesso.style.display ="none";
-        usuarioNivelAcesso.value = "";
+        formCriarUsuario.style.display = "none";
+        formAlterarUsuario.style.display = "none";
+        formApagarUsuario.style.display = "flex";
+        formNivelAcesso.style.display = "none";
     }
     if (acoesUsuarios.value === "acesso") {
-        nivelAcesso.style.display ="block";
-        seletorNivelAcesso.style.display= "none";       
+        formCriarUsuario.style.display = "none";
+        formAlterarUsuario.style.display = "none";
+        formApagarUsuario.style.display = "none";
+        formNivelAcesso.style.display = "flex";
     }
 })
 
-usuarioNivelAcesso.addEventListener('change', function(){
-    if(usuarioNivelAcesso.value === ""){
-        seletorNivelAcesso.style.display= "none";
-    }
-    if(usuarioNivelAcesso.value !== ""){
-        seletorNivelAcesso.style.display= "block";
-    }
-})
+
 
 
 procedimentos.addEventListener('click', function () {
@@ -124,25 +132,32 @@ procedimentos.addEventListener('click', function () {
     campoAgendamentos.style.display = "none";
     campoUsuarios.style.display = "none";
     campoProcedimentos.style.display = "block";
+    acoesAgendamentos.value = "";
+    acoesUsuarios.value = "";
+    acoesProcedimentos.value = "";
+    seletorAcaoProcedimentos.style.display="block";
+    formCriarProcedimento.style.display = "none";
+    formAlterarProcedimento.style.display = "none";
+    formApagarProcedimento.style.display = "none";
 })
 
-acoesProcedimentos.addEventListener('change', function(){
-    if(this.value === "criar"){
-        formCriarProcedimento.style.display ='block';
-        formAlterarProcedimento.style.display= "none";
-        formApagarProcedimento.style.display="none";
+acoesProcedimentos.addEventListener('change', function () {
+    if (this.value === "criar") {
+        formCriarProcedimento.style.display = 'block';
+        formAlterarProcedimento.style.display = "none";
+        formApagarProcedimento.style.display = "none";
     }
-    if(this.value === "alterar"){
-        formCriarProcedimento.style.display ='none';
-        formAlterarProcedimento.style.display= "block";
-        formApagarProcedimento.style.display="none";
-        
+    if (this.value === "alterar") {
+        formCriarProcedimento.style.display = 'none';
+        formAlterarProcedimento.style.display = "block";
+        formApagarProcedimento.style.display = "none";
+
     }
-    if(this.value === "apagar"){
-        formCriarProcedimento.style.display ='none';
-        formAlterarProcedimento.style.display= "none";
-        formApagarProcedimento.style.display="block";
-        
+    if (this.value === "apagar") {
+        formCriarProcedimento.style.display = 'none';
+        formAlterarProcedimento.style.display = "none";
+        formApagarProcedimento.style.display = "block";
+
     }
 })
 
