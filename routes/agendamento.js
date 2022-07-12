@@ -11,8 +11,8 @@ router.post('/criar', controller.criarAgendamento);
 
 router.get('/all', controller.listarAgendamento);
 
-router.put('/:id', controller.alterarAgendamento);
+router.put('/alterar', controller.alterarAgendamento);
 
-router.delete('/apagar/:id', controller.apagarAgendamento);
+router.delete('/apagar', controller.apagarAgendamento);
 
 module.exports = router;

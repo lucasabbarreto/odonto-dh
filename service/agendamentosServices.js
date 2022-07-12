@@ -28,11 +28,11 @@ const agendamentosServices = {
         return agendamentos;
     },
     listarAgendamentosComId_usuario: async (id) => {
-       const agendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento')
+       const agendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento ORDER BY data_agendamento ASC')
 
        return agendamentos    
     },
-    alterarAgendamento: async (id, agendamento_confirmado, id_usuario, data_agendamento, id_procedimento) => {
+    alterarAgendamento: async (id_agendamento, agendamento_confirmado, id_usuario, data_agendamento, id_procedimento) => {
         await database.agendamentos.update({
             id_usuario,
             agendamento_confirmado,
@@ -40,7 +40,7 @@ const agendamentosServices = {
             id_procedimento
         }, {
             where: {
-                id_agendamento: id
+                id_agendamento
             }
         })
         const agendamento = await database.agendamentos.findOne({
@@ -50,13 +50,13 @@ const agendamentosServices = {
         })
         return agendamento
     },
-    apagarAgendamento: async (id) => {
+    apagarAgendamento: async (id_agendamento) => {
         const agendamento = await database.agendamentos.findOne({
             where: {
-                id_agendamento: id
+                id_agendamento: id_agendamento
             }
         })
-
+        
         const agendamento_confirmado = agendamento.agendamento_confirmado
 
         if (agendamento_confirmado) {
@@ -64,7 +64,7 @@ const agendamentosServices = {
         } else {
             await database.agendamentos.destroy({
                 where: {
-                    id_agendamento: id
+                    id_agendamento
                 }
             })
 

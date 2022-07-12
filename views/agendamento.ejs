@@ -40,18 +40,16 @@
           <form id="form-agendar-admin" class="forms-display-none" action="/agendamento/criar" method="post">
             <div class="area-agendamento">
               <div class="coluna-esquerda-consulta-paciente">
-
                 <span class="selecione-label">Selecione o cliente:</span>
-                <select name="" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
+                <select name="id_usuario" id="" class="selecione-input">
+                  <% todosUsuarios.forEach(usuario=>{ %>
+                    <option value="<%= usuario.id_usuario %>">
+                      <%=usuario.nome%>         
                     </option>
                     <% }) %>
                 </select>
-
                 <span class="selecione-label">Selecione o dentista.</span>
-                <select name="" id="" class="selecione-input">
+                <select name="id_dentista" id="" class="selecione-input">
                   <% dentistas.forEach(dentista=>{ %>
                     <option value="<%= dentista.id_usuario %>">
                       <%=dentista.nome%>
@@ -63,10 +61,10 @@
                 <input type="date" name="data_agendamento" class="selecione-input">
 
                 <span class="selecione-label">Selecione o procedimento.</span>
-                <select name="" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
+                <select name="id_procedimento" id="" class="selecione-input">
+                  <% procedimentos.forEach(procedimento=>{ %>
+                    <option value="<%= procedimento.id_procedimento %>">
+                      <%=procedimento.nome%>
                     </option>
                     <% }) %>
                 </select>
@@ -85,6 +83,7 @@
                         </tr>
                       </thead>
                       <tbody>
+   
                         <% agendamentos[0].map(agendamento=>{ %>
                           <tr>
                             <td>
@@ -124,21 +123,21 @@
             </div>
           </form>
 
-          <form id="form-alterar-agendamento-admin" action="">
+          <form id="form-alterar-agendamento-admin" action="/agendamento/alterar" method="put">
             <div class="area-agendamento">
               <div class="coluna-esquerda-consulta-paciente">
 
                 <span class="selecione-label">Selecione o cliente:</span>
-                <select name="" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option for="id_usuario" value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
+                <select name="id_usuario" id="" class="selecione-input">
+                  <% todosUsuarios.forEach(usuario=>{ %>
+                    <option for="id_usuario" value="<%= usuario.id_usuario %>">
+                      <%=usuario.nome%>
                     </option>
                     <% }) %>
                 </select>
 
                 <span class="selecione-label">Selecione o dentista:</span>
-                <select name="" id="" class="selecione-input">
+                <select name="id_dentista" id="" class="selecione-input">
                   <% dentistas.forEach(dentista=>{ %>
                     <option for="" value="<%= dentista.id_usuario %>">
                       <%=dentista.nome%>
@@ -149,11 +148,11 @@
                 <span class="selecione-label">Selecione o dia para sua consulta:</span>
                 <input type="date" name="data_agendamento" class="selecione-input">
 
-                <span class="selecione-label">Selecione o procedimento:</span>
-                <select name="" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
+                <span class="selecione-label">Selecione o procedimento.</span>
+                <select name="id_procedimento" id="" class="selecione-input">
+                  <% procedimentos.forEach(procedimento=>{ %>
+                    <option value="<%= procedimento.id_procedimento %>">
+                      <%=procedimento.nome%>
                     </option>
                     <% }) %>
                 </select>
@@ -215,7 +214,7 @@
             </div>
           </form>
 
-          <form id="form-cancelar-agendamento-admin" action="">
+          <form id="form-cancelar-agendamento-admin" action="/agendamento/apagar" method="delete">
             <div class="area-agendamento">
 
               <div class="historico-consulta">
@@ -342,7 +341,7 @@
                 </div>
               </div>
               <div class="botoes-consulta-paciente">
-                <button type="submit" class="botao-consulta-paciente">Confirmar</button>
+                <button type="submit" class="botao-consulta-paciente">Alterar</button>
               </div>
             </form>
             <% } %>
