@@ -38,7 +38,7 @@
             </select>
           </div>
           <form id="form-agendar-admin" class="forms-display-none" action="/agendamento/criar" method="post">
-            <div class="area-agendamento" id="area-agendamento">
+            <div class="area-agendamento">
               <div class="coluna-esquerda-consulta-paciente">
 
                 <span class="selecione-label">Selecione o cliente:</span>
@@ -125,7 +125,7 @@
           </form>
 
           <form id="form-alterar-agendamento-admin" action="">
-            <div class="area-agendamento" id="area-agendamento">
+            <div class="area-agendamento">
               <div class="coluna-esquerda-consulta-paciente">
 
                 <span class="selecione-label">Selecione o cliente:</span>
@@ -216,7 +216,7 @@
           </form>
 
           <form id="form-cancelar-agendamento-admin" action="">
-            <div class="area-agendamento" id="area-agendamento">
+            <div class="area-agendamento">
 
               <div class="historico-consulta">
                 <span>Prontuário</span>
@@ -347,11 +347,6 @@
             </form>
             <% } %>
 
-
-
-
-
-
         </div>
         <div id=campo-usuarios>
 
@@ -473,38 +468,29 @@
           </form>
 
           <form action="" id="form-apagar-usuario">
-            <div class="area-agendamento" id="area-agendamento">
-              <div class="coluna-esquerda-consulta-paciente">
-                <label class="selecione-label">Selecione o usuário:</label>
-                <select name="" id="" class="selecione-input">
-                  <option value=""></option>
-                </select>
-                <div class="botoes-consulta-paciente">
-                  <button type="submit" class="botao-consulta-paciente">Apagar</button>
-                </div>
-              </div>
+            <label class="selecione-label">Selecione o usuário:</label>
+            <select name="" id="" class="selecione-input">
+              <option value=""></option>
+            </select>
+            <button type="submit">Apagar</button>
+
           </form>
 
-          <form id="form-nivel-acesso" action="/agendamento/<%= usuario.id_usuario %>_method=put" method="post">
-            <div id="seletor-usuario-nivel-acesso">
-              <label for="usuario">Selecione usuário:</label>
-              <select name="" id="usuario-nivel-acesso">
-                <option value=""></option>
-                <option value="1">João</option>
-              </select>
-            </div>
-            <div id="seletor-nivel-acesso">
-              <label for="permisso">Selecione o nível de acesso:</label>
-              <select name="permissao" id="permissao">
-                <option value=0>Cliente</option>
-                <option value=1>Dentista</option>
-                <option value=2>Administrador</option>
-              </select>
-              <button type="submit">Alterar</button>
-            </div>
+          <form id="form-nivel-acesso">
+            <label for="usuario">Selecione usuário:</label>
+            <select name="" id="usuario-nivel-acesso">
+              <option value=""></option>
+              <option value="1">João</option>
+            </select>
+            <label for="permisso">Selecione o nível de acesso:</label>
+            <select name="permissao" id="permissao">
+              <option value=0>Cliente</option>
+              <option value=1>Dentista</option>
+              <option value=2>Administrador</option>
+            </select>
+            <button type="submit">Alterar</button>
           </form>
         </div>
-
         <div id="campo-procedimentos">
           <div id="seletor-acao-procedimentos" class="seletores-acoes">
             <label for="acoes-usuarios" class="acoes-label">Selecione a ação que deseja executar:</label>
