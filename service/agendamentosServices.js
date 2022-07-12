@@ -22,25 +22,31 @@ const agendamentosServices = {
 
         return agendamento
     },
+    procurarAgendamentoPorId: async (id) => {
+        const agendamento = await database.agendamentos.findByPk(id);
+
+        return agendamento;
+    },
     listarAgendamentos: async () => {
         const agendamentos = await database.agendamentos.findAll();
 
         return agendamentos;
     },
     listarAgendamentosComId_usuario: async (id) => {
-       const agendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento ORDER BY data_agendamento ASC')
-
+       const todosAgendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento ORDER BY data_agendamento ASC')
+        console.log(todosAgendamentos[0])
+       const agendamentos = todosAgendamentos[0].filter(agendamento=> agendamento.id_usuario == id)
+        console.log(agendamentos)
        return agendamentos    
     },
-    alterarAgendamento: async (id_agendamento, agendamento_confirmado, id_usuario, data_agendamento, id_procedimento) => {
+    alterarAgendamento: async (id, id_dentista, data_agendamento, id_procedimento) => {
         await database.agendamentos.update({
-            id_usuario,
-            agendamento_confirmado,
+            id_dentista,
             data_agendamento,
             id_procedimento
         }, {
             where: {
-                id_agendamento
+                id_agendamento: id
             }
         })
         const agendamento = await database.agendamentos.findOne({
@@ -50,10 +56,10 @@ const agendamentosServices = {
         })
         return agendamento
     },
-    apagarAgendamento: async (id_agendamento) => {
+    apagarAgendamento: async (id) => {
         const agendamento = await database.agendamentos.findOne({
             where: {
-                id_agendamento: id_agendamento
+                id_agendamento: id
             }
         })
         
@@ -64,7 +70,7 @@ const agendamentosServices = {
         } else {
             await database.agendamentos.destroy({
                 where: {
-                    id_agendamento
+                    id_agendamento: id
                 }
             })
 

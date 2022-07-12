@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const cadastroRouter = require('./routes/cadastro');
-const agendamentoPacienteRouter = require('./routes/agendamento');
+const agendamentoRouter = require('./routes/agendamento');
 const procedimentoRouter = require('./routes/procedimentos');
 
 const app = express();
@@ -34,7 +34,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/cadastro', cadastroRouter);
-app.use('/agendamento', agendamentoPacienteRouter);
+app.use('/agendamento', agendamentoRouter);
 app.use('/procedimento',procedimentoRouter);
 
 

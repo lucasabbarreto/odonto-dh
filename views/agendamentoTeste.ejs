@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/agendamento.css">
+    <title>Agendamento</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <div class="campo-nome-botao">
+                <span class="span-consulta-paciente">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+            </div>
+            <div class="campo-acoes">
+                <span>Selecione a ação que deseja executar:</span>
+            <span>Ações para agendamentos:</span>
+            <ul>
+                <li><a href="/agendamento/agendar">Agendar consulta.</a></li>
+                <li><a href="/agendamento/usuarios">Verificar agendamento por usuário.</a></li>
+            </ul>
+            <span>Ações para Usuários:</span>
+            <ul>
+                <li><a href="">Criar usuário.</a></li>
+                <li><a href="">Alterar Usuário.</a></li>
+            </ul>
+            <span>Ações para Procedimentos:</span>
+            <ul>
+                <li><a href="">Criar Procedimento.</a></li>
+                <li><a href="">Alterar Procedimento.</a></li>
+            </ul>
+            </div>            
+        </main>
+</body>
+
+</html>

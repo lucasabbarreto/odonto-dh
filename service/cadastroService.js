@@ -10,6 +10,14 @@ const cadastroServices = {
     })
     return cadastro
   },
+  procurarCadastroPorId: async (id)=>{
+    const cadastro = await database.usuarios.findOne({
+      where: {
+        id_usuario: id
+      }
+    })
+    return cadastro
+  },
   ListarCadastro: async () => {
     const cadastro = await database.usuarios.findAll();
     return cadastro;

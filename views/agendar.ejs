@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/agendar.css">
+    <title>Agendamento</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <div class="campo-nome-botao">
+                <span class="span-consulta-paciente">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+            </div>
+            <a href="/agendamento">Voltar ao menu alterior:</a>
+            <form id="form-agendar-admin" action="/agendamento/criar" method="post">
+                    <label for="id_usuario" class="selecione-label">Selecione o cliente:</label for="id_usuario">
+                    <select name="id_usuario" id="id_usuario" class="selecione-input">
+                        <% todosUsuarios.forEach(usuario=>{ %>
+                            <option value="<%= usuario.id_usuario %>">
+                                <%=usuario.nome%>
+                            </option>
+                            <% }) %>
+                    </select>
+                    <span class="selecione-label">Selecione o dentista.</span>
+                    <select name="id_dentista" id="" class="selecione-input">
+                        <% dentistas.forEach(dentista=>{ %>
+                            <option value="<%= dentista.id_usuario %>">
+                                <%=dentista.nome%>
+                            </option>
+                            <% }) %>
+                    </select>
+
+                    <span class="selecione-label">Selecione o dia para sua consulta.</span>
+                    <input type="date" name="data_agendamento" class="selecione-input">
+
+                    <span class="selecione-label">Selecione o procedimento.</span>
+                    <select name="id_procedimento" id="" class="selecione-input">
+                        <% procedimentos.forEach(procedimento=>{ %>
+                            <option value="<%= procedimento.id_procedimento %>">
+                                <%=procedimento.nome%>
+                            </option>
+                            <% }) %>
+                    </select>                    
+                    <button type="submit" class="botao-consulta-paciente">Agendar</button>                    
+            </form>
+
+        </main>
+
+</body>
+
+</html>

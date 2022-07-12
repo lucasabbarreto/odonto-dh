@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/agendar.css">
+    <title>Agendamento</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        
+        <main>
+            <div class="campo-nome-botao">
+                <span class="span-consulta-paciente">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+            </div>
+            <form id="form-alterar-admin" action="/agendamento/alterar/<%= agendamento.id_agendamento %>?_method=PUT" method="POST">
+                <span for="id_usuario" class="selecione-label">Cliente: <%= nome %></span>
+                <div>
+                    <label class="selecione-label">Selecione o dentista.</label>
+                    <select name="id_dentista" id="" class="selecione-input">
+                        <% dentistas.forEach(dentista=>{ %>
+                            <option value="<%= dentista.id_usuario %>">
+                                <%=dentista.nome%>
+                            </option>
+                            <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <label class="selecione-label">Selecione o dia para sua consulta.</label>
+                    <input type="date" name="data_agendamento" class="selecione-input">
+                </div>
+                <div>
+                    <label class="selecione-label">Selecione o procedimento.</label>
+                    <select name="id_procedimento" id="" class="selecione-input">
+                        <% procedimentos.forEach(procedimento=>{ %>
+                            <option value="<%= procedimento.id_procedimento %>">
+                                <%=procedimento.nome%>
+                            </option>
+                            <% }) %>
+                    </select>
+                </div>
+
+                <button type="submit" class="botao-consulta-paciente">Alterar</button>
+            </form>
+        </main>
+</body>
+
+</html>

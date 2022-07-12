@@ -6,16 +6,43 @@ const controller = {
     index: async function (req, res) {
         const email = req.session.email
         const usuario = await agendamentosServices.index(email);
-        const id = usuario.id_usuario
-        const agendamentos = await agendamentosServices.listarAgendamentosComId_usuario(id)
-        const dentistas = await cadastroServices.listarDentistas()
-        const todosUsuarios = await cadastroServices.ListarCadastro()
+        const nome = usuario.nome
+        req.session.nome = nome;
+        res.render('agendamentoTeste', {nome});
+    },
+    telaAgendar: async (req, res) => {
+        const todosUsuarios = await cadastroServices.ListarCadastro();
+        const dentistas = await cadastroServices.listarDentistas();
         const procedimentos = await procedimentosServices.ListarProcedimentos();
-        const todosAgendamentos = await agendamentosServices.listarAgendamentos();
+        const nome = req.session.nome;
+        res.render('agendar',{todosUsuarios, dentistas, procedimentos, nome});
+    },
+    listarUsuarios: async (req, res) => {
+        const todosUsuarios = await cadastroServices.ListarCadastro();
+        console.log(todosUsuarios)
+        const nome = req.session.nome;
+        res.render('usuarios',{todosUsuarios, nome});
+    },
+    prontuario: async (req, res) => {
+        let { id } = req.params;
+        const agendamentos = await agendamentosServices.listarAgendamentosComId_usuario(id);
         console.log(agendamentos)
-        const permissao = 0
-        let usuarioSelecionado = null;
-        res.render('agendamento', { usuario, todosUsuarios, procedimentos, agendamentos, todosAgendamentos, dentistas, permissao, usuarioSelecionado });
+        const cadastro = await cadastroServices.procurarCadastroPorId(id);
+        let nome = cadastro.nome;
+        const usuarioLogado = req.session.nome;
+        res.render('prontuario', {agendamentos, usuarioLogado, nome});
+    },
+    exibirAgendamento: async (req, res) => {
+        let { id } = req.params;
+        
+        const dentistas = await cadastroServices.listarDentistas();
+        const procedimentos = await procedimentosServices.ListarProcedimentos();
+        const agendamento = await agendamentosServices.procurarAgendamentoPorId(id);
+        let id_usuario = agendamento.id_usuario;
+        const cadastro = await cadastroServices.procurarCadastroPorId(id_usuario);
+        const nome = cadastro.nome
+        const id_agendamento = agendamento.id_agendamento;
+        res.render('alterarAgendamento', {dentistas, procedimentos, nome, agendamento})
     },
     criarAgendamento: async (req, res) => {
         const { data_agendamento, id_dentista, id_procedimento, id_usuario } = req.body;
@@ -33,8 +60,8 @@ const controller = {
             id_usuario,
             id_dentista
         );
-
-        return res.redirect('/agendamento')
+        
+        // return res.redirect('alterar')
 
     },
     listarAgendamento: async (req, res) => {
@@ -45,25 +72,27 @@ const controller = {
 
     },
     alterarAgendamento: async (req, res) => {
-        const {id_agendamento, id_usuario, agendamento_confirmado, data_agendamento, id_procedimento } = req.body;
+        const { id } = req.params
+        const { id_dentista, data_agendamento, id_procedimento } = req.body;
 
         const agendamento = await agendamentosServices.alterarAgendamento(
-            id_agendamento,
-            agendamento_confirmado,
-            id_usuario,
+            id,
+            id_dentista,
             data_agendamento,
             id_procedimento
         )
 
-        return res.send("Agendamento " + agendamento.id_agendamento + " alterado com sucesso");
+        return res.redirect('/agendamento')
+
+        // return res.send("Agendamento " + agendamento.id_agendamento + " alterado com sucesso");
     },
     apagarAgendamento: async (req, res) => {
-        const { id_agendamento } = req.body;
-        const agendamento = await agendamentosServices.apagarAgendamento(id_agendamento);
+        const { id } = req.params;
+        const agendamento = await agendamentosServices.apagarAgendamento(id);
         if (agendamento) {
             return res.send("Não é possivel apagar o agendamento")
         } else {
-            return res.send("Agendamento " + id_agendamento + " apagado.")
+            return res.redirect('/agendamento');
         }
 
 

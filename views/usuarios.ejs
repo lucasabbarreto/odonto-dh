@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/agendar.css">
+    <title>Agendamento</title>
+</head>
+<body>
+    <%-include('./partials/header')%>
+    <main>
+        <div class="campo-nome-botao">
+            <span class="span-consulta-paciente">Olá, <%= nome %></span>
+            <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+        </div>
+        <div>
+            <span>Selecione um usuário para alterar seus agendamentos:</span>
+        <ul>
+            <% todosUsuarios.map(usuario=>{%>
+                <li>
+                    <span><%=usuario.nome%></span>
+                    <a href="/agendamento/prontuario/<%= usuario.id_usuario %>">Selecionar</a>
+                </li>
+            <%})%>
+            
+        </ul>
+        </div>        
+    </main>
+    
+</body>
+</html>
