@@ -10,17 +10,24 @@
 
 main {
     max-width: 1200px;
-    margin: 0 auto;    
+    margin: 20px auto 0;    
 }
 
 .campo-nome-botao {
-    margin-top: 20px;
+    margin: 20px 0;
+}
+
+.menu-inicial {
+    padding: 0 5px;
+    border: 2px solid #399ca98c;
+    border-radius: 10px;
 }
 
 #form-agendar-admin {
     display: flex;   
     flex-direction: column;
     border-radius: 10px;
+    margin-top: 20px;
     padding: 20px 0;
     background-color: #399ca98c;
     align-items: center;

@@ -12,12 +12,30 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
+    color: white;    
 }
 
 #form-apagar-usuario {
     display: flex;
     flex-direction: column;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    width: 297px;
+}
+
+li {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+a {
+    color: inherit;
 }
 
 .campo-acoes {
@@ -30,6 +48,11 @@ main {
     padding: 0 60px 20px;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+.titulo-acao {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .campo-nome-botao {

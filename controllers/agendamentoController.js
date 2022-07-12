@@ -61,7 +61,7 @@ const controller = {
             id_dentista
         );
         
-        // return res.redirect('alterar')
+        return res.redirect('/agendamento')
 
     },
     listarAgendamento: async (req, res) => {
