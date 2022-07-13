@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/usuarios.css">
+    <title>Agendamento</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <div class="campo-nome-usuario-logado">
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
+            </div>
+            <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
+            <div class="campo-selecao">
+                <span class="seletor-acoes">Selecione um usuário para alterar</span>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente:</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% usuarios.map(usuario=>{%>
+                                <tr>
+                                    <td>
+                                        <%=usuario.nome%>
+                                    </td>
+                                    <td>
+                                        
+                                        <a class="selecionar-link"
+                                            href="/cadastro/alterar/<%= usuario.id_usuario %>">Selecionar</a>
+                                            <form  action="/cadastro/apagar/<%=usuario.id_usuario%>?_method=delete" method="post">
+                                                <button class="botao-apagar" type="submit">Apagar</button>
+                                            </form>                                        
+                                    </td>
+                                </tr>                                
+                            <%})%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+</body>
+
+</html>

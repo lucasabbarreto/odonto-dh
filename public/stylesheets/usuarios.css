@@ -77,15 +77,22 @@ main {
     margin-bottom: 10px;
 }
 
-.selecionar-link {
+.selecionar-link,
+.botao-apagar {
     border: 2px solid #1CBACF;
+    background-color: white;
+    font-size: 16px;
     color: #1CBACF;
-    padding: 2px;
     border-radius: 10px;
     transition: 500ms ease-in-out;
 }
 
 .selecionar-link:hover {
+    background-color: #1CBACF;
+    color: white;
+}
+
+.botao-apagar:hover {
     background-color: #1CBACF;
     color: white;
 }
@@ -96,31 +103,29 @@ table {
     border-collapse: separate;
 }
 
-th, td {
+th,
+td {
     padding: 4px;
 }
 
 
 thead tr {
     color: #1CBACF;
-    background-color: white;    
+    background-color: white;
 }
 
 
 
 tbody tr {
     color: #1CBACF;
-    background-color: white;   
+    background-color: white;
 
-     
+
 }
 
 tbody tr td:nth-child(even) {
     display: flex;
     justify-content: center;
-
-    
+    gap: 5px;
 }
-
-
 

@@ -5,11 +5,13 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', controller.index);
 
-router.get('/all', controller.todosCadastros);
+router.get('/todos', controller.todosCadastros);
+
+router.get('/alterar/:id', controller.alterarCadastro);
 
 router.post('/',controller.criar);
 
-router.put('/:id', controller.atualizar);
+router.put('/alterar/:id', controller.atualizar);
 
 router.delete('/apagar/:id', controller.apagar);
 

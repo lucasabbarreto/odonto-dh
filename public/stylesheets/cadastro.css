@@ -7,13 +7,62 @@ body {
     font-family: "Poppins",serif;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    margin: 30px auto;
+    color: white;
+}
+
+.campo-nome-botao {
+    margin-bottom: 20px;
+}
+
+.usuario-logado {
+    color: #1CBACF;
+}
+
+.botao-sair {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.botao-sair:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
+.menu-inicial {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    width: 170px;
+    margin-bottom: 20px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.menu-inicial:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
 .form-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1024px;
-    background-color: #399ca98c;
-    margin: 30px auto;
+    background-color: #1CBACF;
     border-radius: 5px;
     padding: 30px 0;
 }
@@ -23,6 +72,12 @@ body {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 30px;
+}
+
+.titulo-campo {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .email-senha-wrapper {
@@ -101,8 +156,7 @@ body {
     width: 200px;
 }
 
-.coluna-direita-cadastro select {
-    width: 50px;
+.coluna-direita-cadastro select {    
     border: none;
     border-radius: 5px;
     padding: 2px;
@@ -112,20 +166,20 @@ body {
     width: 100px;
     height: 30px;
     cursor: pointer;
-    color: white;
-    background-color: #3e5ba5e3;
+    color: #1CBACF;
+    background-color: white;
     margin-top: 10px;
     border: solid 1px #1CBACF;
     border-radius: 5px;
-    padding: 5px;
     font-weight: 600;
-    font-size: 11px;
+    font-size: 16px;
     transition: 250ms ease-in-out;
 }
 
 .button-cadastro:hover {
-    color: #3e5ba5e3;
-    background-color: white;
+    border: solid 1px white;
+    color: white;
+    background-color: #1CBACF;
 }
 
 

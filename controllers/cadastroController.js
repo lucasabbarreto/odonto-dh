@@ -1,17 +1,45 @@
 const cadastroServices = require('../service/cadastroService');
+const agendamentosServices = require('../service/agendamentosServices');
 
 const controller = {
-  index: (req, res) => {
-    res.render('cadastro');
+  index: async (req, res) => {
+    const email = req.session.email;
+    if (email) {
+      const usuario = await agendamentosServices.index(email);
+      const nome = usuario.nome
+      req.session.nome = nome;
+      res.render('cadastro', { nome });
+    }else{
+      const nome = null
+      res.render('cadastro', { nome });
+    }
+
   },
-  
+
   todosCadastros: async (req, res) => {
-    const cadastro = await cadastroServices.ListarCadastro();
-    return res.json(cadastro);
+    const todosUsuarios = await cadastroServices.ListarCadastro();
+    const nome = req.session.nome;
+    let usuarios = todosUsuarios.filter(usuario=>{
+      return usuario.permissao < 3
+    })
+    return res.render('listaCadastro', { usuarios, nome });
   },
-  
+
+  alterarCadastro: async (req, res) => {
+    let { id } = req.params;
+
+    const usuario = await cadastroServices.procurarCadastroPorId(id);
+    res.render('alterarCadastro', { usuario })
+  },
+
   criar: async (req, res) => {
-    const {
+    const emailLogado = req.session.email;
+    if(emailLogado){
+      var usuario = await agendamentosServices.index(emailLogado);
+    } else{
+      var usuario = {permissao: 0}
+    }
+    let {
       nome,
       sexo,
       cpf,
@@ -30,7 +58,11 @@ const controller = {
 
     const permissao = 0;
 
-    const cadastro = await cadastroServices.CriarCadastro(
+    if(!senha){
+      senha = "admin"
+    }
+
+    await cadastroServices.CriarCadastro(
       nome,
       sexo,
       cpf,
@@ -47,13 +79,17 @@ const controller = {
       estado,
     )
 
-    return res.redirect('/login')
+    if(usuario.permissao >0){
+      return res.redirect('/agendamento')
+    } else {
+      return res.redirect('/login')
+    }    
   },
 
   atualizar: async (req, res) => {
     const { id } = req.params;
 
-    const {
+    let {
       nome,
       sexo,
       cpf,
@@ -73,7 +109,21 @@ const controller = {
 
     console.log(req.body)
 
-    const usuario = await cadastroServices.AtualizarUsuario(
+    const usuario = await cadastroServices.procurarCadastroPorId(id);
+
+    if (!data_nascimento) {
+      data_nascimento = usuario.data_nascimento
+    }
+
+    if (!senha) {
+      senha = usuario.senha
+    }
+
+    if (!estado) {
+      estado = usuario.estado
+    }
+
+    await cadastroServices.AtualizarUsuario(
       id,
       nome,
       sexo,
@@ -91,7 +141,7 @@ const controller = {
       estado,
     )
 
-    return res.json(usuario);
+    return res.redirect('/cadastro/todos');
   },
 
   apagar: async (req, res) => {
@@ -99,7 +149,7 @@ const controller = {
 
     await cadastroServices.apagarUsuario(id)
 
-    return res.send("Usuário " + id + " apagado")
+    return res.redirect('/cadastro/todos')
   }
 }
 

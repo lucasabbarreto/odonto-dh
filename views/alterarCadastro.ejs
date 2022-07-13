@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/stylesheets/cadastro.css">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+
+        <form action="/cadastro/alterar/<%=usuario.id_usuario%>?_method=put"  method="post" class="form-cadastro">
+            <span class="titulo-campo">Selecione um campo para alterar</span>
+            <div class="email-senha-wrapper">
+                <div class='coluna-esquerda-cadastro'>
+                    <div class="label-wrapper-cadastro">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-wrapper-cadastro">
+                        <input value="<%=usuario.email%>" type="email" name="email" id="email">
+                    </div>
+                </div>
+                <div class="coluna-direita-cadastro">
+                    <div class="label-wrapper-cadastro">
+                        <label for="senha">Senha</label>
+                    </div>
+                    <div class="input-wrapper-cadastro">
+                        <input type="password" name="senha" id="senha">
+                    </div>
+                </div>
+            </div>
+            <div class="detalhes-wrapper-cadastro">
+                <div class='coluna-esquerda-cadastro'>
+                    <div class="label-wrapper-cadastro">
+                        <label for="nome">Nome completo</label>
+                        <label for="sexo">Sexo</label>
+                        <label for="cpf">CPF</label>
+                        <label for="tel">Telefone</label>
+                        <label for="data_nascimento">Data de nascimento</label>
+                    </div>
+                    <div class="input-wrapper-cadastro">
+                        <input value="<%=usuario.nome%>" type="text" name="nome" id="nome">
+                        <select name="sexo" id="sexo">
+                            <option value="M">masculino</option>
+                            <option value="F">feminino</option>
+                            <option value="">Não informar</option>
+                        </select>
+                        <input value="<%=usuario.cpf%>" type="text" name="cpf" id="cpf">
+                        <input value="<%=usuario.telefone%>" type="tel" name="telefone" id="tel">
+                        <input value="" type="date" name="data_nascimento" id="data_nascimento">
+                    </div>
+                </div>
+                <div class="coluna-direita-cadastro">
+                    <div class="label-wrapper-cadastro">
+                        <label for="cep">CEP</label>
+                        <label for="endereco">Endereço</label>
+                        <label for="complemento">Complemento</label>
+                        <label for="bairro">Bairro</label>
+                        <label for="cidade">Cidade</label>
+                        <label for="estado">Estado</label>
+                    </div>
+                    <div class="input-wrapper-cadastro">
+                        <input value="<%=usuario.cep%>" type="text" name="cep" id="cep">
+                        <input value="<%=usuario.endereco%>" type="text" name="endereco" id="endereco">
+                        <input value="<%=usuario.complemento%>" type="text" name="complemento" id="complemento">
+                        <input value="<%=usuario.bairro%>" type="text" name="bairro" id="bairro">
+                        <input value="<%=usuario.cidade%>" type="text" name="cidade" id="cidade">
+                        <select name="estado" id="estado">
+                            <option value=""></option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="button-cadastro" type="submit">Enviar</button>
+        </form>
+</body>
+
+</html>

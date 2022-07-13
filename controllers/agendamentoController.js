@@ -18,8 +18,11 @@ const controller = {
         res.render('agendar',{todosUsuarios, dentistas, procedimentos, nome});
     },
     listarUsuarios: async (req, res) => {
-        const todosUsuarios = await cadastroServices.ListarCadastro();
-        console.log(todosUsuarios)
+        let todosUsuarios = await cadastroServices.ListarCadastro();
+
+        todosUsuarios = todosUsuarios.filter(usuario=>{
+            return usuario.permissao < 3
+        })
         const nome = req.session.nome;
         res.render('usuarios',{todosUsuarios, nome});
     },
@@ -41,7 +44,6 @@ const controller = {
         let id_usuario = agendamento.id_usuario;
         const cadastro = await cadastroServices.procurarCadastroPorId(id_usuario);
         const nome = cadastro.nome
-        const id_agendamento = agendamento.id_agendamento;
         res.render('alterarAgendamento', {dentistas, procedimentos, nome, agendamento})
     },
     criarAgendamento: async (req, res) => {
