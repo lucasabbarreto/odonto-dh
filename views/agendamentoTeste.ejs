@@ -17,24 +17,105 @@
                 <span class="usuario-logado">Olá, <%= nome %></span>
                 <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
-            <div class="campo-acoes">
-                <span class="titulo-acao">Selecione a ação que deseja executar:</span>
-            <span class="acoes">Ações para agendamentos:</span>
-            <ul>
-                <li><a href="/agendamento/agendar">Agendar consulta</a></li>
-                <li><a href="/agendamento/usuarios">Verificar agendamento por usuário</a></li>
-            </ul>
-            <span class="acoes">Ações para Usuários:</span>
-            <ul>
-                <li><a href="/cadastro">Criar usuário</a></li>
-                <li><a href="/cadastro/todos">Alterar usuário</a></li>
-            </ul>
-            <span class="acoes">Ações para Procedimentos:</span>
-            <ul>
-                <li><a href="/procedimento">Criar procedimento</a></li>
-                <li><a href="/procedimento/lista">Alterar procedimento</a></li>
-            </ul>
-            </div>            
+            <%if(permissao>1){%>
+
+                <div class="campo-acoes">
+                    <span class="titulo-acao">Selecione a ação que deseja executar:</span>
+                    <span class="acoes">Ações para agendamentos:</span>
+                    <ul>
+                        <li><a href="/agendamento/agendar">Agendar consulta</a></li>
+                        <li><a href="/agendamento/usuarios">Verificar agendamento por usuário</a></li>
+                    </ul>
+                    <span class="acoes">Ações para Usuários:</span>
+                    <ul>
+                        <li><a href="/cadastro">Criar usuário</a></li>
+                        <li><a href="/cadastro/todos">Alterar usuário</a></li>
+                    </ul>
+                    <span class="acoes">Ações para Procedimentos:</span>
+                    <ul>
+                        <li><a href="/procedimento">Criar procedimento</a></li>
+                        <li><a href="/procedimento/lista">Alterar procedimento</a></li>
+                    </ul>
+                </div>
+                <% }%>
+
+                    <% if(permissao==0){ %>
+                        <section class="area-agendamento">
+                            <form id="form-agendamento" action="/agendamento/criar" method="post">
+                                <span>Agende uma nova consulta:</span>
+                                <span>Selecione o dentista:</span>
+                                <select name="id_dentista" id="">
+                                    <% dentistas.forEach(dentista=>{ %>
+                                        <option value="<%= dentista.id_usuario %>">
+                                            <%=dentista.nome%>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <span>Selecione o dia para sua consulta:</span>
+                                <input type="date" name="data_agendamento">
+                                <button type="submit">Agendar</button>
+                            </form>
+                            <div class="prontuario">
+                                <span>Prontuário</span>
+                                <div>
+                                    <div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Selecione</th>
+                                                    <th>Data</th>
+                                                    <th>Dia</th>
+                                                    <th>Procedimento</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% agendamentos.map(agendamento=>{ %>
+                                                    <tr>
+                                                        <td><input name="agendamento_selecionado"
+                                                                value="<%=agendamento.id_agendamento%>" type="radio">
+                                                        </td>
+                                                        <td>
+                                                            <%= agendamento.data_agendamento.toLocaleDateString() %>
+                                                        </td>
+                                                        <td>
+                                                            <% if(agendamento.data_agendamento.getDay()==1){ %>
+                                                                Segunda-feira
+                                                                <% } %>
+                                                                    <% if(agendamento.data_agendamento.getDay()==2){ %>
+                                                                        Terça-feira
+                                                                        <% } %>
+                                                                            <% if(agendamento.data_agendamento.getDay()==3){
+                                                                                %>
+                                                                                Quarta-feira
+                                                                                <% } %>
+                                                                                    <% if(agendamento.data_agendamento.getDay()==4){
+                                                                                        %>
+                                                                                        Quinta-feira
+                                                                                        <% } %>
+                                                                                            <% if(agendamento.data_agendamento.getDay()==5){
+                                                                                                %>
+                                                                                                Sexta-feira
+                                                                                                <% } %>
+                                                        </td>
+                                                        <td>
+                                                            <%= agendamento.nome%>
+                                                        </td>
+                                                        <td>
+                                                            <a class="botao-alterar" href="">Alterar</a>
+                                                            <form  action=""><button class="botao-cancelar" >Cancelar</button></form>
+                                                        </td>
+                                                    </tr>
+                                                    <% }) %>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <% } %>
         </main>
 </body>
 

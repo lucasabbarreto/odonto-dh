@@ -6,9 +6,14 @@ const controller = {
     index: async function (req, res) {
         const email = req.session.email
         const usuario = await agendamentosServices.index(email);
+        const dentistas = await cadastroServices.listarDentistas();
+        const id = usuario.id_usuario
+        const agendamentos = await agendamentosServices.listarAgendamentosComId_usuario(id);
+        console.log(agendamentos)
         const nome = usuario.nome
+        const permissao = usuario.permissao
         req.session.nome = nome;
-        res.render('agendamentoTeste', {nome});
+        res.render('agendamentoTeste', {nome, permissao, dentistas, agendamentos});
     },
     telaAgendar: async (req, res) => {
         const todosUsuarios = await cadastroServices.ListarCadastro();
@@ -47,7 +52,7 @@ const controller = {
         res.render('alterarAgendamento', {dentistas, procedimentos, nome, agendamento})
     },
     criarAgendamento: async (req, res) => {
-        const { data_agendamento, id_dentista, id_procedimento, id_usuario } = req.body;
+        let { data_agendamento, id_dentista, id_procedimento, id_usuario } = req.body;
         if (!id_usuario) {
             const cadastro = await cadastroServices.procurarCadastroPorEmail(req.session.email);
             id_usuario = cadastro.id_usuario;
