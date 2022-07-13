@@ -19,20 +19,31 @@
             </div>
             <div class="campo-selecao">
                 <span class="seletor-acoes">Selecione um usuário para alterar seus agendamentos:</span>
-                <ul class="lista-usuarios">
-                    <% todosUsuarios.map(usuario=>{%>
-                        <li class="usuarios">
-                            <span>
-                                <%=usuario.nome%>
-                            </span>
-                            <a class="selecionar-link" href="/agendamento/prontuario/<%= usuario.id_usuario %>">Selecionar</a>
-                        </li>
-                        <%})%>
 
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente:</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <% todosUsuarios.map(usuario=>{%>
+                                <tr>
+                                    <td>
+                                        <%=usuario.nome%>
+                                    </td>
+                                    <td>
+                                        <a class="selecionar-link"
+                                            href="/agendamento/prontuario/<%= usuario.id_usuario %>">Selecionar</a>
+    
+                                    </td>
+                                </tr>                                
+                            <%})%>
+                    </tbody>
+                </table>
             </div>
         </main>
-
 </body>
 
 </html>

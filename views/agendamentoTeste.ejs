@@ -14,22 +14,22 @@
     <%-include('./partials/header')%>
         <main>
             <div class="campo-nome-botao">
-                <span class="span-consulta-paciente">Olá, <%= nome %></span>
-                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
             <div class="campo-acoes">
                 <span class="titulo-acao">Selecione a ação que deseja executar:</span>
-            <span class="titulo-acao">Ações para agendamentos:</span>
+            <span class="acoes">Ações para agendamentos:</span>
             <ul>
                 <li><a href="/agendamento/agendar">Agendar consulta</a></li>
                 <li><a href="/agendamento/usuarios">Verificar agendamento por usuário</a></li>
             </ul>
-            <span class="titulo-acao">Ações para Usuários:</span>
+            <span class="acoes">Ações para Usuários:</span>
             <ul>
                 <li><a href="">Criar usuário</a></li>
                 <li><a href="">Alterar Usuário</a></li>
             </ul>
-            <span class="titulo-acao">Ações para Procedimentos:</span>
+            <span class="acoes">Ações para Procedimentos:</span>
             <ul>
                 <li><a href="">Criar Procedimento</a></li>
                 <li><a href="">Alterar Procedimento</a></li>

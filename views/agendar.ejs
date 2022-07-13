@@ -14,8 +14,8 @@
     <%-include('./partials/header')%>
         <main>
             <div class="campo-nome-botao">
-                <span class="span-consulta-paciente">Olá, <%= nome %></span>
-                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
             <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
             <form id="form-agendar-admin" action="/agendamento/criar" method="post">
@@ -47,7 +47,7 @@
                             </option>
                             <% }) %>
                     </select>                    
-                    <button type="submit" class="botao-consulta-paciente">Agendar</button>                    
+                    <button type="submit" class="botao-submit">Agendar</button>                    
             </form>
 
         </main>

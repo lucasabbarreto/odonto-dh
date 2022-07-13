@@ -9,13 +9,13 @@
 }
 
 main {
-    max-width: 1200px;
+    max-width: 700px;
     margin: 20px auto 0;
     color: white;
 }
 
 .usuario-logado {
-    color: #399ca98c;
+    color: #1CBACF;
 }
 
 .botao-sair {
@@ -30,13 +30,16 @@ main {
 }
 
 .botao-sair:hover {
-    color: #3e5ba5e3;
+    color: #1CBACF;
     background-color: white;
 }
 
 .campo-selecao {
-    background-color: #399ca98c;
-    padding: 10px 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1CBACF;
+    padding: 10px 60px 10px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -45,22 +48,11 @@ main {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
-    
+
 }
 
 .seletor-acoes {
     font-size: 20px;
-}
-
-.lista-usuarios {
-    margin-top: 10px;
-    gap: 10px
-}
-
-.usuarios {
-    border: 2px solid white;
-    padding: 5px;
-    gap: 5px;
 }
 
 .selecionar-link {
@@ -68,4 +60,24 @@ main {
     color: white;
 }
 
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 2px solid white;
+    border-collapse: collapse;
+}
 
+th, td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    color: #1CBACF;
+    background-color: white;
+    
+}
+
+tbody tr:nth-child(even) {
+    color: white;
+    background-color: #1CBACF;
+}
