@@ -9,14 +9,18 @@
 }
 
 main {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 20px auto 0;
     color: white;
 
 }
 
+.campo-nome-botao {
+    margin-bottom: 20px;
+}
+
 .usuario-logado {
-    color: #399ca98c;
+    color: #1CBACF;
 }
 
 .botao-sair {
@@ -31,14 +35,92 @@ main {
 }
 
 .botao-sair:hover {
-    color: #3e5ba5e3;
+    color: #1CBACF;
     background-color: white;
 }
 
-.campo.acoes {
-    background-color: #399ca98c; ;
+.menu-inicial {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.menu-inicial:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
+.campo-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1CBACF;
+    border-radius: 10px;
+    color: white;
+    margin: 20px 0;
+    padding: 10px 0 20px;
+}
+
+.nome-cliente {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 table {
-    color: #1CBACF;
+    table-layout: fixed;
+    border-radius: 10px;
+    border-collapse: separate;
 }
+
+th, td {
+    padding: 4px;
+}
+
+
+thead tr {
+    color: #1CBACF;
+    background-color: white;    
+}
+
+
+
+tbody tr {
+    color: #1CBACF;
+    background-color: white;   
+
+     
+}
+
+tbody tr td:nth-child(even) {
+    display: flex;
+    justify-content: center;    
+    gap: 5px;
+}
+
+.botao-alterar, .botao-cancelar {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border: 2px solid #1CBACF;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: #1CBACF;
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.botao-alterar:hover {   
+    color: #1CBACF;
+    background-color: white;   
+}
+
+.botao-cancelar:hover {   
+    color: #1CBACF;
+    background-color: white;   
+}
+

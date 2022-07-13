@@ -13,10 +13,11 @@
 <body>
     <%-include('./partials/header')%>
         <main>
-            <div>
+            <div class="campo-nome-usuario-logado">
                 <span class="usuario-logado">Olá, <%= nome %></span>
                 <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
+            <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
             <div class="campo-selecao">
                 <span class="seletor-acoes">Selecione um usuário para alterar seus agendamentos:</span>
 

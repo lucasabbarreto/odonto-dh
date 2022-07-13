@@ -15,9 +15,11 @@
         
         <main>
             <div class="campo-nome-botao">
-                <span class="span-consulta-paciente">Olá, <%= nome %></span>
-                <a href="/agendamento/sair" class="botao-consulta-paciente">Sair</a>
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
+                
             </div>
+            <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
             <form id="form-alterar-admin" action="/agendamento/alterar/<%= agendamento.id_agendamento %>?_method=PUT" method="POST">
                 <span for="id_usuario" class="selecione-label">Cliente: <%= nome %></span>
                 <div>
@@ -45,7 +47,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="botao-consulta-paciente">Alterar</button>
+                <button class="botao-submit" type="submit" class="botao-consulta-paciente">Alterar</button>
             </form>
         </main>
 </body>

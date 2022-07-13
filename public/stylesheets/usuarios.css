@@ -14,6 +14,10 @@ main {
     color: white;
 }
 
+.campo-nome-usuario-logado {
+    margin-bottom: 20px;
+}
+
 .usuario-logado {
     color: #1CBACF;
 }
@@ -34,12 +38,29 @@ main {
     background-color: white;
 }
 
+.menu-inicial {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.menu-inicial:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
 .campo-selecao {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
     background-color: #1CBACF;
-    padding: 10px 60px 10px;
+    padding: 10px 60px 20px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -53,31 +74,53 @@ main {
 
 .seletor-acoes {
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .selecionar-link {
-    border: 2px solid white;
+    border: 2px solid #1CBACF;
+    color: #1CBACF;
+    padding: 2px;
+    border-radius: 10px;
+    transition: 500ms ease-in-out;
+}
+
+.selecionar-link:hover {
+    background-color: #1CBACF;
     color: white;
 }
 
 table {
     table-layout: fixed;
-    width: 100%;
-    border: 2px solid white;
-    border-collapse: collapse;
+    border-radius: 10px;
+    border-collapse: separate;
 }
 
 th, td {
-    padding: 10px;
+    padding: 4px;
 }
 
-tbody tr:nth-child(odd) {
+
+thead tr {
     color: #1CBACF;
-    background-color: white;
+    background-color: white;    
+}
+
+
+
+tbody tr {
+    color: #1CBACF;
+    background-color: white;   
+
+     
+}
+
+tbody tr td:nth-child(even) {
+    display: flex;
+    justify-content: center;
+
     
 }
 
-tbody tr:nth-child(even) {
-    color: white;
-    background-color: #1CBACF;
-}
+
+

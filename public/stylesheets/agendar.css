@@ -10,12 +10,34 @@
 
 main {
     max-width: 600px;
-    margin: 20px auto 0;    
+    margin: 0 auto;    
 }
 
 .campo-nome-botao {
     margin: 20px 0;
 }
+
+.usuario-logado {
+    font-size: 18px;
+    color: #1CBACF;
+}
+
+.botao-sair {
+    font-size: 18px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.botao-sair:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
 
 .menu-inicial {
     font-size: 14px;
@@ -36,8 +58,8 @@ main {
 #form-agendar-admin {
     display: flex;   
     flex-direction: column;
-    border-radius: 10px;
     margin-top: 20px;
+    border-radius: 10px;
     padding: 20px 0;
     background-color: #1CBACF;
     align-items: center;
@@ -71,23 +93,10 @@ main {
     padding: 2px;
 }
 
-.botao-sair {
-    font-size: 14px;
-    color: white;
-    border: solid 1px #1CBACF;
-    border-radius: 5px;
-    background-color: #1CBACF;
-    padding: 2px 6px;
-    cursor: pointer;
-    transition: 500ms ease-in-out;
-}
 
-.botao-sair:hover {
-    color: #1CBACF;
-    background-color: white;
-}
 
 .botao-submit {
+    font-size: 16px;
     border: 2px solid #1CBACF ;
     background-color: white;
     color: #1CBACF;
