@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/usuarios.css">
+    <title>Agendamento</title>
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <div class="campo-nome-usuario-logado">
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
+            </div>
+            <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
+            <div class="campo-selecao">
+                <span class="seletor-acoes">Selecione um usuário para alterar seus agendamentos:</span>
+                <span class="nome-cliente">
+                    <%=usuario.nome%>
+                </span>
+                <form class="form-nivel-acesso" action="/cadastro/nivelacesso/<%=usuario.id_usuario%>?_method=put" method="post">
+                    <select class="seletor-nivel-acesso" name="permissao" id="">
+                        <option value=""></option>
+                        <option value="0">Cliente</option>
+                        <option value="1">Dentista</option>
+                        <option value="2">Administrador</option>
+                    </select>
+                    <button class="botao-nivel-acesso" type="submit">Alterar</button>
+                </form>               
+            </div>
+        </main>
+</body>
+
+</html>

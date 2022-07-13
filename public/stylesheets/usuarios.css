@@ -9,7 +9,7 @@
 }
 
 main {
-    max-width: 700px;
+    max-width: 900px;
     margin: 20px auto 0;
     color: white;
 }
@@ -80,6 +80,7 @@ main {
 .selecionar-link,
 .botao-apagar {
     border: 2px solid #1CBACF;
+    padding: 0 2px;
     background-color: white;
     font-size: 16px;
     color: #1CBACF;
@@ -93,6 +94,42 @@ main {
 }
 
 .botao-apagar:hover {
+    background-color: #1CBACF;
+    color: white;
+}
+
+.nome-cliente {
+    font-size: 18px;
+    margin-bottom: 10px;
+    
+}
+
+.form-nivel-acesso {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seletor-nivel-acesso {
+    height: 25px;
+    border-radius: 5px;
+}
+
+.botao-nivel-acesso {
+    height: 25px;
+    border: 2px solid #1CBACF;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color: #1CBACF;
+    transition: 500ms ease-in-out;
+}
+
+.botao-nivel-acesso:hover {
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
     background-color: #1CBACF;
     color: white;
 }

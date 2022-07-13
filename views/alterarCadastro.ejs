@@ -13,7 +13,12 @@
 
 <body>
     <%-include('./partials/header')%>
-
+    <main>
+        <div class="campo-nome-usuario-logado">
+            <span class="usuario-logado">Olá, <%= nome %></span>
+            <a href="/agendamento/sair" class="botao-sair">Sair</a>
+        </div>
+        <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
         <form action="/cadastro/alterar/<%=usuario.id_usuario%>?_method=put"  method="post" class="form-cadastro">
             <span class="titulo-campo">Selecione um campo para alterar</span>
             <div class="email-senha-wrapper">
@@ -105,6 +110,8 @@
             </div>
             <button class="button-cadastro" type="submit">Enviar</button>
         </form>
+    </main>
+        
 </body>
 
 </html>

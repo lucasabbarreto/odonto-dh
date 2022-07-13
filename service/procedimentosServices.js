@@ -5,14 +5,10 @@ const procedimentosServices = {
     const procedimentos = await database.procedimentos.findAll();
     return procedimentos;
   },
-  ProcurarProcedimento: async (procedimento) => {
+  ProcurarProcedimento: async (id) => {
 
-    const nomeProcedimento = await database.procedimentos.findOne({
-      where: {
-        nome: procedimento
-      }
-    });
-    return nomeProcedimento;
+    const procedimento = await database.procedimentos.findByPk(id);
+    return procedimento;
   },
   CriarProcedimento: async (
     nome
@@ -24,21 +20,21 @@ const procedimentosServices = {
     return novoProcedimento;
   },
   alterarProcedimento: async (
-    nomeAtual,
-    nomeAtualizado
+    id,
+    nome
   ) => {
     await database.procedimentos.update({
-      nome: nomeAtualizado
+      nome
     }, {
       where: {
-        nome: nomeAtual
+        id_procedimento: id
       }
     })
   },
-  apagarProcedimento: async (nome) => {
+  apagarProcedimento: async (id) => {
       await database.procedimentos.destroy({
         where: {
-          nome
+          id_procedimento: id
         }
       })
     }      

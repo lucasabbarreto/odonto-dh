@@ -24,7 +24,7 @@ const controller = {
             return usuario.permissao < 3
         })
         const nome = req.session.nome;
-        res.render('usuarios',{todosUsuarios, nome});
+        res.render('agendamentosAdmin',{todosUsuarios, nome});
     },
     prontuario: async (req, res) => {
         let { id } = req.params;

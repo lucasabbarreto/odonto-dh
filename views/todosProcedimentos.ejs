@@ -24,24 +24,21 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Usuário:</th>
+                            <th>Procedimento:</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                            <% usuarios.map(usuario=>{%>
+                            <% procedimentos.map(procedimento=>{%>
                                 <tr>
                                     <td>
-                                        <%=usuario.nome%>
+                                        <%=procedimento.nome%>
                                     </td>
-                                    <td>
-                                        
-                                        <a class="selecionar-link"
-                                            href="/cadastro/alterar/<%= usuario.id_usuario %>">Alterar dados</a>
+                                    <td>                            
                                             <a class="selecionar-link"
-                                            href="/cadastro/nivelacesso/<%= usuario.id_usuario %>">Alterar nível de acesso</a>
-                                            <form  action="/cadastro/apagar/<%=usuario.id_usuario%>?_method=delete" method="post">
-                                                <button class="botao-apagar" type="submit">Apagar usuário</button>
+                                            href="/procedimento/alterar/<%=procedimento.id_procedimento%>">Alterar procedimento</a>
+                                            <form  action="/procedimento/<%=procedimento.id_procedimento%>?_method=delete" method="post">
+                                                <button class="botao-apagar" type="submit">Apagar procedimento</button>
                                             </form>                                        
                                     </td>
                                 </tr>                                
@@ -52,4 +49,5 @@
         </main>
 </body>
 
+</html>
 </html>

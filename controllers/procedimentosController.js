@@ -1,17 +1,34 @@
 const procedimentosServices = require('../service/procedimentosServices')
 
 const controller = {
-  criarProcedimento: async (request, response) => {
-    const { nome } = request.body
+  telaCriarProcedimento: async (req, res)=> {
+    let nome = req.session.nome;
 
-    const procedimento = await procedimentosServices.CriarProcedimento(nome)
+    res.render('criarProcedimento', {nome})
+  },
+  listarProcedimentos: async (req, res)=>{
+    let nome = req.session.nome;
 
-    return response.json(procedimento);
+    const procedimentos = await procedimentosServices.ListarProcedimentos();
+
+    res.render('todosProcedimentos', {nome, procedimentos})
+  },
+  criarProcedimento: async (req, res) => {
+    const { nome } = req.body
+
+    await procedimentosServices.CriarProcedimento(nome)
+
+    return res.redirect('/procedimento/lista');
   },
 
-  TodosProcedimentos: async (request, response) => {
-    const procedimentos = await procedimentosServices.ListarProcedimentos();
-    return response.json(procedimentos);
+  telaAlterarProcedimentos: async (req, res) => {
+    let { id } = req.params;
+
+    let nome = req.session.nome;
+
+    const procedimento = await procedimentosServices.ProcurarProcedimento(id)
+
+    return res.render('alterarProcedimento', {procedimento, nome});
   },
 
   buscarProcedimento: async (request, response) => {  
@@ -23,19 +40,21 @@ const controller = {
   },
 
   alterarProcedimento: async (req, res) => {
-    const { nomeAtual, nomeAtualizado } = req.body;
 
-    await procedimentosServices.alterarProcedimento(nomeAtual, nomeAtualizado);
+    let { id } = req.params;
+    const { nome } = req.body;
 
-    return res.send("Procedimento " + nomeAtual + " alterado com sucesso para " + nomeAtualizado)
+    await procedimentosServices.alterarProcedimento(id, nome);
+
+    return res.redirect('/procedimento/lista')
   },
 
   apagarProcedimento: async (req, res) => {
-    const { nome } = req.body;
+    let { id } = req.params;
 
-    await procedimentosServices.apagarProcedimento(nome);
+    await procedimentosServices.apagarProcedimento(id);
 
-    return res.send("Procedimento " + nome + " apagado com sucesso.")
+    return res.redirect('/procedimento/lista')
   }
   
 }

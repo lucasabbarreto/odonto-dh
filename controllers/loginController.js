@@ -18,6 +18,7 @@ const controller = {
       if (usuario.senha === senha) {
         req.session.isLogged = true
         req.session.email = usuario.email
+        req.session.nome = usuario.nome
         return res.redirect('/agendamento')
       } else {
         return res.render('login', { loginFail: true })

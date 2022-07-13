@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/procedimento.css">
+</head>
+
+<body>
+    <%-include('./partials/header')%>
+        <main>
+            <% if(nome){%>
+                <div class="campo-nome-botao">
+                    <span class="usuario-logado">Olá, <%= nome %></span>
+                    <a href="/agendamento/sair" class="botao-sair">Sair</a>
+
+                </div>
+                <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
+            <% } %>
+                <form action="/procedimento" class="form-procedimento" method="post">
+                    <span class="span-novo-procedimento">Cadastre um novo procedimento</span>
+                    <div class="novo-procedimento-wrapper">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                        <button class="button-submit" type="submit">Criar</button>
+                    </div>
+                </form>
+        </main>
+</body>
+
+</html>

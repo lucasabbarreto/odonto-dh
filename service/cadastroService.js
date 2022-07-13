@@ -1,4 +1,3 @@
-const { request } = require('express');
 const database = require('../database/models');
 
 const cadastroServices = {
@@ -10,7 +9,7 @@ const cadastroServices = {
     })
     return cadastro
   },
-  procurarCadastroPorId: async (id)=>{
+  procurarCadastroPorId: async (id) => {
     const cadastro = await database.usuarios.findOne({
       where: {
         id_usuario: id
@@ -22,7 +21,7 @@ const cadastroServices = {
     const cadastro = await database.usuarios.findAll();
     return cadastro;
   },
-  listarDentistas: async () =>{
+  listarDentistas: async () => {
     const dentistas = await database.usuarios.findAll({
       where: {
         permissao: 1
@@ -111,6 +110,18 @@ const cadastroServices = {
       }
     });
     return usuarioAlterado;
+  },
+  atualizarNivelAcesso: async (id, permissao) => {
+    await database.usuarios.update(
+      {
+        permissao
+      }, {
+      where: {
+        id_usuario: id
+      }
+    }
+
+    )
   },
   apagarUsuario: async (id) => {
     await database.usuarios.destroy({

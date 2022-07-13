@@ -9,7 +9,7 @@ const controller = {
       const nome = usuario.nome
       req.session.nome = nome;
       res.render('cadastro', { nome });
-    }else{
+    } else {
       const nome = null
       res.render('cadastro', { nome });
     }
@@ -19,7 +19,7 @@ const controller = {
   todosCadastros: async (req, res) => {
     const todosUsuarios = await cadastroServices.ListarCadastro();
     const nome = req.session.nome;
-    let usuarios = todosUsuarios.filter(usuario=>{
+    let usuarios = todosUsuarios.filter(usuario => {
       return usuario.permissao < 3
     })
     return res.render('listaCadastro', { usuarios, nome });
@@ -27,17 +27,35 @@ const controller = {
 
   alterarCadastro: async (req, res) => {
     let { id } = req.params;
-
     const usuario = await cadastroServices.procurarCadastroPorId(id);
-    res.render('alterarCadastro', { usuario })
-  },
 
+    let nome = req.session.nome;
+
+    res.render('alterarCadastro', { usuario, nome })
+  },
+  nivelAcesso: async (req, res) => {
+    let { id } = req.params;    
+    const usuario = await cadastroServices.procurarCadastroPorId(id);
+
+    let nome = req.session.nome
+
+    res.render('telaNivelAcesso', { usuario, nome })
+  },
+  alterarNivelAcesso: async (req, res)=> {
+    let { id } = req.params;
+
+    let { permissao } = req.body;
+
+    await cadastroServices.atualizarNivelAcesso(id, permissao)
+
+    res.redirect('/cadastro/todos')
+  },
   criar: async (req, res) => {
     const emailLogado = req.session.email;
-    if(emailLogado){
+    if (emailLogado) {
       var usuario = await agendamentosServices.index(emailLogado);
-    } else{
-      var usuario = {permissao: 0}
+    } else {
+      var usuario = { permissao: 0 }
     }
     let {
       nome,
@@ -58,7 +76,7 @@ const controller = {
 
     const permissao = 0;
 
-    if(!senha){
+    if (!senha) {
       senha = "admin"
     }
 
@@ -79,11 +97,11 @@ const controller = {
       estado,
     )
 
-    if(usuario.permissao >0){
+    if (usuario.permissao > 0) {
       return res.redirect('/agendamento')
     } else {
       return res.redirect('/login')
-    }    
+    }
   },
 
   atualizar: async (req, res) => {

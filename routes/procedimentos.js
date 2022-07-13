@@ -5,12 +5,16 @@ var router = express.Router();
 
 router.post('/', controller.criarProcedimento);
 
-router.get('/', controller.TodosProcedimentos);
+router.get('/', controller.telaCriarProcedimento);
 
 router.post('/buscar', controller.buscarProcedimento);
 
-router.put('/', controller.alterarProcedimento);
+router.get('/lista', controller.listarProcedimentos);
 
-router.delete('/', controller.apagarProcedimento);
+router.get('/alterar/:id', controller.telaAlterarProcedimentos);
+
+router.put('/alterar/:id', controller.alterarProcedimento);
+
+router.delete('/:id', controller.apagarProcedimento);
 
 module.exports = router;

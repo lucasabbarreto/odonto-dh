@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    margin: 30px auto;
+    color: white;
+}
+
+.campo-nome-botao {
+    margin-bottom: 20px;
+}
+
+.usuario-logado {
+    color: #1CBACF;
+}
+
+.botao-sair {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.botao-sair:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
+.menu-inicial {
+    font-size: 14px;
+    color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    width: 170px;
+    margin-bottom: 20px;
+    background-color: #1CBACF;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.menu-inicial:hover {
+    color: #1CBACF;
+    background-color: white;
+}
+
+.form-procedimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1024px;
+    background-color: #1CBACF;
+    border-radius: 5px;
+    padding: 30px 0;
+}
+
+.span-novo-procedimento {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.titulo-campo {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.novo-procedimento-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-size: 18px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.novo-procedimento-wrapper input {
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 2px 5px;
+    height: 25px;
+    width: 200px;
+}
+
+.button-submit {
+    cursor: pointer;
+    color: #1CBACF;
+    background-color: white;
+    border: solid 1px #1CBACF;
+    border-radius: 5px;
+    padding: 0 5px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 250ms ease-in-out;
+}
+
+.button-submit:hover {
+    border: solid 1px white;
+    color: white;
+    background-color: #1CBACF;
+}
