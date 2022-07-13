@@ -12,7 +12,6 @@ main {
     max-width: 1200px;
     margin: 20px auto 0;
     color: white;
-
 }
 
 .usuario-logado {
@@ -35,32 +34,38 @@ main {
     background-color: white;
 }
 
+.campo-selecao {
+    background-color: #399ca98c;
+    padding: 10px 60px 0;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
 .lista-usuarios {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    background-color: #399ca98c;
-    padding: 20px 60px;
+    padding: 10px 0;
+    
 }
 
 .seletor-acoes {
     font-size: 20px;
 }
 
-ul {
+.lista-usuarios {
     margin-top: 10px;
     gap: 10px
 }
 
-li{
+.usuarios {
     border: 2px solid white;
     padding: 5px;
     gap: 5px;
 }
 
-a {
+.selecionar-link {
     border: 2px solid white;
-    color: inherit
+    color: white;
 }
 
 

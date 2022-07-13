@@ -17,15 +17,15 @@
                 <span class="usuario-logado">Olá, <%= nome %></span>
                 <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
-            <div class="lista-usuarios">
+            <div class="campo-selecao">
                 <span class="seletor-acoes">Selecione um usuário para alterar seus agendamentos:</span>
-                <ul>
+                <ul class="lista-usuarios">
                     <% todosUsuarios.map(usuario=>{%>
-                        <li>
+                        <li class="usuarios">
                             <span>
                                 <%=usuario.nome%>
                             </span>
-                            <a href="/agendamento/prontuario/<%= usuario.id_usuario %>">Selecionar</a>
+                            <a class="selecionar-link" href="/agendamento/prontuario/<%= usuario.id_usuario %>">Selecionar</a>
                         </li>
                         <%})%>
 
