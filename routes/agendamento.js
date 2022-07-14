@@ -5,13 +5,13 @@ const controller = require('../controllers/agendamentoController');
 
 router.get('/', auth, controller.index);
 
-router.get('/agendar', controller.telaAgendar);
+router.get('/agendar', auth, controller.telaAgendar);
 
-router.get('/usuarios', controller.listarUsuarios);
+router.get('/usuarios', auth, controller.listarUsuarios);
 
-router.get('/prontuario/:id', controller.prontuario);
+router.get('/prontuario/:id', auth, controller.prontuario);
 
-router.get('/alterar/:id', controller.exibirAgendamento);
+router.get('/alterar/:id', auth, controller.exibirAgendamento);
 
 router.get('/sair', controller.logout);
 
@@ -19,8 +19,8 @@ router.post('/criar', controller.criarAgendamento);
 
 router.get('/all', controller.listarAgendamento);
 
-router.put('/alterar/:id', controller.alterarAgendamento);
+router.put('/alterar/:id', auth, controller.alterarAgendamento);
 
-router.delete('/apagar/:id', controller.apagarAgendamento);
+router.delete('/apagar/:id', auth, controller.apagarAgendamento);
 
 module.exports = router;
