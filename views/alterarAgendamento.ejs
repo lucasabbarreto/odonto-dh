@@ -12,43 +12,51 @@
 
 <body>
     <%-include('./partials/header')%>
-        
+
         <main>
             <div class="campo-nome-botao">
-                <span class="usuario-logado">Olá, <%= nome %></span>
+                <span class="usuario-logado">Olá, <%= usuarioLogado.nome %></span>
                 <a href="/agendamento/sair" class="botao-sair">Sair</a>
-                
-            </div>
-            <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
-            <form id="form-alterar-admin" action="/agendamento/alterar/<%= agendamento.id_agendamento %>?_method=PUT" method="POST">
-                <span for="id_usuario" class="selecione-label">Cliente: <%= nome %></span>
-                <div>
-                    <label class="selecione-label">Selecione o dentista.</label>
-                    <select name="id_dentista" id="" class="selecione-input">
-                        <% dentistas.forEach(dentista=>{ %>
-                            <option value="<%= dentista.id_usuario %>">
-                                <%=dentista.nome%>
-                            </option>
-                            <% }) %>
-                    </select>
-                </div>
-                <div>
-                    <label class="selecione-label">Selecione o dia para sua consulta.</label>
-                    <input type="date" name="data_agendamento" class="selecione-input">
-                </div>
-                <div>
-                    <label class="selecione-label">Selecione o procedimento.</label>
-                    <select name="id_procedimento" id="" class="selecione-input">
-                        <% procedimentos.forEach(procedimento=>{ %>
-                            <option value="<%= procedimento.id_procedimento %>">
-                                <%=procedimento.nome%>
-                            </option>
-                            <% }) %>
-                    </select>
-                </div>
 
-                <button class="botao-submit" type="submit" class="botao-consulta-paciente">Alterar</button>
-            </form>
+            </div>
+            <% if(permissao> 0){ %>
+                <a class="menu-inicial" href="/agendamento">Voltar ao menu inicial</a>
+            <%}%>
+
+                    <form id="form-alterar-admin"
+                        action="/agendamento/alterar/<%= agendamento.id_agendamento %>?_method=PUT" method="POST">
+                        <% if(permissao> 0){ %>
+                            <span for="id_usuario" class="selecione-label">Cliente: <%= nome %></span>
+                            <%}%>
+                                <div>
+                                    <label class="selecione-label">Selecione o dentista.</label>
+                                    <select name="id_dentista" id="" class="selecione-input">
+                                        <% dentistas.forEach(dentista=>{ %>
+                                            <option value="<%= dentista.id_usuario %>">
+                                                <%=dentista.nome%>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="selecione-label">Selecione o dia para sua consulta.</label>
+                                    <input type="date" name="data_agendamento" class="selecione-input">
+                                </div>
+                                <%if(permissao> 0){%>
+                                    <div>
+                                        <label class="selecione-label">Selecione o procedimento.</label>
+                                        <select name="id_procedimento" id="" class="selecione-input">
+                                            <% procedimentos.forEach(procedimento=>{ %>
+                                                <option value="<%= procedimento.id_procedimento %>">
+                                                    <%=procedimento.nome%>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                    </div>
+                                <% } %>
+                                    <button class="botao-submit" type="submit"
+                                            class="botao-consulta-paciente">Alterar</button>
+                    </form>
         </main>
 </body>
 

@@ -42,6 +42,10 @@ const controller = {
     },
     exibirAgendamento: async (req, res) => {
         let { id } = req.params;
+
+        const email = req.session.email
+        const usuarioLogado = await agendamentosServices.index(email);
+        const permissao = usuarioLogado.permissao;
         
         const dentistas = await cadastroServices.listarDentistas();
         const procedimentos = await procedimentosServices.ListarProcedimentos();
@@ -49,7 +53,7 @@ const controller = {
         let id_usuario = agendamento.id_usuario;
         const cadastro = await cadastroServices.procurarCadastroPorId(id_usuario);
         const nome = cadastro.nome
-        res.render('alterarAgendamento', {dentistas, procedimentos, nome, agendamento})
+        res.render('alterarAgendamento', {dentistas, procedimentos, nome, agendamento, permissao, usuarioLogado})
     },
     criarAgendamento: async (req, res) => {
         let { data_agendamento, id_dentista, id_procedimento, id_usuario } = req.body;
@@ -60,6 +64,9 @@ const controller = {
         if (!id_procedimento) {
             id_procedimento = 1;
         }
+
+
+         data_agendamento = data_agendamento.toLocaleString()
 
         await agendamentosServices.criarAgendamento(
             data_agendamento,
@@ -82,24 +89,43 @@ const controller = {
         const { id } = req.params
         const { id_dentista, data_agendamento, id_procedimento } = req.body;
 
-        const agendamento = await agendamentosServices.alterarAgendamento(
+        const email = req.session.email
+        const usuario = await agendamentosServices.index(email);
+        const permissao = usuario.permissao
+
+        await agendamentosServices.alterarAgendamento(
             id,
             id_dentista,
             data_agendamento,
             id_procedimento
         )
 
-        return res.redirect('/agendamento')
+        const agendamento = await agendamentosServices.procurarAgendamentoPorId(id);
+        const id_usuario = agendamento.id_usuario
 
-        // return res.send("Agendamento " + agendamento.id_agendamento + " alterado com sucesso");
+        if(permissao > 0){
+            return res.redirect(`/agendamento/prontuario/${id_usuario}`)
+        } else{
+            return res.redirect('/agendamento')
+        }    
     },
     apagarAgendamento: async (req, res) => {
         const { id } = req.params;
+        
+        const procurarAgendamento = await agendamentosServices.procurarAgendamentoPorId(id);        
+        let id_usuario = procurarAgendamento.id_usuario
+
         const agendamento = await agendamentosServices.apagarAgendamento(id);
+        const email = req.session.email
+        const usuario = await agendamentosServices.index(email);
+        const permissao = usuario.permissao
+
         if (agendamento) {
             return res.send("Não é possivel apagar o agendamento")
-        } else {
+        } else if(permissao == 0) {
             return res.redirect('/agendamento');
+        } else {
+            return res.redirect(`/agendamento/prontuario/${id_usuario}`);
         }
 
 

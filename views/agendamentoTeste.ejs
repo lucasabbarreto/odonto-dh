@@ -102,8 +102,8 @@
                                                             <%= agendamento.nome%>
                                                         </td>
                                                         <td>
-                                                            <a class="botao-alterar" href="">Alterar</a>
-                                                            <form  action=""><button class="botao-cancelar" >Cancelar</button></form>
+                                                            <a class="botao-alterar" href="/agendamento/alterar/<%=agendamento.id_agendamento%>">Alterar</a>
+                                                            <form  action="/agendamento/apagar/<%=agendamento.id_agendamento%>?_method=delete" method="post"><button class="botao-cancelar" type="submit">Cancelar</button></form>
                                                         </td>
                                                     </tr>
                                                     <% }) %>
