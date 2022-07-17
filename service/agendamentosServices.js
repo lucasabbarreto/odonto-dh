@@ -12,12 +12,12 @@ const agendamentosServices = {
         return usuario;
     },
     criarAgendamento: async (data_agendamento, id_procedimento, id_usuario, id_dentista) => {
-        const agendamento = await database.agendamentos.create({            
+        const agendamento = await database.agendamentos.create({
             data_agendamento,
             agendamento_confirmado: false,
             id_procedimento,
             id_usuario,
-            id_dentista            
+            id_dentista
         })
 
         return agendamento
@@ -33,11 +33,11 @@ const agendamentosServices = {
         return agendamentos;
     },
     listarAgendamentosComId_usuario: async (id) => {
-       const todosAgendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento ORDER BY data_agendamento ASC')
+        const todosAgendamentos = await sequelize.query('SELECT id_agendamento, data_agendamento, nome, id_usuario FROM agendamentos INNER JOIN procedimentos ON agendamentos.id_procedimento = procedimentos.id_procedimento ORDER BY data_agendamento ASC')
         console.log(todosAgendamentos[0])
-       const agendamentos = todosAgendamentos[0].filter(agendamento=> agendamento.id_usuario == id)
+        const agendamentos = todosAgendamentos[0].filter(agendamento => agendamento.id_usuario == id)
         console.log(agendamentos)
-       return agendamentos    
+        return agendamentos
     },
     alterarAgendamento: async (id, id_dentista, data_agendamento, id_procedimento) => {
         await database.agendamentos.update({
@@ -62,7 +62,7 @@ const agendamentosServices = {
                 id_agendamento: id
             }
         })
-        
+
         const agendamento_confirmado = agendamento.agendamento_confirmado
 
         if (agendamento_confirmado) {
@@ -76,12 +76,26 @@ const agendamentosServices = {
 
         }
     },
-    formatarAgendamentos: (agendamentos) => {
-        agendamentos.map(agendamento =>{
-            agendamento.data_agendamento = `${agendamento.data_agendamento.getDate()}/${agendamento.data_agendamento.getMonth()+1}/${agendamento.data_agendamento.getFullYear()}`
-            return agendamento
-        })
-    }
+    formatarData: (data => {
+
+        let ano = data.getFullYear()
+    
+        let mes = data.getMonth() + 1;
+        mes = mes.toString()
+        if(mes.length == 1){
+            mes = `0${mes}`
+        }       
+
+        let dia = data.getDate()
+
+        dia = dia.toString()
+        if(dia.length == 1){
+            dia = `0${dia}`
+        }
+
+        novoFormato = `${ano}-${mes}-${dia}`
+        return novoFormato
+    })
 };
 
 module.exports = agendamentosServices;
