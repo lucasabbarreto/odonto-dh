@@ -218,3 +218,10 @@ tbody tr td:nth-child(5) {
     padding: 0 5px;
     cursor: pointer;
 }
+
+@media (max-width: 700px){
+    .campo-acoes {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

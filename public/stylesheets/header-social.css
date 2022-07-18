@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: "Poppins",serif;
+    font-family: "Poppins", serif;
 }
 
-.social{
+.social {
     display: flex;
     gap: 5px;
 
@@ -24,18 +24,18 @@ html{
     height: 45px;
 }
 
-.header-menu{
+.header-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     max-width: 1024px;
     margin: 0 auto;
 }
-  
+
 .agendamento {
     display: flex;
     justify-content: space-between;
@@ -45,7 +45,7 @@ html{
     color: #1CBACF;
 }
 
-.btn-agendamento{
+.btn-agendamento {
     width: 100px;
     height: 30px;
     cursor: pointer;
@@ -62,4 +62,19 @@ html{
 .btn-agendamento:hover {
     color: #1CBACF;
     background-color: white;
+}
+
+@media (max-width: 1024px) {
+    .header-menu {
+        padding: 10px 10px;
+    }   
+}
+
+@media (max-width: 560px) {    
+    .social {
+        display: none;
+    }
+    .agendamento {
+        margin: 0 auto;
+    }
 }

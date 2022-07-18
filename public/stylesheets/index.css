@@ -31,12 +31,6 @@ html{
     height: 400px;   
 }
 
-.icone-wpp{
-    width: 70px;
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-}
 
 /* carrossel 1  */
 .sobreNos {
@@ -90,6 +84,7 @@ html{
     display: flex;
     flex-direction: column;
     background-color: #1CBACF;
+    border-radius: 5px;
     margin-top: 25px;
     margin-bottom: 70px;
     padding: 25px 0;

@@ -1,4 +1,4 @@
-.baseboard{
+.baseboard {
    background-color: #1CBACF;
    font-family: 'Poppins', sans-serif;
 }
@@ -14,7 +14,7 @@
 
 .logo-footer {
    height: 100px;
-  }
+}
 
 .opening-hours {
    display: flex;
@@ -22,26 +22,21 @@
    gap: 10px;
 }
 
-.opening-hours p, h3 {
+.opening-hours p,
+h3 {
    /* Horario de Funcionamento */
-   
+
    font-family: Poppins;
-   font-style:normal;
+   font-style: normal;
    font-weight: 600;
    font-size: 14px;
    line-height: 21px;
    color: #FFFFFF;
 }
 
-.map{
-   /* Localizacao 1 */
-   background: url(Localizacao.jpg);
-   border-radius: 5px;
-}
-
 .social-media-footer h3 {
    font-family: Poppins;
-   font-style:normal;
+   font-style: normal;
    font-weight: 600;
    font-size: 14px;
    line-height: 21px;
@@ -69,4 +64,24 @@
    height: 45px;
    background-color: white;
    border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+   .footer-wrapper {
+      padding: 10px;
+   }
+}
+
+@media (max-width: 680px) {
+   .social-media-icons-footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+   }
+}
+
+@media (max-width: 580px) {  
+   .logo-footer {
+      display: none;
+   }
 }

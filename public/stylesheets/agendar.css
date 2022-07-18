@@ -112,5 +112,11 @@ main {
     color: white;
 }
 
+@media (max-width: 640px){
+    main {
+        margin: 0 10px;    
+    }
+}
+
 
 

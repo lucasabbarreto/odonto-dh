@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: "Poppins",serif;
+    font-family: "Poppins", serif;
 }
 
 .wrapper-nav {
@@ -19,7 +19,7 @@ html{
     height: 100px;
 }
 
-.header-nav{
+.header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,15 +28,15 @@ html{
     margin: 0 auto;
 }
 
-.header-nav a{
+.header-nav a {
     color: white;
 }
 
-.logo-donto{
+.logo-donto {
     height: 80px;
 }
 
-.categorias{
+.categorias {
     display: flex;
     gap: 64px;
     color: white;
@@ -53,78 +53,28 @@ html{
 
 /* Início Responsividade Index */
 
-@media(max-width: 960px){
-    .header-nav{
-     padding-right:30px;
-    }
-
-    .map{
-       display: none;
-    }
-
-.social-media-footer{
-    padding: 30px;
-}
-
-@media(max-width: 768px){
-    .sobreNos{
-        display: none;
-    }
-
-    .tratamento{
-        display: none;
+@media (max-width:1024px) {
+    .header-nav {
+        padding: 0 10px;
     }
 }
 
-@media(max-width: 480px){
-
-.wrapper-nav{
-    justify-content: space-between;
-    align-items: center;
-}
-
-    .social{
-        display: none;
-    }
-
-    .navbar{
-        padding: 20px;
-        margin-left: 20px;
-        
-    }
-
-    .social-dois{
-        display: none;
-    }
-
-    .categorias{
-        display: flex;
-        flex-direction: row;
-        gap: 13px;
-        padding: 50px;
-        margin-left: 11px;
-
-       
-    }
-
-    .contato{
-        padding: 3git px;
+@media (max-width:780px) {
+    .categorias p {
+        font-size: 18px;
     }
 }
 
-.sobreNos{
-    display: none;
+@media (max-width:640px) {
+    .header-nav {
+        padding: 0 50px;
+    }
+    .categorias {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .categorias p {
+        font-size: 16px;
+    }
 }
 
-.tratamento{
-    display: none;
-}
-
-.logo-footer{
-    display: none;
-}
-.opening-hours{
-    padding: 20px;
-}
-
-}

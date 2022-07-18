@@ -10,7 +10,7 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    max-width: 1024px;
+    max-width: 780px;
     margin: 30px auto;
     color: white;
 }
@@ -116,4 +116,10 @@ main {
     border: solid 1px white;
     color: white;
     background-color: #1CBACF;
+}
+
+@media (max-width: 780px){
+    main {
+        margin: 30px 10px;
+    }
 }
