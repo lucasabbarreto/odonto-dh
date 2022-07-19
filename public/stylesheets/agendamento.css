@@ -187,6 +187,12 @@ tbody tr td:nth-child(5) {
     gap: 5px;
 }
 
+.td-acoes {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+}
+
 .botao-alterar, .botao-cancelar {
     display: flex;
     height: 25px;

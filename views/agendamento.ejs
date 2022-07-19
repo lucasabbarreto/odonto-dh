@@ -224,7 +224,6 @@
                     <table>
                       <thead>
                         <tr>
-                          <th>Selecione</th>
                           <th>Data</th>
                           <th>Dia</th>
                           <th>Procedimento</th>
@@ -233,9 +232,6 @@
                       <tbody>
                         <% agendamentos[0].map(agendamento=>{ %>
                           <tr>
-                            <td><input name="agendamento_selecionado" value="<%=agendamento.id_agendamento%>"
-                                type="radio">
-                            </td>
                             <td>
                               <%= agendamento.data_agendamento.toLocaleDateString() %>
                             </td>

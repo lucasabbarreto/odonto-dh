@@ -62,7 +62,6 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th>Selecione</th>
                                                     <th>Data</th>
                                                     <th>Dia</th>
                                                     <th>Procedimento</th>
@@ -72,9 +71,6 @@
                                             <tbody>
                                                 <% agendamentos.map(agendamento=>{ %>
                                                     <tr>
-                                                        <td><input name="agendamento_selecionado"
-                                                                value="<%=agendamento.id_agendamento%>" type="radio">
-                                                        </td>
                                                         <td>
                                                             <%= agendamento.data_agendamento.toLocaleDateString() %>
                                                         </td>
@@ -101,7 +97,7 @@
                                                         <td>
                                                             <%= agendamento.nome%>
                                                         </td>
-                                                        <td>
+                                                        <td class="td-acoes">
                                                             <a class="botao-alterar" href="/agendamento/alterar/<%=agendamento.id_agendamento%>">Alterar</a>
                                                             <form  action="/agendamento/apagar/<%=agendamento.id_agendamento%>?_method=delete" method="post"><button class="botao-cancelar" type="submit">Cancelar</button></form>
                                                         </td>
