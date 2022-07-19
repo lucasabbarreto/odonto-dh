@@ -57,39 +57,27 @@ const agendamentosServices = {
         return agendamento
     },
     apagarAgendamento: async (id) => {
-        const agendamento = await database.agendamentos.findOne({
+        await database.agendamentos.destroy({
             where: {
                 id_agendamento: id
             }
         })
 
-        const agendamento_confirmado = agendamento.agendamento_confirmado
-
-        if (agendamento_confirmado) {
-            return agendamento_confirmado
-        } else {
-            await database.agendamentos.destroy({
-                where: {
-                    id_agendamento: id
-                }
-            })
-
-        }
     },
     formatarData: (data => {
 
         let ano = data.getFullYear()
-    
+
         let mes = data.getMonth() + 1;
         mes = mes.toString()
-        if(mes.length == 1){
+        if (mes.length == 1) {
             mes = `0${mes}`
-        }       
+        }
 
         let dia = data.getDate()
 
         dia = dia.toString()
-        if(dia.length == 1){
+        if (dia.length == 1) {
             dia = `0${dia}`
         }
 

@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    agendamento_confirmado: {
-      type: DataTypes.BOOLEAN,
-    },
     id_procedimento: {
       type: DataTypes.INTEGER,
       allowNull: false,

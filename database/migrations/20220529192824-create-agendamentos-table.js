@@ -12,9 +12,6 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      agendamento_confirmado: {
-        type: Sequelize.BOOLEAN,
-      },
       id_procedimento: {
         type: Sequelize.INTEGER,
         allowNull: false,

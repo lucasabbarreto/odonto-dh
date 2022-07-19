@@ -1,20 +1,21 @@
 var express = require('express');
 const controller = require('../controllers/procedimentosController');
 var router = express.Router();
+const auth = require('../middlewares/auth');
 
 
-router.post('/', controller.criarProcedimento);
+router.post('/', auth, controller.criarProcedimento);
 
-router.get('/', controller.telaCriarProcedimento);
+router.get('/', auth, controller.telaCriarProcedimento);
 
-router.post('/buscar', controller.buscarProcedimento);
+router.post('/buscar', auth, controller.buscarProcedimento);
 
-router.get('/lista', controller.listarProcedimentos);
+router.get('/lista', auth, controller.listarProcedimentos);
 
-router.get('/alterar/:id', controller.telaAlterarProcedimentos);
+router.get('/alterar/:id', auth, controller.telaAlterarProcedimentos);
 
-router.put('/alterar/:id', controller.alterarProcedimento);
+router.put('/alterar/:id', auth, controller.alterarProcedimento);
 
-router.delete('/:id', controller.apagarProcedimento);
+router.delete('/:id', auth, controller.apagarProcedimento);
 
 module.exports = router;
