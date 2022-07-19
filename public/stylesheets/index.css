@@ -114,6 +114,7 @@ html{
     display: flex;
     background-color: #1CBACF;
     width: 1024px;
+    margin-bottom: 70px;
     border-bottom: solid 1px white;
     border-radius: 5px;
     flex-direction: column;
