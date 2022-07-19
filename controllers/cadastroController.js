@@ -31,7 +31,11 @@ const controller = {
 
     let nome = req.session.nome;
 
-    res.render('alterarCadastro', { usuario, nome })
+    let data_nascimento = usuario.data_nascimento;
+
+    data_nascimento = agendamentosServices.formatarData(data_nascimento)
+
+    res.render('alterarCadastro', { usuario, nome, data_nascimento })
   },
   nivelAcesso: async (req, res) => {
     let { id } = req.params;    
@@ -79,6 +83,8 @@ const controller = {
     if (!senha) {
       senha = "admin"
     }
+
+    data_nascimento = `${data_nascimento}T12:00:00`
 
     await cadastroServices.CriarCadastro(
       nome,
@@ -129,10 +135,6 @@ const controller = {
 
     const usuario = await cadastroServices.procurarCadastroPorId(id);
 
-    if (!data_nascimento) {
-      data_nascimento = usuario.data_nascimento
-    }
-
     if (!senha) {
       senha = usuario.senha
     }
@@ -140,6 +142,8 @@ const controller = {
     if (!estado) {
       estado = usuario.estado
     }
+
+    data_nascimento = `${data_nascimento}T12:00:00`
 
     await cadastroServices.AtualizarUsuario(
       id,

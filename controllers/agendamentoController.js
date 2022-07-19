@@ -12,10 +12,13 @@ const controller = {
         const nome = usuario.nome
         const permissao = usuario.permissao
         req.session.nome = nome;
-        res.render('agendamentoTeste', { nome, permissao, dentistas, agendamentos });
+        res.render('agendamento', { nome, permissao, dentistas, agendamentos });
     },
     telaAgendar: async (req, res) => {
-        const todosUsuarios = await cadastroServices.ListarCadastro();
+        let todosUsuarios = await cadastroServices.ListarCadastro();
+        todosUsuarios = todosUsuarios.filter(usuario=>{
+            return usuario.permissao != 3
+        })
         const dentistas = await cadastroServices.listarDentistas();
         const procedimentos = await procedimentosServices.ListarProcedimentos();
         const nome = req.session.nome;

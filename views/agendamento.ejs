@@ -1,529 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/header-nav.css">
-  <link rel="stylesheet" href="/stylesheets/agendamento.css">
-
-  <title>Agendamento</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-nav.css">
+    <link rel="stylesheet" href="/stylesheets/agendamento.css">
+    <title>Agendamento</title>
 </head>
 
 <body>
-  <%-include('./partials/header')%>
-    <main>
-      <div class="campo-nome-botao">
-        <span class="span-consulta-paciente">Olá, <%= usuario.nome %></span>
-        <a href="agendamento/sair"><button class="botao-consulta-paciente">Sair</button></a>
-      </div>
-      <div class="campo-acoes">
-        <div class="abas-admin">
-
-          <span class="abas" id="agendamentos">Agendamentos</span>
-          <span class="abas" id="usuarios">Usuários</span>
-          <span class="abas" id="procedimentos">Procedimentos</span>
-
-        </div>
-        <div id="campo-agendamentos">
-
-          <div id="selecionar-acao-agendamentos" class="seletores-acoes">
-            <label for="acoes-agendamentos" class="acoes-label">Selecione a ação que deseja executar:</label>
-            <select name="" id="acoes-agendamentos" class="acoes-input">
-              <option value=""></option>
-              <option value="agendar">Agendar</option>
-              <option value="alterar">Alterar agendamento</option>
-              <option value="cancelar">Cancelar agendamento</option>
-            </select>
-          </div>
-          <form id="form-agendar-admin" class="forms-display-none" action="/agendamento/criar" method="post">
-            <div class="area-agendamento">
-              <div class="coluna-esquerda-consulta-paciente">
-                <span class="selecione-label">Selecione o cliente:</span>
-                <select name="id_usuario" id="" class="selecione-input">
-                  <% todosUsuarios.forEach(usuario=>{ %>
-                    <option value="<%= usuario.id_usuario %>">
-                      <%=usuario.nome%>         
-                    </option>
-                    <% }) %>
-                </select>
-                <span class="selecione-label">Selecione o dentista.</span>
-                <select name="id_dentista" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
-                    </option>
-                    <% }) %>
-                </select>
-
-                <span class="selecione-label">Selecione o dia para sua consulta.</span>
-                <input type="date" name="data_agendamento" class="selecione-input">
-
-                <span class="selecione-label">Selecione o procedimento.</span>
-                <select name="id_procedimento" id="" class="selecione-input">
-                  <% procedimentos.forEach(procedimento=>{ %>
-                    <option value="<%= procedimento.id_procedimento %>">
-                      <%=procedimento.nome%>
-                    </option>
-                    <% }) %>
-                </select>
-
-              </div>
-              <div class="historico-consulta">
-                <span>Prontuário</span>
-                <div id="table-wrapper">
-                  <div id="table-scroll">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Data</th>
-                          <th>Dia</th>
-                          <th>Procedimento</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-   
-                        <% agendamentos[0].map(agendamento=>{ %>
-                          <tr>
-                            <td>
-                              <%= agendamento.data_agendamento.toLocaleDateString() %>
-                            </td>
-                            <td>
-                              <% if(agendamento.data_agendamento.getDay()==1){ %>
-                                Segunda-feira
-                                <% } %>
-                                  <% if(agendamento.data_agendamento.getDay()==2){ %>
-                                    Terça-feira
-                                    <% } %>
-                                      <% if(agendamento.data_agendamento.getDay()==3){ %>
-                                        Quarta-feira
-                                        <% } %>
-                                          <% if(agendamento.data_agendamento.getDay()==4){ %>
-                                            Quinta-feira
-                                            <% } %>
-                                              <% if(agendamento.data_agendamento.getDay()==5){ %>
-                                                Sexta-feira
-                                                <% } %>
-                            </td>
-                            <td>
-                              <%= agendamento.nome%>
-                            </td>
-                          </tr>
-                          <% }) %>
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+    <%-include('./partials/header')%>
+        <main>
+            <div class="campo-nome-botao">
+                <span class="usuario-logado">Olá, <%= nome %></span>
+                <a href="/agendamento/sair" class="botao-sair">Sair</a>
             </div>
-            <div class="botoes-consulta-paciente">
-              <button type="submit" class="botao-consulta-paciente">Agendar</button>
-            </div>
-          </form>
+            <%if(permissao>1){%>
 
-          <form id="form-alterar-agendamento-admin" action="/agendamento/alterar" method="put">
-            <div class="area-agendamento">
-              <div class="coluna-esquerda-consulta-paciente">
-
-                <span class="selecione-label">Selecione o cliente:</span>
-                <select name="id_usuario" id="" class="selecione-input">
-                  <% todosUsuarios.forEach(usuario=>{ %>
-                    <option for="id_usuario" value="<%= usuario.id_usuario %>">
-                      <%=usuario.nome%>
-                    </option>
-                    <% }) %>
-                </select>
-
-                <span class="selecione-label">Selecione o dentista:</span>
-                <select name="id_dentista" id="" class="selecione-input">
-                  <% dentistas.forEach(dentista=>{ %>
-                    <option for="" value="<%= dentista.id_usuario %>">
-                      <%=dentista.nome%>
-                    </option>
-                    <% }) %>
-                </select>
-
-                <span class="selecione-label">Selecione o dia para sua consulta:</span>
-                <input type="date" name="data_agendamento" class="selecione-input">
-
-                <span class="selecione-label">Selecione o procedimento.</span>
-                <select name="id_procedimento" id="" class="selecione-input">
-                  <% procedimentos.forEach(procedimento=>{ %>
-                    <option value="<%= procedimento.id_procedimento %>">
-                      <%=procedimento.nome%>
-                    </option>
-                    <% }) %>
-                </select>
-
-              </div>
-              <div class="historico-consulta">
-                <span>Prontuário</span>
-                <div id="table-wrapper">
-                  <div id="table-scroll">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Selecione</th>
-                          <th>Data</th>
-                          <th>Dia</th>
-                          <th>Procedimento</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% agendamentos[0].map(agendamento=>{ %>
-                          <tr>
-                            <td><input name="agendamento_selecionado" value="<%=agendamento.id_agendamento%>"
-                                type="radio">
-                            </td>
-                            <td>
-                              <%= agendamento.data_agendamento.toLocaleDateString() %>
-                            </td>
-                            <td>
-                              <% if(agendamento.data_agendamento.getDay()==1){ %>
-                                Segunda-feira
-                                <% } %>
-                                  <% if(agendamento.data_agendamento.getDay()==2){ %>
-                                    Terça-feira
-                                    <% } %>
-                                      <% if(agendamento.data_agendamento.getDay()==3){ %>
-                                        Quarta-feira
-                                        <% } %>
-                                          <% if(agendamento.data_agendamento.getDay()==4){ %>
-                                            Quinta-feira
-                                            <% } %>
-                                              <% if(agendamento.data_agendamento.getDay()==5){ %>
-                                                Sexta-feira
-                                                <% } %>
-                            </td>
-                            <td>
-                              <%= agendamento.nome%>
-                            </td>
-                          </tr>
-                          <% }) %>
-
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="campo-acoes">
+                    <span class="titulo-acao">Selecione a ação que deseja executar:</span>
+                    <span class="acoes">Ações para agendamentos:</span>
+                    <ul>
+                        <li><a href="/agendamento/agendar">Agendar consulta</a></li>
+                        <li><a href="/agendamento/usuarios">Verificar agendamento por usuário</a></li>
+                    </ul>
+                    <span class="acoes">Ações para Usuários:</span>
+                    <ul>
+                        <li><a href="/cadastro">Criar usuário</a></li>
+                        <li><a href="/cadastro/todos">Alterar usuário</a></li>
+                    </ul>
+                    <span class="acoes">Ações para Procedimentos:</span>
+                    <ul>
+                        <li><a href="/procedimento">Criar procedimento</a></li>
+                        <li><a href="/procedimento/lista">Alterar procedimento</a></li>
+                    </ul>
                 </div>
-              </div>
-            </div>
-            <div class="botoes-consulta-paciente">
-              <button type="submit" class="botao-consulta-paciente">Alterar</button>
-            </div>
-          </form>
+                <% }%>
 
-          <form id="form-cancelar-agendamento-admin" action="/agendamento/apagar" method="delete">
-            <div class="area-agendamento">
+                    <% if(permissao==0){ %>
+                        <section class="area-agendamento">
+                            <form id="form-agendamento" action="/agendamento/criar" method="post">
+                                <span>Agende uma nova consulta:</span>
+                                <span>Selecione o dentista:</span>
+                                <select name="id_dentista" id="">
+                                    <% dentistas.forEach(dentista=>{ %>
+                                        <option value="<%= dentista.id_usuario %>">
+                                            <%=dentista.nome%>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <span>Selecione o dia para sua consulta:</span>
+                                <input type="date" name="data_agendamento">
+                                <button type="submit">Agendar</button>
+                            </form>
+                            <div class="prontuario">
+                                <span>Prontuário</span>
+                                <div>
+                                    <div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Data</th>
+                                                    <th>Dia</th>
+                                                    <th>Procedimento</th>
+                                                    <th>Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% agendamentos.map(agendamento=>{ %>
+                                                    <tr>
+                                                        <td>
+                                                            <%= agendamento.data_agendamento.toLocaleDateString() %>
+                                                        </td>
+                                                        <td>
+                                                            <% if(agendamento.data_agendamento.getDay()==1){ %>
+                                                                Segunda-feira
+                                                                <% } %>
+                                                                    <% if(agendamento.data_agendamento.getDay()==2){ %>
+                                                                        Terça-feira
+                                                                        <% } %>
+                                                                            <% if(agendamento.data_agendamento.getDay()==3){
+                                                                                %>
+                                                                                Quarta-feira
+                                                                                <% } %>
+                                                                                    <% if(agendamento.data_agendamento.getDay()==4){
+                                                                                        %>
+                                                                                        Quinta-feira
+                                                                                        <% } %>
+                                                                                            <% if(agendamento.data_agendamento.getDay()==5){
+                                                                                                %>
+                                                                                                Sexta-feira
+                                                                                                <% } %>
+                                                        </td>
+                                                        <td>
+                                                            <%= agendamento.nome%>
+                                                        </td>
+                                                        <td class="td-acoes">
+                                                            <a class="botao-alterar" href="/agendamento/alterar/<%=agendamento.id_agendamento%>">Alterar</a>
+                                                            <form  action="/agendamento/apagar/<%=agendamento.id_agendamento%>?_method=delete" method="post"><button class="botao-cancelar" type="submit">Cancelar</button></form>
+                                                        </td>
+                                                    </tr>
+                                                    <% }) %>
 
-              <div class="historico-consulta">
-                <span>Prontuário</span>
-                <div id="table-wrapper">
-                  <div id="table-scroll">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Data</th>
-                          <th>Dia</th>
-                          <th>Procedimento</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% agendamentos[0].map(agendamento=>{ %>
-                          <tr>
-                            <td>
-                              <%= agendamento.data_agendamento.toLocaleDateString() %>
-                            </td>
-                            <td>
-                              <% if(agendamento.data_agendamento.getDay()==1){ %>
-                                Segunda-feira
-                                <% } %>
-                                  <% if(agendamento.data_agendamento.getDay()==2){ %>
-                                    Terça-feira
-                                    <% } %>
-                                      <% if(agendamento.data_agendamento.getDay()==3){ %>
-                                        Quarta-feira
-                                        <% } %>
-                                          <% if(agendamento.data_agendamento.getDay()==4){ %>
-                                            Quinta-feira
-                                            <% } %>
-                                              <% if(agendamento.data_agendamento.getDay()==5){ %>
-                                                Sexta-feira
-                                                <% } %>
-                            </td>
-                            <td>
-                              <%= agendamento.nome%>
-                            </td>
-                          </tr>
-                          <% }) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="botoes-consulta-paciente">
-              <button type="submit" class="botao-consulta-paciente">Cancelar</button>
-            </div>
-          </form>
-
-          <% if(permissao=0){ %>
-            <form id="form-agendamento" action="" method="">
-              <div class="area-agendamento">
-                <div class="coluna-esquerda-consulta-paciente">
-                  <span>Selecione o dentista.</span>
-
-                  <select name="" id="">
-                    <% dentistas.forEach(dentista=>{ %>
-                      <option value="<%= dentista.id_usuario %>">
-                        <%=dentista.nome%>
-                      </option>
-                      <% }) %>
-                  </select>
-                  <span>Selecione o dia para sua consulta.</span>
-                  <input type="date" name="data_agendamento">
-
-                </div>
-                <div class="historico-consulta">
-                  <span>Prontuário</span>
-                  <div id="table-wrapper">
-                    <div id="table-scroll">
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Selecione</th>
-                            <th>Data</th>
-                            <th>Dia</th>
-                            <th>Procedimento</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <% agendamentos[0].map(agendamento=>{ %>
-                            <tr>
-                              <td><input name="agendamento_selecionado" value="<%=agendamento.id_agendamento%>"
-                                  type="radio"></td>
-                              <td>
-                                <%= agendamento.data_agendamento.toLocaleDateString() %>
-                              </td>
-                              <td>
-                                <% if(agendamento.data_agendamento.getDay()==1){ %>
-                                  Segunda-feira
-                                  <% } %>
-                                    <% if(agendamento.data_agendamento.getDay()==2){ %>
-                                      Terça-feira
-                                      <% } %>
-                                        <% if(agendamento.data_agendamento.getDay()==3){ %>
-                                          Quarta-feira
-                                          <% } %>
-                                            <% if(agendamento.data_agendamento.getDay()==4){ %>
-                                              Quinta-feira
-                                              <% } %>
-                                                <% if(agendamento.data_agendamento.getDay()==5){ %>
-                                                  Sexta-feira
-                                                  <% } %>
-                              </td>
-                              <td>
-                                <%= agendamento.nome%>
-                              </td>
-                            </tr>
-                            <% }) %>
-
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="botoes-consulta-paciente">
-                <button type="submit" class="botao-consulta-paciente">Alterar</button>
-              </div>
-            </form>
-            <% } %>
-
-        </div>
-        <div id=campo-usuarios>
-
-          <div id="seletor-acao-usuarios" class="seletores-acoes">
-            <label for="acoes-usuarios" class="acoes-label">Selecione a ação que deseja executar:</label>
-            <select name="acoes-usuarios" id="acoes-usuarios" class="acoes-input">
-              <option value=""></option>
-              <option value="criar">Criar usuário</option>
-              <option value="alterar">Modificar usuário</option>
-              <option value="apagar">Apagar usuário</option>
-              <option value="acesso">Alterar nível de acesso</option>
-            </select>
-          </div>
-
-          <form action="/cadastro" class="form-cadastro" id="form-criar-usuario" method="post">
-            <div class="detalhes-wrapper-cadastro">
-              <div class='coluna-esquerda-cadastro'>
-                <div class="label-wrapper-cadastro">
-                  <label for="email">Email</label>
-                  <label for="nome">Nome completo</label>
-                  <label for="sexo">Sexo</label>
-                  <label for="cpf">CPF</label>
-                  <label for="tel">Telefone</label>
-                  <label for="data_nascimento">Data de nascimento</label>
-                </div>
-                <div class="input-wrapper-cadastro">
-                  <input type="email" name="email" id="email">
-                  <input type="text" name="nome" id="nome">
-                  <select name="sexo" id="sexo">
-                    <option value="M">masculino</option>
-                    <option value="F">feminino</option>
-                    <option value="">Não informar</option>
-                  </select>
-                  <input type="text" name="cpf" id="cpf">
-                  <input type="tel" name="telefone" id="tel">
-                  <input type="date" name="data_nascimento" id="data_nascimento">
-                </div>
-              </div>
-              <div class="coluna-direita-cadastro">
-                <div class="label-wrapper-cadastro">
-                  <label for="cep">CEP</label>
-                  <label for="endereco">Endereço</label>
-                  <label for="complemento">Complemento</label>
-                  <label for="bairro">Bairro</label>
-                  <label for="cidade">Cidade</label>
-                  <label for="estado">Estado</label>
-                </div>
-                <div class="input-wrapper-cadastro">
-                  <input type="text" name="cep" id="cep">
-                  <input type="text" name="endereco" id="endereco">
-                  <input type="text" name="complemento" id="complemento">
-                  <input type="text" name="bairro" id="bairro">
-                  <input type="text" name="cidade" id="cidade">
-                  <select name="estado" id="estado">
-                    <option value="AC">AC</option>
-                    <option value="AL">AL</option>
-                    <option value="AP">AP</option>
-                    <option value="AM">AM</option>
-                    <option value="BA">BA</option>
-                    <option value="SP">SP</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <button class="button-cadastro" type="submit">Criar</button>
-          </form>
-
-          <form action="" class="form-cadastro" id="form-alterar-usuario" method="put">
-            <div class="detalhes-wrapper-cadastro">
-              <div class='coluna-esquerda-cadastro'>
-                <div class="label-wrapper-cadastro">
-                  <label for="email">Email</label>
-                  <label for="nome">Nome completo</label>
-                  <label for="sexo">Sexo</label>
-                  <label for="cpf">CPF</label>
-                  <label for="tel">Telefone</label>
-                  <label for="data_nascimento">Data de nascimento</label>
-                </div>
-                <div class="input-wrapper-cadastro">
-                  <input type="email" name="email" id="email">
-                  <input type="text" name="nome" id="nome">
-                  <select name="sexo" id="sexo">
-                    <option value="M">masculino</option>
-                    <option value="F">feminino</option>
-                    <option value="">Não informar</option>
-                  </select>
-                  <input type="text" name="cpf" id="cpf">
-                  <input type="tel" name="telefone" id="tel">
-                  <input type="date" name="data_nascimento" id="data_nascimento">
-                </div>
-              </div>
-              <div class="coluna-direita-cadastro">
-                <div class="label-wrapper-cadastro">
-                  <label for="cep">CEP</label>
-                  <label for="endereco">Endereço</label>
-                  <label for="complemento">Complemento</label>
-                  <label for="bairro">Bairro</label>
-                  <label for="cidade">Cidade</label>
-                  <label for="estado">Estado</label>
-                </div>
-                <div class="input-wrapper-cadastro">
-                  <input type="text" name="cep" id="cep">
-                  <input type="text" name="endereco" id="endereco">
-                  <input type="text" name="complemento" id="complemento">
-                  <input type="text" name="bairro" id="bairro">
-                  <input type="text" name="cidade" id="cidade">
-                  <select name="estado" id="estado">
-                    <option value="AC">AC</option>
-                    <option value="AL">AL</option>
-                    <option value="AP">AP</option>
-                    <option value="AM">AM</option>
-                    <option value="BA">BA</option>
-                    <option value="SP">SP</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <button class="button-cadastro" type="submit">Alterar</button>
-          </form>
-
-          <form action="" id="form-apagar-usuario">
-            <label class="selecione-label">Selecione o usuário:</label>
-            <select name="" id="" class="selecione-input">
-              <option value=""></option>
-            </select>
-            <button type="submit">Apagar</button>
-
-          </form>
-
-          <form id="form-nivel-acesso">
-            <label for="usuario">Selecione usuário:</label>
-            <select name="" id="usuario-nivel-acesso">
-              <option value=""></option>
-              <option value="1">João</option>
-            </select>
-            <label for="permisso">Selecione o nível de acesso:</label>
-            <select name="permissao" id="permissao">
-              <option value=0>Cliente</option>
-              <option value=1>Dentista</option>
-              <option value=2>Administrador</option>
-            </select>
-            <button type="submit">Alterar</button>
-          </form>
-        </div>
-        <div id="campo-procedimentos">
-          <div id="seletor-acao-procedimentos" class="seletores-acoes">
-            <label for="acoes-usuarios" class="acoes-label">Selecione a ação que deseja executar:</label>
-            <select name="acoes-procedimentos" id="acoes-procedimentos" class="acoes-input">
-              <option value=""></option>
-              <option value="criar">Criar procedimento</option>
-              <option value="alterar">Modificar procedimento</option>
-              <option value="apagar">Apagar procedimento</option>
-            </select>
-          </div>
-          <form id="form-criar-procedimento" action="">
-            <label for="input-criar-procedimento">Digite o nome do procedimento:</label>
-            <input id="input-criar-procedimento" type="text">
-            <button>Criar</button>
-          </form>
-          <form id="form-alterar-procedimento" action="">
-            <label for="input-alterar-procedimento">Selecione o procedimento para alterar:</label>
-            <select name="" id="input-alterar-procedimento">
-              <option value=""></option>
-            </select>
-            <div>
-              <label for="">Digite o novo nome para o procedimento:</label>
-              <input type="text">
-            </div>
-
-          </form>
-          <form id="form-apagar-procedimento" action="">
-            <label for="input-apagar-procedimento">Selecione o procedimento para apagar:</label>
-            <select name="" id="input-apagar-procedimento">
-              <option value=""></option>
-            </select>
-            <button>Apagar</button>
-          </form>
-        </div>
-      </div>
-    </main>
-    <script src="js/script-agendamentos.js"></script>
+                        <% } %>
+        </main>
 </body>
-
 
 </html>
